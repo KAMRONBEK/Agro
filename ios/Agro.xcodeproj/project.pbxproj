@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* AgroTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* AgroTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
-		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
@@ -26,8 +25,8 @@
 		407756CD23FBEAF6001F5B46 /* SFUIDisplay-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A62B82540B78469B919A20B7 /* SFUIDisplay-Semibold.otf */; };
 		407756CE23FBEAF6001F5B46 /* SFUIDisplay-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 56D74CDC6B704A74A3BF5EAF /* SFUIDisplay-Thin.otf */; };
 		407756CF23FBEAF6001F5B46 /* SFUIDisplay-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD2E874BEFA349AA8AFFD6F2 /* SFUIDisplay-Ultralight.otf */; };
+		40B3AA6F8F48A61B2D92B309 /* libPods-Agro-AgroTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EB843D2C9B8951834554701 /* libPods-Agro-AgroTests.a */; };
 		757495226DFFC27A8DD00AF0 /* libPods-Agro-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D60A15D706897E74A5A8C545 /* libPods-Agro-tvOSTests.a */; };
-		8AFF20C418FE2E3912139BD7 /* libPods-AgroTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C66037A54A932E9951EF3A67 /* libPods-AgroTests.a */; };
 		C91468AE48C14951E117DB2C /* libPods-Agro.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 14CF1506726C3EC040813A6D /* libPods-Agro.a */; };
 		CEE0F5D4AA837EE60B659BBC /* libPods-Agro-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B60D314FD011D616CD9D02AE /* libPods-Agro-tvOS.a */; };
 /* End PBXBuildFile section */
@@ -59,12 +58,12 @@
 		13B07F961A680F5B00A75B9A /* Agro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Agro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Agro/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Agro/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Agro/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Agro/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Agro/main.m; sourceTree = "<group>"; };
 		14CF1506726C3EC040813A6D /* libPods-Agro.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Agro.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B391F6B9C9E586561DFF2A4 /* Pods-Agro-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agro-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Agro-tvOSTests/Pods-Agro-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1EB843D2C9B8951834554701 /* libPods-Agro-AgroTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Agro-AgroTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20A8A5B7108A44469A7472D2 /* SFUIDisplay-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SFUIDisplay-Regular.otf"; path = "../app/assets/fonts/SF/SFUIDisplay-Regular.otf"; sourceTree = "<group>"; };
 		228B209B8AB7449685FBE450 /* SFUIDisplay-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SFUIDisplay-Medium.otf"; path = "../app/assets/fonts/SF/SFUIDisplay-Medium.otf"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* Agro-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Agro-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,7 +71,6 @@
 		32AC3C9196B9C6B1BAAB93EB /* Pods-AgroTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AgroTests.debug.xcconfig"; path = "Target Support Files/Pods-AgroTests/Pods-AgroTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3BCF96A2C4704E4789EA3CF6 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		4033B412240CFD48008330FA /* InputMask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = InputMask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4033B416240CFF16008330FA /* Agro-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Agro-Bridging-Header.h"; sourceTree = "<group>"; };
 		4033B417240CFF17008330FA /* Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dummy.swift; sourceTree = "<group>"; };
 		421A0E6F6CA1E3475C25D68E /* Pods-Agro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agro.release.xcconfig"; path = "Target Support Files/Pods-Agro/Pods-Agro.release.xcconfig"; sourceTree = "<group>"; };
 		4330037BA7881AC1A68B8063 /* Pods-Agro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agro.debug.xcconfig"; path = "Target Support Files/Pods-Agro/Pods-Agro.debug.xcconfig"; sourceTree = "<group>"; };
@@ -80,6 +78,7 @@
 		56D74CDC6B704A74A3BF5EAF /* SFUIDisplay-Thin.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SFUIDisplay-Thin.otf"; path = "../app/assets/fonts/SF/SFUIDisplay-Thin.otf"; sourceTree = "<group>"; };
 		5711C77104564CBCB4020F04 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		5F516567D3E84FB08B1CD3A2 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
+		62B33037257520CA008AD992 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Agro/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6388DDB9793286AB2F022813 /* Pods-Agro-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agro-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-Agro-tvOSTests/Pods-Agro-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		6BC6F7A7CFC0431AAC6F7FF8 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 		6D1EFFE314234B5FAE1F15F5 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
@@ -92,13 +91,14 @@
 		A17152BF14034E1CA9455172 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		A62B82540B78469B919A20B7 /* SFUIDisplay-Semibold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SFUIDisplay-Semibold.otf"; path = "../app/assets/fonts/SF/SFUIDisplay-Semibold.otf"; sourceTree = "<group>"; };
 		B0263AD90F2D40938429A7C8 /* SFUIDisplay-Light.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SFUIDisplay-Light.otf"; path = "../app/assets/fonts/SF/SFUIDisplay-Light.otf"; sourceTree = "<group>"; };
+		B305FBA75EC57D0A364AA35D /* Pods-Agro-AgroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agro-AgroTests.release.xcconfig"; path = "Target Support Files/Pods-Agro-AgroTests/Pods-Agro-AgroTests.release.xcconfig"; sourceTree = "<group>"; };
 		B60D314FD011D616CD9D02AE /* libPods-Agro-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Agro-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC35E5C22F2548629041D7C5 /* SFUIDisplay-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SFUIDisplay-Bold.otf"; path = "../app/assets/fonts/SF/SFUIDisplay-Bold.otf"; sourceTree = "<group>"; };
 		BD7B09FC03884E53A182D495 /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
-		C66037A54A932E9951EF3A67 /* libPods-AgroTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AgroTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD2E874BEFA349AA8AFFD6F2 /* SFUIDisplay-Ultralight.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SFUIDisplay-Ultralight.otf"; path = "../app/assets/fonts/SF/SFUIDisplay-Ultralight.otf"; sourceTree = "<group>"; };
 		D26F4A9DB81D1174263F133A /* Pods-AgroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AgroTests.release.xcconfig"; path = "Target Support Files/Pods-AgroTests/Pods-AgroTests.release.xcconfig"; sourceTree = "<group>"; };
 		D60A15D706897E74A5A8C545 /* libPods-Agro-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Agro-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAFF7CC5F0D73C50ADF04AD2 /* Pods-Agro-AgroTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agro-AgroTests.debug.xcconfig"; path = "Target Support Files/Pods-Agro-AgroTests/Pods-Agro-AgroTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E1B800A30D4BCBE3B17143AF /* Pods-Agro-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agro-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-Agro-tvOS/Pods-Agro-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		E7707E2B5B604B6EBC98A551 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -112,7 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8AFF20C418FE2E3912139BD7 /* libPods-AgroTests.a in Frameworks */,
+				40B3AA6F8F48A61B2D92B309 /* libPods-Agro-AgroTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,15 +163,14 @@
 		13B07FAE1A68108700A75B9A /* Agro */ = {
 			isa = PBXGroup;
 			children = (
+				62B33037257520CA008AD992 /* LaunchScreen.storyboard */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
-				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
 				4033B417240CFF17008330FA /* Dummy.swift */,
-				4033B416240CFF16008330FA /* Agro-Bridging-Header.h */,
 			);
 			name = Agro;
 			sourceTree = "<group>";
@@ -185,7 +184,7 @@
 				14CF1506726C3EC040813A6D /* libPods-Agro.a */,
 				B60D314FD011D616CD9D02AE /* libPods-Agro-tvOS.a */,
 				D60A15D706897E74A5A8C545 /* libPods-Agro-tvOSTests.a */,
-				C66037A54A932E9951EF3A67 /* libPods-AgroTests.a */,
+				1EB843D2C9B8951834554701 /* libPods-Agro-AgroTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -201,6 +200,8 @@
 				6388DDB9793286AB2F022813 /* Pods-Agro-tvOSTests.release.xcconfig */,
 				32AC3C9196B9C6B1BAAB93EB /* Pods-AgroTests.debug.xcconfig */,
 				D26F4A9DB81D1174263F133A /* Pods-AgroTests.release.xcconfig */,
+				DAFF7CC5F0D73C50ADF04AD2 /* Pods-Agro-AgroTests.debug.xcconfig */,
+				B305FBA75EC57D0A364AA35D /* Pods-Agro-AgroTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -282,6 +283,7 @@
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
+				7A55160AB063D02C7784631E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -426,7 +428,6 @@
 				407756CE23FBEAF6001F5B46 /* SFUIDisplay-Thin.otf in Resources */,
 				407756CF23FBEAF6001F5B46 /* SFUIDisplay-Ultralight.otf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,7 +478,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AgroTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Agro-AgroTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -566,6 +567,7 @@
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Octicons.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Zocial.ttf",
+				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -586,10 +588,63 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Octicons.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SimpleLineIcons.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Zocial.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Agro/Pods-Agro-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A55160AB063D02C7784631E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Agro-AgroTests/Pods-Agro-AgroTests-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Feather.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Foundation.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Octicons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Zocial.ttf",
+				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntDesign.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EvilIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Feather.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Brands.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Regular.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Solid.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Fontisto.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Foundation.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Ionicons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialCommunityIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Octicons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SimpleLineIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Zocial.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Agro-AgroTests/Pods-Agro-AgroTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B236CE708DC2932883B0139E /* [CP] Check Pods Manifest.lock */ = {
@@ -705,22 +760,10 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		13B07FB11A68108700A75B9A /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				13B07FB21A68108700A75B9A /* Base */,
-			);
-			name = LaunchScreen.xib;
-			path = Agro;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 32AC3C9196B9C6B1BAAB93EB /* Pods-AgroTests.debug.xcconfig */;
+			baseConfigurationReference = DAFF7CC5F0D73C50ADF04AD2 /* Pods-Agro-AgroTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -745,7 +788,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D26F4A9DB81D1174263F133A /* Pods-AgroTests.release.xcconfig */;
+			baseConfigurationReference = B305FBA75EC57D0A364AA35D /* Pods-Agro-AgroTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

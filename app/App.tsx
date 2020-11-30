@@ -3,64 +3,61 @@
  * https://github.com/facebook/react-native
  *
  * @format
- * @flow
+ * @flow strict-local
  */
 
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { SafeAreaView, StyleSheet } from 'react-native';
-import FlashMessage from "react-native-flash-message";
+import FlashMessage from 'react-native-flash-message';
 import { store } from 'store';
 import { AppLoggedInWithNavigator, AppAuthWithNavigator } from 'router';
 import { isTokenExist } from 'utils';
 import { MyStatusBar } from 'widgets/ModuleShared';
 
 interface IState {
-  tokenExist: Boolean;
+	tokenExist: Boolean;
 }
 
 export default class App extends Component<{}, IState> {
-  state: IState = {
-    tokenExist: null
-  }
+	state: IState = {
+		tokenExist: null
+	};
 
-  async componentDidMount() {
-    const hasToken = await isTokenExist();
+	async componentDidMount() {
+		const hasToken = await isTokenExist();
 
-    this.setState({ tokenExist: hasToken });
-  }
+		this.setState({ tokenExist: hasToken });
+	}
 
-  renderNavigator = () => {
-    const { tokenExist } = this.state;
-    
-    switch(tokenExist) {
-      case true: {
-        return <AppLoggedInWithNavigator />;
-      }
-      case false: {
-        return <AppAuthWithNavigator />;
-      }
-    }
-  }
+	renderNavigator = () => {
+		const { tokenExist } = this.state;
 
-  render() {
-    return (
-      <Provider store={store}>
-        <MyStatusBar />
+		switch (tokenExist) {
+			case true: {
+				return <AppLoggedInWithNavigator />;
+			}
+			case false: {
+				return <AppAuthWithNavigator />;
+			}
+		}
+	};
 
-        <SafeAreaView style={styles.safearea}>
-          {this.renderNavigator()}
+	render() {
+		return (
+			<Provider store={store}>
+				<MyStatusBar />
 
-        </SafeAreaView>
-        
-        <FlashMessage position="top" />
-      </Provider>
-    );
-  }
+				<SafeAreaView style={styles.safearea}>{this.renderNavigator()}</SafeAreaView>
+
+				<FlashMessage position="top" />
+			</Provider>
+		);
+	}
 }
 
 const styles = StyleSheet.create({
-  safearea: {
-    flex: 1
-  }
-})
+	safearea: {
+		flex: 1
+	}
+});
