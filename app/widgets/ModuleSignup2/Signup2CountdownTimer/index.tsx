@@ -1,0 +1,1 @@
+export { Signup2CountdownTimerConnect as Signup2CountdownTimer } from './widget';

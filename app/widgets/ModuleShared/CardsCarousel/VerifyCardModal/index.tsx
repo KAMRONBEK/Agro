@@ -1,0 +1,1 @@
+export { VerifyCardModalConnect as VerifyCardModal } from './widget';

@@ -1,0 +1,1 @@
+export { SignupGenderModalConnect as SignupGenderModal } from './widget';

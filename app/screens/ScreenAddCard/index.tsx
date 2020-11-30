@@ -1,0 +1,1 @@
+export { ScreenAddCardConnect as ScreenAddCard } from './screen';

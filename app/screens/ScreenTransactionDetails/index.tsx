@@ -1,0 +1,1 @@
+export { ScreenTransactionDetailsConnect as ScreenTransactionDetails } from './screen';

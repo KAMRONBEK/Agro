@@ -1,0 +1,1 @@
+export { AddCardButtonsConnect as AddCardButtons } from './widget';

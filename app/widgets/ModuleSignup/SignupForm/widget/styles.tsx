@@ -1,0 +1,51 @@
+import { StyleSheet } from 'react-native';
+import { Palette } from 'styles';
+
+export const styles = StyleSheet.create({
+  container: {
+    paddingHorizontal: 60,
+    marginBottom: 30
+  },
+  inputBox: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: Palette.white,
+    alignSelf: 'stretch',
+    justifyContent: 'space-between',
+    borderRadius: 100,
+    paddingLeft: 24,
+    shadowOffset: {
+      width: 0,
+      height: 0
+    },
+    shadowColor: Palette.black,
+    shadowOpacity: 0.07,
+    shadowRadius: 10,
+    marginVertical: 8
+  },
+  input: {
+    height: 50,
+    color: Palette.black,
+    width: 0,
+    flexGrow: 1,
+    fontFamily: 'SFUIDisplay-Regular',
+    fontSize: 16
+  },
+  showPasswordButton: {
+    width: 55,
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  forgotPasswordBox: {
+    alignItems: 'flex-end'
+  },
+  forgotPasswordButton: {
+    paddingVertical: 6
+  },
+  forgotPasswordButtonTitle: {
+    fontSize: 14,
+    fontFamily: 'SFUIDisplay-Semibold',
+    color: Palette.greyRoad
+  }
+});

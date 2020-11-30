@@ -1,0 +1,1 @@
+export { AddCardModalConnect as AddCardModal } from './widget';

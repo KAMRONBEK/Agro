@@ -1,0 +1,1 @@
+export { SettingsLogoutModalConnect as SettingsLogoutModal } from './widget';

@@ -1,0 +1,1 @@
+export { ServicePaymentSelectContentConnect as ServicePaymentSelectContent } from './widget';

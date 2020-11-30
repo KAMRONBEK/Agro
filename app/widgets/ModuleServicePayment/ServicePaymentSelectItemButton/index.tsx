@@ -1,0 +1,1 @@
+export { ServicePaymentSelectItemButtonConnect as ServicePaymentSelectItemButton } from './widget';

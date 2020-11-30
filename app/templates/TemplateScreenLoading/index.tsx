@@ -1,0 +1,1 @@
+export { TemplateScreenLoadingView as TemplateScreenLoading } from './template';

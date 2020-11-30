@@ -1,0 +1,1 @@
+export { SettingsLogoutButtonController as SettingsLogoutButton } from './widget';

@@ -1,0 +1,1 @@
+export { CreateVisaVirtualHintsController as CreateVisaVirtualHints } from './widget';

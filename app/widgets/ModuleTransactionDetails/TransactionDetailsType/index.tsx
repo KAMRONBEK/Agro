@@ -1,0 +1,1 @@
+export { TransactionDetailsTypeConnect as TransactionDetailsType } from './widget';

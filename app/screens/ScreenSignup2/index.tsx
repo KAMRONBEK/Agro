@@ -1,0 +1,1 @@
+export { ScreenSignup2Connect as ScreenSignup2 } from './widget';

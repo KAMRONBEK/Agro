@@ -1,0 +1,1 @@
+export const SUPPLIER_ID = 'supplier_id';

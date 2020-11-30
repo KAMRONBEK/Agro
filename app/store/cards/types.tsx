@@ -1,0 +1,1 @@
+export const VISA_EXIST = 'visa_exist';

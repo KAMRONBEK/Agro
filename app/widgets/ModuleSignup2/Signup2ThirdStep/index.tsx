@@ -1,0 +1,1 @@
+export { Signup2ThirdStepConnect as Signup2ThirdStep } from './widget';

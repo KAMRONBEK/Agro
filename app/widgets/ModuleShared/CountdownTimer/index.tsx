@@ -1,0 +1,1 @@
+export { CountdownTimerConnect as CountdownTimer } from './widget';

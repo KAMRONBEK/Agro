@@ -1,0 +1,1 @@
+export { GreenHeader } from './widget';

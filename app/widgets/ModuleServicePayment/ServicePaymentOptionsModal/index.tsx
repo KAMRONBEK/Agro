@@ -1,0 +1,1 @@
+export { ServicePaymentOptionsModalController as ServicePaymentOptionsModal } from './widget';

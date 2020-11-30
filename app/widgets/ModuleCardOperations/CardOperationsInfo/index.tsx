@@ -1,0 +1,1 @@
+export { CardOperationsInfoConnect as CardOperationsInfo } from './widget';

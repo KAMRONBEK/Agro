@@ -1,0 +1,1 @@
+export { CardOperationsStatusModalConnect as CardOperationsStatusModal } from './widget';

@@ -1,0 +1,1 @@
+export { AddCardContentView as AddCardContent } from './widget';

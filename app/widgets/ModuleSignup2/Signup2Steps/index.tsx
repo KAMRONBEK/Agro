@@ -1,0 +1,1 @@
+export { Signup2StepsConnect as Signup2Steps } from './widget';

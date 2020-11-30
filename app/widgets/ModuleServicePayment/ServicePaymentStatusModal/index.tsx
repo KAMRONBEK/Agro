@@ -1,0 +1,1 @@
+export { ServicePaymentStatusModalConnect as ServicePaymentStatusModal } from './widget';
