@@ -1,7 +1,7 @@
 import React, { RefObject } from 'react';
 import { View, Text, Dimensions, ImageBackground, TouchableOpacity, ScrollViewProps, ActivityIndicator } from 'react-native';
 import Carousel, { CarouselStatic } from 'react-native-snap-carousel';
-import Switch from 'react-native-switch-pro';
+// import Switch from 'react-native-switch-pro';
 import { styles } from './styles';
 import { ICard, IActiveCard, ICardBalance } from 'types';
 import { TOUCHABLE_OPACITY_2, TOUCHABLE_OPACITY } from 'const';
@@ -195,11 +195,11 @@ export function CardsView({
               <View style={styles.switchContainer}>
                 { changeVisaVirtualStatusIsFetching && <ActivityIndicator size='small' color={Palette.white} animating={changeVisaVirtualStatusIsFetching} /> }
                 <Text style={styles.switchTitle}>{statuS1 === '0' ? 'Активирована' : 'Заблокирована'}</Text>
-                <Switch 
+                {/* <Switch 
                   value={statuS1 === '0' ? true : false}
                   onAsyncPress={onValueChange}
                   style={styles.switch}
-                />
+                /> */}
               </View>
             </View>
           </View>

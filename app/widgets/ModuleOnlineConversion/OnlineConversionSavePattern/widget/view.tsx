@@ -1,14 +1,14 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import Switch from 'react-native-customisable-switch';
+// import Switch from 'react-native-customisable-switch';
 import { styles } from './styles';
 import { Palette } from 'styles';
 
 export function OnlineConversionSavePatternView() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Сохранить как шаблон</Text>
-      <Switch
+	return (
+		<View style={styles.container}>
+			<Text style={styles.title}>Сохранить как шаблон</Text>
+			{/* <Switch
         defaultValue={true}
         activeBackgroundColor={Palette.greenAloe}
         inactiveBackgroundColor={Palette.greyLightText}
@@ -28,7 +28,7 @@ export function OnlineConversionSavePatternView() {
         onChangeValue={(value) => {
           console.log(value);
         }}
-      />
-    </View>
-  )
+      /> */}
+		</View>
+	);
 }

@@ -3,25 +3,20 @@ import { NavigationScreenProp } from 'react-navigation';
 import { GreenHeaderView } from './view';
 
 interface IOwnProps {
-  navigation: NavigationScreenProp<void>;
-  title: string;
+	navigation: NavigationScreenProp<void>;
+	title: string;
 }
 
 export class GreenHeaderController extends Component<IOwnProps> {
-  back = () => {
-    const { navigation } = this.props;
+	back = () => {
+		const { navigation } = this.props;
 
-    navigation.goBack();
-  };
+		navigation.goBack();
+	};
 
-  render() {
-    const { title } = this.props;
+	render() {
+		const { title } = this.props;
 
-    return (
-      <GreenHeaderView
-        back={this.back}
-        title={title}
-      />
-    )
-  }
+		return <GreenHeaderView back={this.back} title={title} />;
+	}
 }

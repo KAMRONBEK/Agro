@@ -1,14 +1,14 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import Switch from 'react-native-customisable-switch';
+// import Switch from 'react-native-customisable-switch';
 import { styles } from './styles';
 import { Palette } from 'styles';
 
 export function SmsConfirmationTrustTriggerView() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.trustTitle}>Доверять этому устройству</Text>
-      <Switch
+	return (
+		<View style={styles.container}>
+			<Text style={styles.trustTitle}>Доверять этому устройству</Text>
+			{/* <Switch
         defaultValue={true}
         activeBackgroundColor={Palette.greenAloe}
         inactiveBackgroundColor={Palette.grey}
@@ -28,7 +28,7 @@ export function SmsConfirmationTrustTriggerView() {
         onChangeValue={(value) => {
           console.log(value);
         }}
-      />
-    </View>
-  )
+      /> */}
+		</View>
+	);
 }
