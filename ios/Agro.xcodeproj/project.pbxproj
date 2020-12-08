@@ -26,10 +26,10 @@
 		407756CD23FBEAF6001F5B46 /* SFUIDisplay-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A62B82540B78469B919A20B7 /* SFUIDisplay-Semibold.otf */; };
 		407756CE23FBEAF6001F5B46 /* SFUIDisplay-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 56D74CDC6B704A74A3BF5EAF /* SFUIDisplay-Thin.otf */; };
 		407756CF23FBEAF6001F5B46 /* SFUIDisplay-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD2E874BEFA349AA8AFFD6F2 /* SFUIDisplay-Ultralight.otf */; };
-		757495226DFFC27A8DD00AF0 /* libPods-Agro-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D60A15D706897E74A5A8C545 /* libPods-Agro-tvOSTests.a */; };
-		8AFF20C418FE2E3912139BD7 /* libPods-AgroTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C66037A54A932E9951EF3A67 /* libPods-AgroTests.a */; };
-		C91468AE48C14951E117DB2C /* libPods-Agro.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 14CF1506726C3EC040813A6D /* libPods-Agro.a */; };
-		CEE0F5D4AA837EE60B659BBC /* libPods-Agro-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B60D314FD011D616CD9D02AE /* libPods-Agro-tvOS.a */; };
+		4F2F335F4FD82413B1B541FD /* libPods-AgroTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98D9AF6F3471480DB5D57444 /* libPods-AgroTests.a */; };
+		518AD16AAAB4726576AC5520 /* libPods-Agro-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 855919AEF9BA53996E088884 /* libPods-Agro-tvOSTests.a */; };
+		54F04496771E40EC59387047 /* libPods-Agro-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F1347D9E6E0EE02BB67814E /* libPods-Agro-tvOS.a */; };
+		B80C291EFDDBFB168FDE1E1E /* libPods-Agro.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9463F1EFAAA5962CDE7CBFE /* libPods-Agro.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,43 +63,43 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Agro/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Agro/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Agro/main.m; sourceTree = "<group>"; };
-		14CF1506726C3EC040813A6D /* libPods-Agro.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Agro.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1B391F6B9C9E586561DFF2A4 /* Pods-Agro-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agro-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Agro-tvOSTests/Pods-Agro-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		20A8A5B7108A44469A7472D2 /* SFUIDisplay-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SFUIDisplay-Regular.otf"; path = "../app/assets/fonts/SF/SFUIDisplay-Regular.otf"; sourceTree = "<group>"; };
 		228B209B8AB7449685FBE450 /* SFUIDisplay-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SFUIDisplay-Medium.otf"; path = "../app/assets/fonts/SF/SFUIDisplay-Medium.otf"; sourceTree = "<group>"; };
+		240946A001B4814FFA79F580 /* Pods-Agro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agro.debug.xcconfig"; path = "Target Support Files/Pods-Agro/Pods-Agro.debug.xcconfig"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* Agro-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Agro-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* Agro-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Agro-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		32AC3C9196B9C6B1BAAB93EB /* Pods-AgroTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AgroTests.debug.xcconfig"; path = "Target Support Files/Pods-AgroTests/Pods-AgroTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3BCF96A2C4704E4789EA3CF6 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		4033B412240CFD48008330FA /* InputMask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = InputMask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4033B416240CFF16008330FA /* Agro-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Agro-Bridging-Header.h"; sourceTree = "<group>"; };
 		4033B417240CFF17008330FA /* Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dummy.swift; sourceTree = "<group>"; };
-		421A0E6F6CA1E3475C25D68E /* Pods-Agro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agro.release.xcconfig"; path = "Target Support Files/Pods-Agro/Pods-Agro.release.xcconfig"; sourceTree = "<group>"; };
-		4330037BA7881AC1A68B8063 /* Pods-Agro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agro.debug.xcconfig"; path = "Target Support Files/Pods-Agro/Pods-Agro.debug.xcconfig"; sourceTree = "<group>"; };
-		5126BB5F2921C45305533CCA /* Pods-Agro-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agro-tvOS.release.xcconfig"; path = "Target Support Files/Pods-Agro-tvOS/Pods-Agro-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		4D5EEFB403438CB85DAB239E /* Pods-Agro-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agro-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Agro-tvOSTests/Pods-Agro-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4E7ECF3FEB8CBE301D176386 /* Pods-AgroTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AgroTests.debug.xcconfig"; path = "Target Support Files/Pods-AgroTests/Pods-AgroTests.debug.xcconfig"; sourceTree = "<group>"; };
 		56D74CDC6B704A74A3BF5EAF /* SFUIDisplay-Thin.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SFUIDisplay-Thin.otf"; path = "../app/assets/fonts/SF/SFUIDisplay-Thin.otf"; sourceTree = "<group>"; };
 		5711C77104564CBCB4020F04 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
+		5A7F87329F8E248695034029 /* Pods-Agro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agro.release.xcconfig"; path = "Target Support Files/Pods-Agro/Pods-Agro.release.xcconfig"; sourceTree = "<group>"; };
 		5F516567D3E84FB08B1CD3A2 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
-		6388DDB9793286AB2F022813 /* Pods-Agro-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agro-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-Agro-tvOSTests/Pods-Agro-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		6BC6F7A7CFC0431AAC6F7FF8 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 		6D1EFFE314234B5FAE1F15F5 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
+		706D56B33B68EC9D6F5BF2B0 /* Pods-Agro-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agro-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-Agro-tvOSTests/Pods-Agro-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		71F359EF6FBD4B6C8E9D5B37 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
+		7474446E8E063F43433BE166 /* Pods-AgroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AgroTests.release.xcconfig"; path = "Target Support Files/Pods-AgroTests/Pods-AgroTests.release.xcconfig"; sourceTree = "<group>"; };
 		79035E0C5356412CA6119AFA /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		7D23BAA7CDB64C45BF648BB0 /* SFUIDisplay-Heavy.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SFUIDisplay-Heavy.otf"; path = "../app/assets/fonts/SF/SFUIDisplay-Heavy.otf"; sourceTree = "<group>"; };
+		7F1347D9E6E0EE02BB67814E /* libPods-Agro-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Agro-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80368A0B10CB435691DA989A /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
 		833075B6CC3A48FAB942C2A9 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
+		855919AEF9BA53996E088884 /* libPods-Agro-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Agro-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		916D9D6F1C95437DADDEA156 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		98D9AF6F3471480DB5D57444 /* libPods-AgroTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AgroTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A5D07254BD5765B443645AA /* Pods-Agro-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agro-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-Agro-tvOS/Pods-Agro-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		A17152BF14034E1CA9455172 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		A62B82540B78469B919A20B7 /* SFUIDisplay-Semibold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SFUIDisplay-Semibold.otf"; path = "../app/assets/fonts/SF/SFUIDisplay-Semibold.otf"; sourceTree = "<group>"; };
 		B0263AD90F2D40938429A7C8 /* SFUIDisplay-Light.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SFUIDisplay-Light.otf"; path = "../app/assets/fonts/SF/SFUIDisplay-Light.otf"; sourceTree = "<group>"; };
-		B60D314FD011D616CD9D02AE /* libPods-Agro-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Agro-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC35E5C22F2548629041D7C5 /* SFUIDisplay-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SFUIDisplay-Bold.otf"; path = "../app/assets/fonts/SF/SFUIDisplay-Bold.otf"; sourceTree = "<group>"; };
 		BD7B09FC03884E53A182D495 /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
-		C66037A54A932E9951EF3A67 /* libPods-AgroTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AgroTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9463F1EFAAA5962CDE7CBFE /* libPods-Agro.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Agro.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD2E874BEFA349AA8AFFD6F2 /* SFUIDisplay-Ultralight.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SFUIDisplay-Ultralight.otf"; path = "../app/assets/fonts/SF/SFUIDisplay-Ultralight.otf"; sourceTree = "<group>"; };
-		D26F4A9DB81D1174263F133A /* Pods-AgroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AgroTests.release.xcconfig"; path = "Target Support Files/Pods-AgroTests/Pods-AgroTests.release.xcconfig"; sourceTree = "<group>"; };
-		D60A15D706897E74A5A8C545 /* libPods-Agro-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Agro-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E1B800A30D4BCBE3B17143AF /* Pods-Agro-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agro-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-Agro-tvOS/Pods-Agro-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		E5B75EE4C5D822E64F0B2AE4 /* Pods-Agro-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agro-tvOS.release.xcconfig"; path = "Target Support Files/Pods-Agro-tvOS/Pods-Agro-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		E7707E2B5B604B6EBC98A551 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
@@ -112,7 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8AFF20C418FE2E3912139BD7 /* libPods-AgroTests.a in Frameworks */,
+				4F2F335F4FD82413B1B541FD /* libPods-AgroTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,7 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C91468AE48C14951E117DB2C /* libPods-Agro.a in Frameworks */,
+				B80C291EFDDBFB168FDE1E1E /* libPods-Agro.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,7 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEE0F5D4AA837EE60B659BBC /* libPods-Agro-tvOS.a in Frameworks */,
+				54F04496771E40EC59387047 /* libPods-Agro-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,7 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				757495226DFFC27A8DD00AF0 /* libPods-Agro-tvOSTests.a in Frameworks */,
+				518AD16AAAB4726576AC5520 /* libPods-Agro-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,10 +182,10 @@
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				4033B412240CFD48008330FA /* InputMask.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				14CF1506726C3EC040813A6D /* libPods-Agro.a */,
-				B60D314FD011D616CD9D02AE /* libPods-Agro-tvOS.a */,
-				D60A15D706897E74A5A8C545 /* libPods-Agro-tvOSTests.a */,
-				C66037A54A932E9951EF3A67 /* libPods-AgroTests.a */,
+				C9463F1EFAAA5962CDE7CBFE /* libPods-Agro.a */,
+				7F1347D9E6E0EE02BB67814E /* libPods-Agro-tvOS.a */,
+				855919AEF9BA53996E088884 /* libPods-Agro-tvOSTests.a */,
+				98D9AF6F3471480DB5D57444 /* libPods-AgroTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -193,14 +193,14 @@
 		4B2A74B47E3F833B35F9B50B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4330037BA7881AC1A68B8063 /* Pods-Agro.debug.xcconfig */,
-				421A0E6F6CA1E3475C25D68E /* Pods-Agro.release.xcconfig */,
-				E1B800A30D4BCBE3B17143AF /* Pods-Agro-tvOS.debug.xcconfig */,
-				5126BB5F2921C45305533CCA /* Pods-Agro-tvOS.release.xcconfig */,
-				1B391F6B9C9E586561DFF2A4 /* Pods-Agro-tvOSTests.debug.xcconfig */,
-				6388DDB9793286AB2F022813 /* Pods-Agro-tvOSTests.release.xcconfig */,
-				32AC3C9196B9C6B1BAAB93EB /* Pods-AgroTests.debug.xcconfig */,
-				D26F4A9DB81D1174263F133A /* Pods-AgroTests.release.xcconfig */,
+				240946A001B4814FFA79F580 /* Pods-Agro.debug.xcconfig */,
+				5A7F87329F8E248695034029 /* Pods-Agro.release.xcconfig */,
+				9A5D07254BD5765B443645AA /* Pods-Agro-tvOS.debug.xcconfig */,
+				E5B75EE4C5D822E64F0B2AE4 /* Pods-Agro-tvOS.release.xcconfig */,
+				4D5EEFB403438CB85DAB239E /* Pods-Agro-tvOSTests.debug.xcconfig */,
+				706D56B33B68EC9D6F5BF2B0 /* Pods-Agro-tvOSTests.release.xcconfig */,
+				4E7ECF3FEB8CBE301D176386 /* Pods-AgroTests.debug.xcconfig */,
+				7474446E8E063F43433BE166 /* Pods-AgroTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -278,7 +278,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "AgroTests" */;
 			buildPhases = (
-				0819725926335F95051E2C24 /* [CP] Check Pods Manifest.lock */,
+				0B6FF628B55DFB6C35983D19 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
@@ -297,13 +297,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Agro" */;
 			buildPhases = (
-				137BC3F24F83EE63155849E4 /* [CP] Check Pods Manifest.lock */,
+				F77C35072C200686E5B2234D /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				6A8FE845DBE8A94FDE084DCD /* [CP] Copy Pods Resources */,
+				082858C2B6004A89A994FCC4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -318,7 +318,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Agro-tvOS" */;
 			buildPhases = (
-				5CEA1BB40F11D14C9D715897 /* [CP] Check Pods Manifest.lock */,
+				5B7A360FC0FBAFA26B8EC4B9 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
 				2D02E4771E0B4A5D006451C7 /* Sources */,
 				2D02E4781E0B4A5D006451C7 /* Frameworks */,
@@ -338,7 +338,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Agro-tvOSTests" */;
 			buildPhases = (
-				B236CE708DC2932883B0139E /* [CP] Check Pods Manifest.lock */,
+				4EAECBFFB6E7DECDB2076DC3 /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
 				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
 				2D02E48E1E0B4A5D006451C7 /* Resources */,
@@ -462,87 +462,7 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		0819725926335F95051E2C24 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AgroTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		137BC3F24F83EE63155849E4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Agro-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Bundle React Native Code And Images";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
-		};
-		5CEA1BB40F11D14C9D715897 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Agro-tvOS-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6A8FE845DBE8A94FDE084DCD /* [CP] Copy Pods Resources */ = {
+		082858C2B6004A89A994FCC4 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -566,6 +486,7 @@
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Octicons.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Zocial.ttf",
+				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -586,13 +507,50 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Octicons.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SimpleLineIcons.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Zocial.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Agro/Pods-Agro-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B236CE708DC2932883B0139E /* [CP] Check Pods Manifest.lock */ = {
+		0B6FF628B55DFB6C35983D19 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AgroTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Bundle React Native Code And Images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+		};
+		4EAECBFFB6E7DECDB2076DC3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -608,6 +566,50 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Agro-tvOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5B7A360FC0FBAFA26B8EC4B9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Agro-tvOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F77C35072C200686E5B2234D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Agro-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -720,7 +722,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 32AC3C9196B9C6B1BAAB93EB /* Pods-AgroTests.debug.xcconfig */;
+			baseConfigurationReference = 4E7ECF3FEB8CBE301D176386 /* Pods-AgroTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -745,7 +747,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D26F4A9DB81D1174263F133A /* Pods-AgroTests.release.xcconfig */;
+			baseConfigurationReference = 7474446E8E063F43433BE166 /* Pods-AgroTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -767,7 +769,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4330037BA7881AC1A68B8063 /* Pods-Agro.debug.xcconfig */;
+			baseConfigurationReference = 240946A001B4814FFA79F580 /* Pods-Agro.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -793,7 +795,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 421A0E6F6CA1E3475C25D68E /* Pods-Agro.release.xcconfig */;
+			baseConfigurationReference = 5A7F87329F8E248695034029 /* Pods-Agro.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -817,7 +819,7 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E1B800A30D4BCBE3B17143AF /* Pods-Agro-tvOS.debug.xcconfig */;
+			baseConfigurationReference = 9A5D07254BD5765B443645AA /* Pods-Agro-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -845,7 +847,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5126BB5F2921C45305533CCA /* Pods-Agro-tvOS.release.xcconfig */;
+			baseConfigurationReference = E5B75EE4C5D822E64F0B2AE4 /* Pods-Agro-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -873,7 +875,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1B391F6B9C9E586561DFF2A4 /* Pods-Agro-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = 4D5EEFB403438CB85DAB239E /* Pods-Agro-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -900,7 +902,7 @@
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6388DDB9793286AB2F022813 /* Pods-Agro-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = 706D56B33B68EC9D6F5BF2B0 /* Pods-Agro-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
