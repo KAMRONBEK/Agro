@@ -1,6 +1,6 @@
 import React from 'react';
 import { TouchableOpacity, View, Image, Text } from 'react-native';
-// import ModalDropdown from 'react-native-modal-dropdown';
+import ModalDropdown from 'react-native-modal-dropdown';
 import { styles } from './styles';
 import { Arrow } from '../assets';
 import { OPTIONS } from './constants';
@@ -38,24 +38,24 @@ export function MainSelectCurrencyView({  }: IOwnProps) {
 
 	return (
 		<View style={styles.container}>
-			{/* <ModalDropdown
-        options={OPTIONS}
-        renderRow={renderRow}
-        renderSeparator={() => <View />}
-        dropdownStyle={styles.dropdown}
-      > */}
-			<View style={styles.selectButton}>
-				<View style={styles.selectLeftBox}>
-					<View style={styles.currencyFlagBox}>
-						<Image source={require('../assets/Flag/USA.png')} style={styles.currencyFlag} resizeMode="contain" />
+			<ModalDropdown
+				options={OPTIONS}
+				renderRow={renderRow}
+				renderSeparator={() => <View />}
+				dropdownStyle={styles.dropdown}
+			>
+				<View style={styles.selectButton}>
+					<View style={styles.selectLeftBox}>
+						<View style={styles.currencyFlagBox}>
+							<Image source={require('../assets/Flag/USA.png')} style={styles.currencyFlag} resizeMode="contain" />
+						</View>
+						<Text style={styles.currencyCost}>1 USD = 9500.00 сум</Text>
 					</View>
-					<Text style={styles.currencyCost}>1 USD = 9500.00 сум</Text>
+					<View style={styles.selectRightBox}>
+						<Arrow />
+					</View>
 				</View>
-				<View style={styles.selectRightBox}>
-					<Arrow />
-				</View>
-			</View>
-			{/* </ModalDropdown> */}
+			</ModalDropdown>
 		</View>
 	);
 }

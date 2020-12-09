@@ -7,60 +7,55 @@
  */
 
 import React, { Component } from 'react';
+import { StyleSheet } from 'react-native';
+import FlashMessage from 'react-native-flash-message';
 import { Provider } from 'react-redux';
-import { SafeAreaView, StyleSheet } from 'react-native';
-import FlashMessage from "react-native-flash-message";
+import { AppAuthWithNavigator, AppLoggedInWithNavigator } from 'router';
 import { store } from 'store';
-import { AppLoggedInWithNavigator, AppAuthWithNavigator } from 'router';
 import { isTokenExist } from 'utils';
 import { MyStatusBar } from 'widgets/ModuleShared';
 
 interface IState {
-  tokenExist: Boolean;
+	tokenExist: Boolean;
 }
 
 export default class App extends Component<{}, IState> {
-  state: IState = {
-    tokenExist: null
-  }
+	state: IState = {
+		tokenExist: null
+	};
 
-  async componentDidMount() {
-    const hasToken = await isTokenExist();
+	async componentDidMount() {
+		const hasToken = await isTokenExist();
 
-    this.setState({ tokenExist: hasToken });
-  }
+		this.setState({ tokenExist: hasToken });
+	}
 
-  renderNavigator = () => {
-    const { tokenExist } = this.state;
-    
-    switch(tokenExist) {
-      case true: {
-        return <AppLoggedInWithNavigator />;
-      }
-      case false: {
-        return <AppAuthWithNavigator />;
-      }
-    }
-  }
+	renderNavigator = () => {
+		const { tokenExist } = this.state;
 
-  render() {
-    return (
-      <Provider store={store}>
-        <MyStatusBar />
+		switch (tokenExist) {
+			case true: {
+				return <AppLoggedInWithNavigator />;
+			}
+			case false: {
+				return <AppAuthWithNavigator />;
+			}
+		}
+	};
 
-        <SafeAreaView style={styles.safearea}>
-          {this.renderNavigator()}
-
-        </SafeAreaView>
-        
-        <FlashMessage position="top" />
-      </Provider>
-    );
-  }
+	render() {
+		return (
+			<Provider store={store}>
+				<MyStatusBar />
+				{this.renderNavigator()}
+				<FlashMessage position="top" />
+			</Provider>
+		);
+	}
 }
 
 const styles = StyleSheet.create({
-  safearea: {
-    flex: 1
-  }
-})
+	safearea: {
+		flex: 1
+	}
+});
