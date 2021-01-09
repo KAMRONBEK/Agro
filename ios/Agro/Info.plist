@@ -38,7 +38,9 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>The app needs access to your location to show you the nearest branches</string>
+  <key>NSFaceIDUsageDescription</key>
+  <string>Enabling Face ID allows you quick and secure access to your account.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>SFUIDisplay-Black.otf</string>

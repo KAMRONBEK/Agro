@@ -1,7 +1,7 @@
 import React from 'react';
-import { ScrollView, KeyboardAvoidingView, Platform, TouchableNativeFeedback, Keyboard, TouchableWithoutFeedback } from 'react-native';
-import { styles } from './styles';
+import { Keyboard, KeyboardAvoidingView, Platform, TouchableWithoutFeedback } from 'react-native';
 import { Signup2Steps } from 'widgets/ModuleSignup2';
+import { styles } from './styles';
 
 export function ScreenSignup2View() {
   return (

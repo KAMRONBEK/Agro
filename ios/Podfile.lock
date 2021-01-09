@@ -288,6 +288,8 @@ PODS:
   - RNI18n (2.0.15):
     - React
   - RNInputMask (4.1.0)
+  - RNKeychain (6.2.0):
+    - React
   - RNOS (1.2.6):
     - React
   - RNReanimated (1.4.0):
@@ -299,6 +301,8 @@ PODS:
   - RNVectorIcons (6.6.0):
     - React
   - TcpSockets (3.3.2):
+    - React
+  - TouchID (4.4.1):
     - React
   - Yoga (1.14.0)
 
@@ -342,12 +346,14 @@ DEPENDENCIES:
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNI18n (from `../node_modules/react-native-i18n`)
   - RNInputMask (from `../node_modules/react-native-text-input-mask/ios/InputMask`)
+  - RNKeychain (from `../node_modules/react-native-keychain`)
   - RNOS (from `../node_modules/react-native-os`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNSVG (from `../node_modules/react-native-svg`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - TcpSockets (from `../node_modules/react-native-tcp`)
+  - TouchID (from `../node_modules/react-native-touch-id`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -427,6 +433,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-i18n"
   RNInputMask:
     :path: "../node_modules/react-native-text-input-mask/ios/InputMask"
+  RNKeychain:
+    :path: "../node_modules/react-native-keychain"
   RNOS:
     :path: "../node_modules/react-native-os"
   RNReanimated:
@@ -439,6 +447,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-vector-icons"
   TcpSockets:
     :path: "../node_modules/react-native-tcp"
+  TouchID:
+    :path: "../node_modules/react-native-touch-id"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -481,14 +491,16 @@ SPEC CHECKSUMS:
   RNGestureHandler: a4ddde1ffc6e590c8127b8b7eabfdade45475c74
   RNI18n: e2f7e76389fcc6e84f2c8733ea89b92502351fd8
   RNInputMask: 815461ebdf396beb62cf58916c35cf6930adb991
+  RNKeychain: b8e0711b959a19c5b057d1e970d3c83d159b6da5
   RNOS: 6f2f9a70895bbbfbdad7196abd952e7b01d45027
   RNReanimated: b2ab0b693dddd2339bd2f300e770f6302d2e960c
   RNScreens: c2c8bdde0146f16eb6bf092dd7485534851f2711
   RNSVG: 8ba35cbeb385a52fd960fd28db9d7d18b4c2974f
   RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
   TcpSockets: 14306fb79f9750ea7d2ddd02d8bed182abb01797
+  TouchID: ba4c656d849cceabc2e4eef722dea5e55959ecf4
   Yoga: 4bd86afe9883422a7c4028c00e34790f560923d6
 
-PODFILE CHECKSUM: 04052724bb28b785a4290a57cd442e383e59cb95
+PODFILE CHECKSUM: 670ba30597e445c942c20c5f71a41ab71f8d7204
 
 COCOAPODS: 1.10.0

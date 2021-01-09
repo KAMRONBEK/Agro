@@ -43,6 +43,8 @@ target 'Agro' do
   pod 'RNInputMask', :path => '../node_modules/react-native-text-input-mask/ios/InputMask'
 
 
+  pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-community/async-storage'
+
   target 'AgroTests' do
     inherit! :search_paths
     # Pods for testing
