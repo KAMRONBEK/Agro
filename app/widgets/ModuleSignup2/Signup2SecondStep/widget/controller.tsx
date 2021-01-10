@@ -41,7 +41,7 @@ export class Signup2SecondStepController extends Component<IConnectProps> {
 
 			// 	navigation.dispatch(resetAction);
 			// }
-			navigation.navigate(ROUTES.SCREEN_PIN_CODE);
+			navigation.navigate(ROUTES.SCREEN_PIN_CODE, { isSetup: true });
 			console.log('Navigating to PIN - 2');
 		}
 	}

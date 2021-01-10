@@ -12,6 +12,7 @@ import FlashMessage from 'react-native-flash-message';
 import { Provider } from 'react-redux';
 import { AppAuthWithNavigator, AppLoggedInWithNavigator } from 'router';
 import { store } from 'store';
+import reactotron from 'store/reactotron-config';
 import { isTokenExist } from 'utils';
 import { AppLoadingView } from 'widgets/ModuleAppLoading';
 import { MyStatusBar } from 'widgets/ModuleShared';

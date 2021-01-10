@@ -167,6 +167,10 @@ const loggedInStack = createStackNavigator(
 			screen: ScreenSignup2,
 			navigationOptions: BackGreenHeader('Регистрация')
 		},
+		[ROUTES.SCREEN_PIN_CODE]: {
+			screen: ScreenPinCode,
+			navigationOptions: NoHeader
+		},
 		[ROUTES.SCREEN_SMS_CONFIRMATION]: {
 			screen: ScreenSmsConfirmation,
 			navigationOptions: BackGreenHeader('СМС подтверждение')

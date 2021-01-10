@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { ScreenPinCodeView } from './view';
+import { PinCodeView as ScreenPinCodeView } from './view';
 
 interface IConnectProps {}
 
-export class ScreenPaymentController extends Component<IConnectProps> {
+export class ScreenPinController extends Component<IConnectProps> {
 	render() {
-		return <ScreenPinCodeView />;
+		return <ScreenPinCodeView {...this.props} />;
 	}
 }
