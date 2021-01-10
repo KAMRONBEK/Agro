@@ -13,26 +13,33 @@ import { Provider } from 'react-redux';
 import { AppAuthWithNavigator, AppLoggedInWithNavigator } from 'router';
 import { store } from 'store';
 import { isTokenExist } from 'utils';
+import { AppLoadingView } from 'widgets/ModuleAppLoading';
 import { MyStatusBar } from 'widgets/ModuleShared';
 
 interface IState {
 	tokenExist: Boolean;
+	loading: boolean;
 }
 
 export default class App extends Component<{}, IState> {
 	state: IState = {
-		tokenExist: null
+		tokenExist: null,
+		loading: true
 	};
 
 	async componentDidMount() {
-		const hasToken = await isTokenExist();
-
-		this.setState({ tokenExist: hasToken });
+		let hasToken;
+		try {
+			hasToken = await isTokenExist();
+		} catch (error) {}
+		this.setState({ tokenExist: hasToken, loading: false });
 	}
 
 	renderNavigator = () => {
-		const { tokenExist } = this.state;
-
+		const { tokenExist, loading } = this.state;
+		if (loading) {
+			return <AppLoadingView />;
+		}
 		switch (tokenExist) {
 			case true: {
 				return <AppLoggedInWithNavigator />;

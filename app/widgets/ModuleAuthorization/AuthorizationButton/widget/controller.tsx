@@ -1,46 +1,43 @@
-import React, { Component } from "react";
-import { AuthorizationButtonView } from "./view";
-import { ILogin } from "types";
-import { StackActions, NavigationActions, NavigationScreenProp } from "react-navigation";
-import { ROUTES } from "const";
+import React, { Component } from 'react';
+import { AuthorizationButtonView } from './view';
+import { ILogin } from 'types';
+import { StackActions, NavigationActions, NavigationScreenProp } from 'react-navigation';
+import { ROUTES } from 'const';
 
 interface IConnectProps {
-  loginIsFetching: boolean
-  login: ILogin;
-  navigation: NavigationScreenProp<void>;
-  pushLogin: () => void;
+	loginIsFetching: boolean;
+	login: ILogin;
+	navigation: NavigationScreenProp<void>;
+	pushLogin: () => void;
 }
 
 export class AuthorizationButtonController extends Component<IConnectProps> {
-  componentDidUpdate(prevProps: IConnectProps) {
-    const { login, navigation } = this.props;
+	componentDidUpdate(prevProps: IConnectProps) {
+		const { login, navigation } = this.props;
 
-    if (login !== prevProps.login) {
-      if (!!login) {
-        const resetAction = StackActions.reset({
-          index: 0,
-          actions: [NavigationActions.navigate({ routeName: ROUTES.SCREEN_MAIN })],
-        });
-  
-        navigation.dispatch(resetAction);
-      }
-    }
-  } 
+		if (login !== prevProps.login) {
+			//   if (!!login) {
+			//     const resetAction = StackActions.reset({
+			//       index: 0,
+			//       actions: [NavigationActions.navigate({ routeName: ROUTES.SCREEN_MAIN })],
+			//     });
 
-  login = () => {
-    const { pushLogin } = this.props;
+			//     navigation.dispatch(resetAction);
+			//   }
+			navigation.navigate(ROUTES.SCREEN_PIN_CODE);
+			console.log('Navigating to PIN');
+		}
+	}
 
-    pushLogin();
-  }
+	login = () => {
+		const { pushLogin } = this.props;
 
-  render() {
-    const { loginIsFetching } = this.props;
+		pushLogin();
+	};
 
-    return (
-      <AuthorizationButtonView 
-        loginIsFetching={loginIsFetching}
-        login={this.login}
-      />
-    )
-  }
+	render() {
+		const { loginIsFetching } = this.props;
+
+		return <AuthorizationButtonView loginIsFetching={loginIsFetching} login={this.login} />;
+	}
 }

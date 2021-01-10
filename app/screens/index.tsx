@@ -15,3 +15,4 @@ export * from './ScreenSignup2';
 export * from './ScreenTransactionDetails';
 export * from './ScreenCreateVisaVirtual';
 export * from './ScreenAddCard';
+export * from './ScreenPinCode';
