@@ -9,17 +9,19 @@ import { payment } from './payment';
 import { transactions } from './transactions';
 import { cardOperations } from './cardOperations';
 import { signup2 } from './signup2';
+// import { appState } from './appState';
 
 export const models = {
-  app,
-  supplier,
-  categories,
-  suppliers,
-  cards,
-  signup,
-  login,
-  payment,
-  transactions,
-  cardOperations,
-  signup2
+	app,
+	supplier,
+	categories,
+	suppliers,
+	cards,
+	signup,
+	login,
+	payment,
+	transactions,
+	cardOperations,
+	signup2
+	// appState
 };

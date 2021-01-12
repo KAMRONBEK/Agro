@@ -18,9 +18,9 @@ export const compose = <T extends {}>(...funcs: any[]) => {
   return (...args: any[]): T => newCompose(...args);
 };
 
-export const isTokenExist = async (): Promise<Boolean> => {
+export const isTokenExist = async (): Promise<string> => {
   const token = await AsyncStorage.getItem(USER_TOKEN);
-  return !!token;
+  return token;
 };
 
 export const isDataNull = (data: any): boolean => {

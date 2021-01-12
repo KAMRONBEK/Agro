@@ -6,7 +6,7 @@ import { styles } from './styles';
 export const AppLoadingView = () => {
 	return (
 		<View style={styles.container}>
-			<ActivityIndicator color={Palette.greenApple} />
+			<ActivityIndicator size={'large'} color={Palette.greenApple} />
 		</View>
 	);
 };

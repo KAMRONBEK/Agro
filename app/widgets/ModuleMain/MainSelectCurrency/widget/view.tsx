@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { TouchableOpacity, View, Image, Text } from 'react-native';
 import ModalDropdown from 'react-native-modal-dropdown';
 import { styles } from './styles';
 import { Arrow } from '../assets';
 import { OPTIONS } from './constants';
+import { apiQwerty } from 'utils';
 
 interface IOwnProps {}
 
-export function MainSelectCurrencyView({  }: IOwnProps) {
+export let MainSelectCurrencyView = ({  }: IOwnProps) => {
+	const [data, setData] = useState({});
+	let effect = async () => {
+		let res = await apiQwerty.get(`/api/visas/exchange`);
+	};
+	useEffect(() => {
+		effect();
+	}, []);
 	function renderRow(option: any, index: number, isSelected: boolean) {
 		return (
 			<TouchableOpacity
@@ -58,4 +66,4 @@ export function MainSelectCurrencyView({  }: IOwnProps) {
 			</ModalDropdown>
 		</View>
 	);
-}
+};

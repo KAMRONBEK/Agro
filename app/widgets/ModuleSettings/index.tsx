@@ -4,3 +4,4 @@ export * from './SettingsButton';
 export * from './SettingsSwitch';
 export * from './SettingsLogoutButton';
 export * from './SettingsLogoutModal';
+export * from './SettingsSaveButton';
