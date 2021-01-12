@@ -17,7 +17,7 @@ export const stackAuthConfig: CreateNavigatorConfig<NavigationStackConfig, Navig
 }
 
 export const stackLoggedInConfig: CreateNavigatorConfig<NavigationStackConfig, NavigationStackRouterConfig, NavigationStackOptions, NavigationStackProp<NavigationRoute, any>> = {
-  initialRouteName: ROUTES.SCREEN_MAIN,
+  initialRouteName: ROUTES.SCREEN_PIN_CODE,
   mode: CARD_TYPE,
   headerMode: HEADER_MODE,
   cardShadowEnabled: false,

@@ -37,7 +37,9 @@ export function ScreenCardOperationsView({ cards, operationType }: IOwnProps) {
 				<Cards
 					cards={cards}
 					activeCardTitle={
-						operationType === OperationType.Transfer ? strings('selectCardForDebit') : strings('selectCardForRecharge')
+
+						operationType === OperationType.Transfer ? 'Выбрать карту для списания' : 'Выбрать карту для пополнения'
+
 					}
 				/>
 				{operationType === OperationType.Transfer && <CardOperationsRecipientCard />}

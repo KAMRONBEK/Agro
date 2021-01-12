@@ -12,13 +12,15 @@ import FlashMessage from 'react-native-flash-message';
 import { Provider } from 'react-redux';
 import { AppAuthWithNavigator, AppLoggedInWithNavigator } from 'router';
 import { store } from 'store';
-import { isTokenExist } from 'utils';
+import reactotron from 'store/reactotron-config';
+import { apiQwerty, isTokenExist } from 'utils';
 import { AppLoadingView } from 'widgets/ModuleAppLoading';
 import { MyStatusBar } from 'widgets/ModuleShared';
 
 interface IState {
 	tokenExist: Boolean;
 	loading: boolean;
+	token?: string;
 }
 
 export default class App extends Component<{}, IState> {
@@ -32,7 +34,11 @@ export default class App extends Component<{}, IState> {
 		try {
 			hasToken = await isTokenExist();
 		} catch (error) {}
-		this.setState({ tokenExist: hasToken, loading: false });
+		apiQwerty.interceptors.request.use(val => {
+			val.headers = { ...val.headers, Authorization: !!hasToken ? hasToken : '' };
+			return val;
+		});
+		this.setState({ tokenExist: !!hasToken, loading: false, token: hasToken });
 	}
 
 	renderNavigator = () => {
