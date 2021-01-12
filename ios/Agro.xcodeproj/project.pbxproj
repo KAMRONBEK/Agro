@@ -29,6 +29,7 @@
 		4F2F335F4FD82413B1B541FD /* libPods-AgroTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98D9AF6F3471480DB5D57444 /* libPods-AgroTests.a */; };
 		518AD16AAAB4726576AC5520 /* libPods-Agro-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 855919AEF9BA53996E088884 /* libPods-Agro-tvOSTests.a */; };
 		54F04496771E40EC59387047 /* libPods-Agro-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F1347D9E6E0EE02BB67814E /* libPods-Agro-tvOS.a */; };
+		62CC826425AC6C580080FFFD /* libRNI18n.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62CC826325AC6C580080FFFD /* libRNI18n.a */; };
 		B80C291EFDDBFB168FDE1E1E /* libPods-Agro.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9463F1EFAAA5962CDE7CBFE /* libPods-Agro.a */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
 			remoteInfo = "Agro-tvOS";
+		};
+		62CC825925AC6C340080FFFD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 62CC825425AC6C330080FFFD /* RNI18n.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNI18n;
+		};
+		62CC825B25AC6C340080FFFD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 62CC825425AC6C330080FFFD /* RNI18n.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6476C4051EEAA69700B10F51;
+			remoteInfo = "RNI18n-tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -78,6 +93,10 @@
 		5711C77104564CBCB4020F04 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		5A7F87329F8E248695034029 /* Pods-Agro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agro.release.xcconfig"; path = "Target Support Files/Pods-Agro/Pods-Agro.release.xcconfig"; sourceTree = "<group>"; };
 		5F516567D3E84FB08B1CD3A2 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
+		62CC825325AC6BC10080FFFD /* uz-UZ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "uz-UZ"; path = "uz-UZ.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		62CC825425AC6C330080FFFD /* RNI18n.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNI18n.xcodeproj; path = "../node_modules/react-native-i18n/ios/RNI18n.xcodeproj"; sourceTree = "<group>"; };
+		62CC826325AC6C580080FFFD /* libRNI18n.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRNI18n.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		62CC826525AC6CC20080FFFD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		6BC6F7A7CFC0431AAC6F7FF8 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 		6D1EFFE314234B5FAE1F15F5 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		706D56B33B68EC9D6F5BF2B0 /* Pods-Agro-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agro-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-Agro-tvOSTests/Pods-Agro-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -120,6 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62CC826425AC6C580080FFFD /* libRNI18n.a in Frameworks */,
 				B80C291EFDDBFB168FDE1E1E /* libPods-Agro.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -179,6 +199,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				62CC826325AC6C580080FFFD /* libRNI18n.a */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				4033B412240CFD48008330FA /* InputMask.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
@@ -205,9 +226,19 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		62CC825525AC6C330080FFFD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				62CC825A25AC6C340080FFFD /* libRNI18n.a */,
+				62CC825C25AC6C340080FFFD /* libRNI18n-tvOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				62CC825425AC6C330080FFFD /* RNI18n.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -364,11 +395,11 @@
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 93K92R8X54;
+						DevelopmentTeam = HPB6QQ52WT;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						DevelopmentTeam = 93K92R8X54;
+						DevelopmentTeam = HPB6QQ52WT;
 						LastSwiftMigration = 1130;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
@@ -391,10 +422,18 @@
 				English,
 				en,
 				Base,
+				"uz-UZ",
+				ru,
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 62CC825525AC6C330080FFFD /* Products */;
+					ProjectRef = 62CC825425AC6C330080FFFD /* RNI18n.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				13B07F861A680F5B00A75B9A /* Agro */,
@@ -404,6 +443,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		62CC825A25AC6C340080FFFD /* libRNI18n.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNI18n.a;
+			remoteRef = 62CC825925AC6C340080FFFD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		62CC825C25AC6C340080FFFD /* libRNI18n-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRNI18n-tvOS.a";
+			remoteRef = 62CC825B25AC6C340080FFFD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		00E356EC1AD99517003FC87E /* Resources */ = {
@@ -461,7 +517,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
 		082858C2B6004A89A994FCC4 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -713,6 +769,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				13B07FB21A68108700A75B9A /* Base */,
+				62CC825325AC6BC10080FFFD /* uz-UZ */,
+				62CC826525AC6CC20080FFFD /* ru */,
 			);
 			name = LaunchScreen.xib;
 			path = Agro;
@@ -727,7 +785,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 93K92R8X54;
+				DEVELOPMENT_TEAM = HPB6QQ52WT;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -753,7 +811,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = 93K92R8X54;
+				DEVELOPMENT_TEAM = HPB6QQ52WT;
 				INFOPLIST_FILE = AgroTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -776,7 +834,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = 93K92R8X54;
+				DEVELOPMENT_TEAM = HPB6QQ52WT;
 				INFOPLIST_FILE = Agro/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -785,7 +843,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = uz.agrobank.app;
+				PRODUCT_BUNDLE_IDENTIFIER = uz.agrobank.app2;
 				PRODUCT_NAME = Agro;
 				SWIFT_OBJC_BRIDGING_HEADER = "Agro-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -801,7 +859,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 93K92R8X54;
+				DEVELOPMENT_TEAM = HPB6QQ52WT;
 				INFOPLIST_FILE = Agro/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -810,7 +868,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = uz.agrobank.app;
+				PRODUCT_BUNDLE_IDENTIFIER = uz.agrobank.app2;
 				PRODUCT_NAME = Agro;
 				SWIFT_OBJC_BRIDGING_HEADER = "Agro-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
