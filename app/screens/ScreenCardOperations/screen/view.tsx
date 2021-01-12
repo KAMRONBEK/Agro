@@ -15,6 +15,8 @@ import {
 } from 'widgets/ModuleCardOperations';
 import { OperationType, ICard, CardTypes } from 'types';
 import { Cards } from 'widgets/ModuleShared';
+import { strings } from 'locales/i18n';
+import { select } from 'store';
 
 interface IOwnProps {
 	cards: ICard[];
@@ -35,7 +37,9 @@ export function ScreenCardOperationsView({ cards, operationType }: IOwnProps) {
 				<Cards
 					cards={cards}
 					activeCardTitle={
+
 						operationType === OperationType.Transfer ? 'Выбрать карту для списания' : 'Выбрать карту для пополнения'
+
 					}
 				/>
 				{operationType === OperationType.Transfer && <CardOperationsRecipientCard />}
