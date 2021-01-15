@@ -1,12 +1,13 @@
+import { strings } from "locales/i18n";
 import { IHint } from "./types";
 
 export const HINTS: IHint[] = [
-  {
-    label: 'Что такое виртуальная Visa карта?',
-    text: 'Это формат международной карты без физического носителя, предназначенная для интернет покупок'
-  },
-  {
-    label: 'Возможности виртуальной Visa карты',
-    text: 'При помощи этой карты вы можете совершать покупки в зарубежных интернет-магазинах'
-  }
+	{
+		label: strings("whatIsVirtualVisaCard"),
+		text: strings("whatIsVirtualVisaCardAnswer")
+	},
+	{
+		label: strings("visaVirtualPossibilities"),
+		text: strings("visaVirtualPossibilitiesAswer")
+	}
 ];

@@ -1,31 +1,29 @@
-import React from 'react';
-import { View, Text } from 'react-native';
-import { styles } from './styles';
-import { Cards } from 'widgets/ModuleShared';
-import { CreateVisaVirtualHints, CreateVisaVirtualButton } from 'widgets/ModuleCreateVisaVirtual';
-import { ICard } from 'types';
+import React from "react";
+import { View, Text } from "react-native";
+import { styles } from "./styles";
+import { Cards } from "widgets/ModuleShared";
+import { CreateVisaVirtualHints, CreateVisaVirtualButton } from "widgets/ModuleCreateVisaVirtual";
+import { ICard } from "types";
+import { strings } from "locales/i18n";
 
 interface IOwnProps {
-  cards: ICard[];
+	cards: ICard[];
 }
 
-export function CreateVisaVirtualContentView({
-  cards
-}: IOwnProps) {
-  return (
-    <View style={styles.container}>
-      <Cards 
-        cards={cards}
-        activeCardTitle={'Выбрать карту'}
-      />
-      
-      <View style={styles.chooseCardTextBox}>
-        <Text style={styles.chooseCardText}>Выберите <Text style={styles.agrobank}>Agrobank</Text> карту, данные которой будут использоваться при открытии виртуальной Visa  карты</Text>
-      </View>
+export function CreateVisaVirtualContentView({ cards }: IOwnProps) {
+	return (
+		<View style={styles.container}>
+			<Cards cards={cards} activeCardTitle={strings("selectCard")} />
 
-      <CreateVisaVirtualHints />
+			<View style={styles.chooseCardTextBox}>
+				<Text style={styles.chooseCardText}>
+					{strings("select")} <Text style={styles.agrobank}>Agrobank</Text> {strings("selectAgrobankCard")}
+				</Text>
+			</View>
 
-      <CreateVisaVirtualButton />
-    </View>
-  )
+			<CreateVisaVirtualHints />
+
+			<CreateVisaVirtualButton />
+		</View>
+	);
 }

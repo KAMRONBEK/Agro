@@ -1,12 +1,13 @@
-import React from 'react';
-import { View } from 'react-native';
-import { PaymentsButton } from 'widgets/ModulePayment';
-import { styles } from './styles';
+import { strings } from "locales/i18n";
+import React from "react";
+import { View } from "react-native";
+import { PaymentsButton } from "widgets/ModulePayment";
+import { styles } from "./styles";
 
 export function PaymentsNewsView() {
-  return (
-    <View style={styles.container}>
-      <PaymentsButton title="Банкоматы" />
-    </View>
-  )
+	return (
+		<View style={styles.container}>
+			<PaymentsButton title={strings("atms")} />
+		</View>
+	);
 }

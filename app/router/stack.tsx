@@ -1,6 +1,6 @@
-import React from 'react';
-import { createAppContainer } from 'react-navigation';
-import { createBottomTabNavigator } from 'react-navigation-tabs';
+import React from "react";
+import { createAppContainer } from "react-navigation";
+import { createBottomTabNavigator } from "react-navigation-tabs";
 import {
 	ScreenLocalization,
 	ScreenLoginType,
@@ -19,7 +19,7 @@ import {
 	ScreenCreateVisaVirtual,
 	ScreenAddCard,
 	ScreenPinCode
-} from 'screens';
+} from "screens";
 import {
 	NoHeader,
 	BackHeader,
@@ -27,11 +27,12 @@ import {
 	BackGreenHeader,
 	GreenHeader,
 	AccountBackHeader
-} from 'widgets/ModuleRouter';
-import { createStackNavigator } from 'react-navigation-stack';
-import { ROUTES } from 'const/routes';
-import { stackAuthConfig, stackLoggedInConfig, bottomTabNavigatorConfig } from './stackConfigs';
-import { Home, Wallet, Place, Settings } from './assets';
+} from "widgets/ModuleRouter";
+import { createStackNavigator } from "react-navigation-stack";
+import { ROUTES } from "const/routes";
+import { stackAuthConfig, stackLoggedInConfig, bottomTabNavigatorConfig } from "./stackConfigs";
+import { Home, Wallet, Place, Settings } from "./assets";
+import { strings } from "locales/i18n";
 
 const bottomTabsStack = createBottomTabNavigator(
 	{
@@ -39,48 +40,48 @@ const bottomTabsStack = createBottomTabNavigator(
 			screen: createStackNavigator({
 				[ROUTES.SCREEN_MAIN]: {
 					screen: ScreenMain,
-					navigationOptions: AccountHeader('FRESH')
+					navigationOptions: AccountHeader("FRESH")
 				}
 			}),
 			navigationOptions: {
 				tabBarIcon: ({ tintColor, focused }) => <Home focused={focused} color={tintColor} />,
-				tabBarLabel: 'Главная'
+				tabBarLabel: strings("main")
 			}
 		},
 		[ROUTES.SCREEN_PAYMENT]: {
 			screen: createStackNavigator({
 				[ROUTES.SCREEN_PAYMENT]: {
 					screen: ScreenPayment,
-					navigationOptions: AccountHeader('Оплаты')
+					navigationOptions: AccountHeader(strings("payments"))
 				}
 			}),
 			navigationOptions: {
 				tabBarIcon: ({ tintColor, focused }) => <Wallet focused={focused} color={tintColor} />,
-				tabBarLabel: 'Оплаты'
+				tabBarLabel: strings("payments")
 			}
 		},
 		[ROUTES.SCREEN_BRANCHES]: {
 			screen: createStackNavigator({
 				[ROUTES.SCREEN_BRANCHES]: {
 					screen: ScreenBranches,
-					navigationOptions: GreenHeader('Филиалы')
+					navigationOptions: GreenHeader(strings("branches"))
 				}
 			}),
 			navigationOptions: {
 				tabBarIcon: ({ tintColor, focused }) => <Place focused={focused} color={tintColor} />,
-				tabBarLabel: 'Филиалы'
+				tabBarLabel: strings("branches")
 			}
 		},
 		[ROUTES.SCREEN_SETTINGS]: {
 			screen: createStackNavigator({
 				[ROUTES.SCREEN_SETTINGS]: {
 					screen: ScreenSettings,
-					navigationOptions: GreenHeader('Поменять настройки')
+					navigationOptions: GreenHeader(strings("changeSettings"))
 				}
 			}),
 			navigationOptions: {
 				tabBarIcon: ({ tintColor, focused }) => <Settings focused={focused} color={tintColor} />,
-				tabBarLabel: 'Настройки'
+				tabBarLabel: strings("settings")
 			}
 		}
 	},
@@ -99,15 +100,15 @@ const authStack = createStackNavigator(
 		},
 		[ROUTES.SCREEN_AUTHORIZATION]: {
 			screen: ScreenAuthorization,
-			navigationOptions: BackGreenHeader('Авторизация')
+			navigationOptions: BackGreenHeader(strings("auth"))
 		},
 		[ROUTES.SCREEN_SIGNUP]: {
 			screen: ScreenSignup2,
-			navigationOptions: BackGreenHeader('Регистрация')
+			navigationOptions: BackGreenHeader(strings("register"))
 		},
 		[ROUTES.SCREEN_SMS_CONFIRMATION]: {
 			screen: ScreenSmsConfirmation,
-			navigationOptions: BackGreenHeader('СМС подтверждение')
+			navigationOptions: BackGreenHeader(strings("smsConfirm"))
 		},
 		[ROUTES.SCREEN_PIN_CODE]: {
 			screen: ScreenPinCode,
@@ -123,27 +124,27 @@ const authStack = createStackNavigator(
 		},
 		[ROUTES.SCREEN_TRANSACTION_DETAILS]: {
 			screen: ScreenTransactionDetails,
-			navigationOptions: BackGreenHeader('Детали')
+			navigationOptions: BackGreenHeader(strings("details"))
 		},
 		[ROUTES.SCREEN_ONLINE_CONVERSION]: {
 			screen: ScreenOnlineConversion,
-			navigationOptions: BackGreenHeader('Онлайн конверсия')
+			navigationOptions: BackGreenHeader(strings("onlineConversion"))
 		},
 		[ROUTES.SCREEN_CARD_OPERATIONS]: {
 			screen: ScreenCardOperations,
-			navigationOptions: AccountBackHeader('Операции с картой')
+			navigationOptions: AccountBackHeader(strings("paylentWithCard"))
 		},
 		[ROUTES.SCREEN_SERVICE_PAYMENT]: {
 			screen: ScreenServicePayment,
-			navigationOptions: AccountBackHeader('Оплата')
+			navigationOptions: AccountBackHeader(strings("payment"))
 		},
 		[ROUTES.SCREEN_CREATE_VISA_VIRTUAL]: {
 			screen: ScreenCreateVisaVirtual,
-			navigationOptions: BackGreenHeader('Виртуальная Visa карта')
+			navigationOptions: BackGreenHeader(strings("virtualVisaCard"))
 		},
 		[ROUTES.SCREEN_ADD_CARD]: {
 			screen: ScreenAddCard,
-			navigationOptions: BackGreenHeader('Добавить карту')
+			navigationOptions: BackGreenHeader(strings("addCard"))
 		}
 	},
 	stackAuthConfig
@@ -161,11 +162,11 @@ const loggedInStack = createStackNavigator(
 		},
 		[ROUTES.SCREEN_AUTHORIZATION]: {
 			screen: ScreenAuthorization,
-			navigationOptions: BackGreenHeader('Филиалы')
+			navigationOptions: BackGreenHeader(strings("branches"))
 		},
 		[ROUTES.SCREEN_SIGNUP]: {
 			screen: ScreenSignup2,
-			navigationOptions: BackGreenHeader('Регистрация')
+			navigationOptions: BackGreenHeader(strings("register"))
 		},
 		[ROUTES.SCREEN_PIN_CODE]: {
 			screen: ScreenPinCode,
@@ -173,7 +174,7 @@ const loggedInStack = createStackNavigator(
 		},
 		[ROUTES.SCREEN_SMS_CONFIRMATION]: {
 			screen: ScreenSmsConfirmation,
-			navigationOptions: BackGreenHeader('СМС подтверждение')
+			navigationOptions: BackGreenHeader(strings("smsConfirm"))
 		},
 		[ROUTES.SCREEN_MAIN]: {
 			screen: bottomTabsStack,
@@ -185,27 +186,27 @@ const loggedInStack = createStackNavigator(
 		},
 		[ROUTES.SCREEN_TRANSACTION_DETAILS]: {
 			screen: ScreenTransactionDetails,
-			navigationOptions: BackGreenHeader('Детали')
+			navigationOptions: BackGreenHeader(strings("details"))
 		},
 		[ROUTES.SCREEN_ONLINE_CONVERSION]: {
 			screen: ScreenOnlineConversion,
-			navigationOptions: BackGreenHeader('Онлайн конверсия')
+			navigationOptions: BackGreenHeader(strings("onlineConversion"))
 		},
 		[ROUTES.SCREEN_CARD_OPERATIONS]: {
 			screen: ScreenCardOperations,
-			navigationOptions: AccountBackHeader('Операции с картой')
+			navigationOptions: AccountBackHeader(strings("paymentWithCard"))
 		},
 		[ROUTES.SCREEN_SERVICE_PAYMENT]: {
 			screen: ScreenServicePayment,
-			navigationOptions: AccountBackHeader('Оплата')
+			navigationOptions: AccountBackHeader(strings("payment"))
 		},
 		[ROUTES.SCREEN_CREATE_VISA_VIRTUAL]: {
 			screen: ScreenCreateVisaVirtual,
-			navigationOptions: BackGreenHeader('Виртуальная Visa карта')
+			navigationOptions: BackGreenHeader(strings("virtualVisaCard"))
 		},
 		[ROUTES.SCREEN_ADD_CARD]: {
 			screen: ScreenAddCard,
-			navigationOptions: BackGreenHeader('Добавить карту')
+			navigationOptions: BackGreenHeader(strings("addCard"))
 		}
 	},
 	stackLoggedInConfig

@@ -1,10 +1,10 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  },
-  category: {
-    marginTop: 30
-  }
+	container: {
+		flex: 1
+	},
+	category: {
+		marginTop: 30
+	}
 });

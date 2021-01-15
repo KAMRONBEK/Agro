@@ -11,6 +11,7 @@ import { Palette } from 'styles';
 import { TextInputMask } from 'react-native-masked-text';
 import { BlurView } from "@react-native-community/blur";
 import moment from 'moment';
+import { strings } from "locales/i18n";
 
 interface IOwnProps {
   carouselRef: RefObject<Carousel<any>> & RefObject<ScrollViewProps> & RefObject<CarouselStatic<any>>;
@@ -60,7 +61,7 @@ export function CardsView({
           style={styles.balance}
         />
 
-        <Text style={styles.balanceCurrency}>сум</Text>
+        <Text style={styles.balanceCurrency}>{strings('som')}</Text>
 
         {
           cardsBalanceIsFetching ?
@@ -125,7 +126,7 @@ export function CardsView({
         blurAmount={3}
         blurRadius={5}
       >
-        <Text style={styles.blurText}>Срок действия виртуальной карты Visa истек</Text>
+        <Text style={styles.blurText}>{strings('visaCardExpired')}</Text>
 
         <View style={styles.blurCardNumberBox}>
           <VisaColor />
@@ -141,7 +142,7 @@ export function CardsView({
         </View>
 
         <TouchableOpacity activeOpacity={TOUCHABLE_OPACITY} style={styles.blurButton}>
-          <Text style={styles.blurButtonText}>Открыть повторно</Text>
+          <Text style={styles.blurButtonText}>{strings('openAgain')}</Text>
         </TouchableOpacity>
       </BlurView>
     )
@@ -194,7 +195,7 @@ export function CardsView({
               <Text style={styles.virtualTitle}>Virtual</Text>
               <View style={styles.switchContainer}>
                 { changeVisaVirtualStatusIsFetching && <ActivityIndicator size='small' color={Palette.white} animating={changeVisaVirtualStatusIsFetching} /> }
-                <Text style={styles.switchTitle}>{statuS1 === '0' ? 'Активирована' : 'Заблокирована'}</Text>
+                <Text style={styles.switchTitle}>{statuS1 === '0' ? strings('activated'): strings('deactivated')}</Text>
                 {/* <Switch 
                   value={statuS1 === '0' ? true : false}
                   onAsyncPress={onValueChange}
