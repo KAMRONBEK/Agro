@@ -1,16 +1,16 @@
-import React from 'react';
-import { TouchableOpacity, View, Text, TextInput } from 'react-native';
-import { TOUCHABLE_OPACITY } from 'const';
-import { styles } from './styles';
-import { ChevronRight } from '../assets';
-import reactotron from 'store/reactotron-config';
-import { Palette } from 'styles';
+import React from "react";
+import { TouchableOpacity, View, Text, TextInput } from "react-native";
+import { TOUCHABLE_OPACITY } from "const";
+import { styles } from "./styles";
+import { ChevronRight } from "../assets";
+import reactotron from "store/reactotron-config";
+import { Palette } from "styles";
 
 interface IOwnProps {
 	icon: JSX.Element;
 	name: string;
 	showBorderBottom: boolean;
-	onPress?: () => void;
+	onPress?: (any) => void;
 	placeholder?: string;
 	hasInput?: boolean;
 	onChange?: (e: string) => void;

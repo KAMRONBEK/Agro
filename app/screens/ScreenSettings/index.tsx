@@ -1,1 +1,1 @@
-export { ScreenSettingsView as ScreenSettings } from './widget';
+export { ScreenSettingsConnect as ScreenSettings } from "./widget";

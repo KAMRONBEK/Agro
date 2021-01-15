@@ -1,7 +1,8 @@
-import { Route } from 'react-native-tab-view';
+import { strings } from "locales/i18n";
+import { Route } from "react-native-tab-view";
 
 export const ROUTES: Route[] = [
-  { key: 'first', title: 'Сумовые' },
-  { key: 'second', title: 'Валютные' },
-  // { key: 'third', title: 'Депозитные' }
-]
+	{ key: "first", title: strings("somType") },
+	{ key: "second", title: strings("currencyType") }
+	// { key: 'third', title: 'Депозитные' }
+];

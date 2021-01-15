@@ -1,1 +1,3 @@
-export interface IAppStateModel {}
+export interface IAppStateModel {
+	appLang: string;
+}
