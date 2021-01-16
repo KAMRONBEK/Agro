@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
-import { SmsConfirmationButtonView } from './view';
-import { NavigationScreenProp, NavigationActions, StackActions } from 'react-navigation';
-import { ROUTES } from 'const';
+import React, { Component } from "react";
+import { SmsConfirmationButtonView } from "./view";
+import { ROUTES } from "const";
 
 interface IConnectProps {
 	confirmIsFetching: boolean;
 	signup: boolean;
 	signupIsFetching: boolean;
-	navigation: NavigationScreenProp<void>;
+	navigation: any;
 	pushConfirmPhone: () => void;
 }
 
@@ -25,7 +24,7 @@ export class SmsConfirmationButtonController extends Component<IConnectProps> {
 			//     navigation.dispatch(resetAction);
 			//   }
 			navigation.navigate(ROUTES.SCREEN_PIN_CODE);
-			console.log('Navigating to PIN');
+			console.log("Navigating to PIN");
 		}
 	}
 

@@ -3,7 +3,6 @@ import { AuthorizationButtonController } from "./controller";
 import { IDispatch } from "store";
 import { IStoreState } from "types";
 import { compose } from "utils";
-import { withNavigation } from "react-navigation";
 import { ComponentType } from "react";
 
 const mapState = ({ login: loginState }: IStoreState) => ({
@@ -23,5 +22,4 @@ export const AuthorizationButtonConnect = compose<ExportComponent>(
     mapState,
     mapDispatch
   ),
-  withNavigation
 )(AuthorizationButtonController);

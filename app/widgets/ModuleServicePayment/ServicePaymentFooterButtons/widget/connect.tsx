@@ -2,7 +2,6 @@ import { connect } from "react-redux";
 import { IStoreState } from "types";
 import { ServicePaymentFooterButtonsController } from "./controller";
 import { IDispatch } from "store";
-import { withNavigation } from "react-navigation";
 import { ComponentType } from "react";
 import { compose } from "utils";
 
@@ -23,5 +22,4 @@ export const ServicePaymentFooterButtonsConnect = compose<ExportComponent>(
     mapState,
     mapDispatch
   ),
-  withNavigation 
 )(ServicePaymentFooterButtonsController);

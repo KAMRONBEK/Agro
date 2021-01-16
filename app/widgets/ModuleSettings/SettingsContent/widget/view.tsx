@@ -20,7 +20,9 @@ let userType = {
 	email: "example@example.com"
 };
 
-export let SettingsContentView = ({ setLanguage, appLang }) => {
+interface IProps {}
+
+export let SettingsContentView = ({  }: IProps) => {
 	const [userData, setUserData] = useState<typeof userType>({});
 	const [loading, setLoading] = useState(false);
 
@@ -37,13 +39,10 @@ export let SettingsContentView = ({ setLanguage, appLang }) => {
 	let effect = async () => {
 		let user = await apiQwerty.get<typeof userType>("/api/users");
 		setUserData(user.data);
-		console.log(appLang);
 	};
+
 	let onFieldChange = (fieldName: string) => (value: string) => {
 		setUserData({ ...userData, [fieldName]: value });
-	};
-	let onLanguagePress = lang => {
-		setLanguage(lang);
 	};
 
 	useEffect(() => {
@@ -95,8 +94,9 @@ export let SettingsContentView = ({ setLanguage, appLang }) => {
 						icon={<Lang />}
 						name={strings("language")}
 						showBorderBottom
-						onPress={onLanguagePress}
-						value={appLang}
+						onPress={any => {
+							setLocale(any);
+						}}
 					/>
 					<SettingsButton icon={<Secure />} name={strings("security")} showBorderBottom />
 					<SettingsButton icon={<Review />} name={strings("feedback")} showBorderBottom />

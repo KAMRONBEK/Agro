@@ -1,8 +1,4 @@
-import React from 'react';
-import { NavigationStackOptions } from 'react-navigation-stack';
+import React from "react";
 
-export const NoHeaderHeader = (): NavigationStackOptions => {
-  return {
-    header: null
-  };
-};
+export const NoHeaderHeader = () => null;
+

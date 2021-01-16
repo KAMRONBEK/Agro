@@ -4,7 +4,6 @@ import { IStoreState, FieldType } from "types";
 import { IDispatch } from "store";
 import { compose } from "utils";
 import { ComponentType } from "react";
-import { withNavigation } from "react-navigation";
 
 const mapState = ({ cards: cardsState }: IStoreState) => ({
   createCard: cardsState.createCard,
@@ -27,5 +26,4 @@ export const AddCardModalConnect = compose<ExportComponent>(
     mapState,
     mapDispatch
   ),
-  withNavigation
 )(AddCardModalController);

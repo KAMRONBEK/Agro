@@ -1,25 +1,24 @@
-import React, { ComponentType } from 'react';
-import { connect } from 'react-redux';
-import { IStoreState } from 'types';
-import { IDispatch } from 'store';
-import { PaymentsCategoriesController, IOwnProps } from './controller';
-import { withNavigation } from 'react-navigation';
-import { compose } from 'utils';
+import React, { ComponentType } from "react";
+import { connect } from "react-redux";
+import { Dispatch, RootState } from "store";
+import { PaymentsCategoriesController, IOwnProps } from "./controller";
+import { compose } from "utils";
+import { withNavigation } from "router/withNavigation";
 
-const mapState = ({ categories: categoriesState }: IStoreState) => ({
-  categories: categoriesState.categories
+const mapState = ({ categories: categoriesState }: RootState) => ({
+	categories: categoriesState.categories
 });
 
-const mapDispatch = ({ suppliers }: IDispatch) => ({
-  pushSuppliers: suppliers.pushSuppliers
+const mapDispatch = ({ suppliers }: Dispatch) => ({
+	pushSuppliers: suppliers.pushSuppliers
 });
 
 type ExportComponent = ComponentType<IOwnProps>;
 
 export const PaymentsCategoriesConnect = compose<ExportComponent>(
-  withNavigation,
-  connect(
-    mapState,
-    mapDispatch
-  )
+	connect(
+		mapState,
+		mapDispatch
+	),
+	withNavigation
 )(PaymentsCategoriesController);

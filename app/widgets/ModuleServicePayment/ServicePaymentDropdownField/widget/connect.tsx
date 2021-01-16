@@ -3,7 +3,6 @@ import { ServicePaymentDropdownFieldController } from './controller';
 import { IStoreState, FieldType } from 'types';
 import { IDispatch } from 'store';
 import { compose } from 'utils';
-import { withNavigation } from 'react-navigation';
 import { ComponentType } from 'react';
 
 const mapState = ({ supplier, suppliers: suppliersData }: IStoreState) => ({
@@ -24,5 +23,4 @@ export const ServicePaymentDropdownFieldConnect = compose<ExportComponent>(
     mapState,
     mapDispatch
   ),
-  withNavigation
 )(ServicePaymentDropdownFieldController);

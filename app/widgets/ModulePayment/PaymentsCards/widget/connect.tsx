@@ -1,11 +1,9 @@
 import { connect } from "react-redux";
 import { PaymentsCardsController } from "./controller";
-import { IStoreState } from "types";
+import { RootState } from "store";
 
-const mapState = ({ cards: cardsState }: IStoreState) => ({
-  cards: cardsState.cards
+const mapState = ({ cards: cardsState }: RootState) => ({
+	cards: cardsState.cards
 });
 
-export const PaymentsCardsConnect = connect(
-  mapState
-)(PaymentsCardsController);
+export const PaymentsCardsConnect = connect(mapState)(PaymentsCardsController);

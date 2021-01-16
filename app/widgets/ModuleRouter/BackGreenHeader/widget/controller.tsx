@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { NavigationScreenProp } from 'react-navigation';
 import { BackGreenHeaderView } from './view';
 
 interface IOwnProps {
-  navigation: NavigationScreenProp<void>;
+  navigation: any;
   title: string;
 }
 
@@ -16,7 +15,7 @@ export class BackGreenHeaderController extends Component<IOwnProps> {
 
   render() {
     const { title, navigation } = this.props;
-    const navTitle = navigation.getParam('title');
+    const navTitle = navigation.params?.title;
 
     return (
       <BackGreenHeaderView

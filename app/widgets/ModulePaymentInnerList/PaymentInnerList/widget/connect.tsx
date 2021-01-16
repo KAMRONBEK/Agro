@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { IStoreState } from 'types';
 import { IDispatch } from 'store';
 import { PaymentInnerListController } from './controller';
-import { withNavigation } from 'react-navigation';
 import { compose } from 'utils';
 
 const mapState = ({ suppliers: suppliersState }: IStoreState) => ({
@@ -17,7 +16,6 @@ const mapDispatch = ({ supplier }: IDispatch) => ({
 type ExportComponent = ComponentType<{}>;
 
 export const PaymentInnerListConnect = compose<ExportComponent>(
-  withNavigation,
   connect(
     mapState,
     mapDispatch

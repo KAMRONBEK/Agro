@@ -36,7 +36,7 @@ export function SettingsSwitchView({ icon, name, showBorderBottom, onChange, val
 					buttonBorderColor={Palette.greenAloe}
 					buttonBorderWidth={2.3}
 					animationTime={150}
-					padding={false}
+					// padding={false}
 					onChangeValue={onChange}
 					value={value}
 				/>

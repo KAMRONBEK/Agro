@@ -2,7 +2,6 @@ import { connect } from "react-redux";
 import { SignupButtonController } from "./controller";
 import { IDispatch } from "store";
 import { IStoreState } from "types";
-import { withNavigation } from "react-navigation";
 import { ComponentType } from "react";
 import { compose } from "utils";
 
@@ -24,5 +23,4 @@ export const SignupButtonConnect = compose<ExportComponent>(
     mapState,
     mapDispatch
   ),
-  withNavigation
 )(SignupButtonController);

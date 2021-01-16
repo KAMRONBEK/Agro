@@ -3,7 +3,6 @@ import { ROUTES } from 'const';
 import React, { useEffect } from 'react';
 import { View } from 'react-native';
 import { Text } from 'react-native-svg';
-import { withNavigation } from 'react-navigation';
 import { styles } from './styles';
 
 export let PinCodeView = ({ navigation }) => {

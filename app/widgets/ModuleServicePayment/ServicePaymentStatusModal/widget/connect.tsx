@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import { ServicePaymentStatusModalController } from './controller';
 import { IStoreState } from 'types';
 import { compose } from 'utils';
-import { withNavigation } from 'react-navigation';
 import { ComponentType } from 'react';
 
 const mapState = ({ payment: paymentState }: IStoreState) => ({
@@ -17,5 +16,4 @@ export const ServicePaymentStatusModalConnect = compose<ExportComponent>(
   connect(
     mapState
   ),
-  withNavigation
 )(ServicePaymentStatusModalController);

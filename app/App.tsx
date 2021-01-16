@@ -1,21 +1,14 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
-import React, { Component } from 'react';
-import { StyleSheet } from 'react-native';
-import FlashMessage from 'react-native-flash-message';
-import { Provider } from 'react-redux';
-import { AppAuthWithNavigator, AppLoggedInWithNavigator } from 'router';
-import { store } from 'store';
-import reactotron from 'store/reactotron-config';
-import { apiQwerty, isTokenExist } from 'utils';
-import { AppLoadingView } from 'widgets/ModuleAppLoading';
-import { MyStatusBar } from 'widgets/ModuleShared';
+import React, { Component } from "react";
+import FlashMessage from "react-native-flash-message";
+import { Provider } from "react-redux";
+import { store } from "store";
+import { apiQwerty, isTokenExist, setLocale } from "utils";
+import { AppLoadingView } from "widgets/ModuleAppLoading";
+import { MyStatusBar } from "widgets/ModuleShared";
+import TabNavigator from "./router/TabNavigator";
+import { NavigationContainer } from "@react-navigation/native";
+import AuthStack from "./router/stackNavigators/AuthStack";
+import { Locale } from "./const";
 
 interface IState {
 	tokenExist: Boolean;
@@ -35,10 +28,26 @@ export default class App extends Component<{}, IState> {
 			hasToken = await isTokenExist();
 		} catch (error) {}
 		apiQwerty.interceptors.request.use(val => {
-			val.headers = { ...val.headers, Authorization: !!hasToken ? hasToken : '' };
+			val.headers = { ...val.headers, Authorization: !!hasToken ? hasToken : "" };
 			return val;
 		});
 		this.setState({ tokenExist: !!hasToken, loading: false, token: hasToken });
+	}
+
+	async componentDidUpdate(prevProps: Readonly<{}>, prevState: Readonly<IState>, snapshot?: any) {
+		if (await isTokenExist()) {
+			let hasToken;
+			try {
+				hasToken = await isTokenExist();
+			} catch (error) {}
+			apiQwerty.interceptors.request.use(val => {
+				val.headers = { ...val.headers, Authorization: !!hasToken ? hasToken : "" };
+				return val;
+			});
+			this.setState({ tokenExist: !!hasToken, loading: false, token: hasToken });
+		} else {
+			this.setState({ tokenExist: false, loading: false, token: null });
+		}
 	}
 
 	renderNavigator = () => {
@@ -48,10 +57,10 @@ export default class App extends Component<{}, IState> {
 		}
 		switch (tokenExist) {
 			case true: {
-				return <AppLoggedInWithNavigator />;
+				return <TabNavigator />;
 			}
 			case false: {
-				return <AppAuthWithNavigator />;
+				return <AuthStack />;
 			}
 		}
 	};
@@ -60,15 +69,9 @@ export default class App extends Component<{}, IState> {
 		return (
 			<Provider store={store}>
 				<MyStatusBar />
-				{this.renderNavigator()}
+				<NavigationContainer>{this.renderNavigator()}</NavigationContainer>
 				<FlashMessage position="top" />
 			</Provider>
 		);
 	}
 }
-
-const styles = StyleSheet.create({
-	safearea: {
-		flex: 1
-	}
-});
