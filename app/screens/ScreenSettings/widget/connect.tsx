@@ -1,18 +1,13 @@
 import { connect } from "react-redux";
-import { IDispatch } from "store";
+import { Dispatch, RootState } from "store";
 import { withErrorAuthentication } from "templates";
 import { compose } from "utils";
 import { ComponentType } from "react";
-import { IStoreState } from "types";
 import { ScreenSettingsView } from "./view";
 
-const mapState = ({ appState }: IStoreState) => ({
-	appLang: appState.appLang
-});
+const mapState = ({  }: RootState) => ({});
 
-const mapDispatch = ({ appState }: IDispatch) => ({
-	setLanguage: appState.setLanguage
-});
+const mapDispatch = ({  }: Dispatch) => ({});
 
 type ExportComponent = ComponentType<{}>;
 

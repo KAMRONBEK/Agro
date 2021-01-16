@@ -1,87 +1,94 @@
-import { initState } from './state';
-import { 
-  ITransaction, 
-  ITransactionsState, 
-  ITransactionsData, 
-  IMessageError, 
-  ITransactionDetailsParams, 
-  ITransactionDetails 
-} from 'types';
-import { createLoggedAsyncAction, isUnauthenticated } from 'utils';
-import { callTransactions, callTransactionDetails } from './request';
+import { initState } from "./state";
+import {
+	ITransaction,
+	ITransactionsState,
+	ITransactionsData,
+	IMessageError,
+	ITransactionDetailsParams,
+	ITransactionDetails
+} from "types";
+import { createLoggedAsyncAction, isUnauthenticated } from "utils";
+import { callTransactions, callTransactionDetails } from "./request";
+import { createModel } from "@rematch/core";
+import { RootModel } from "../models";
 
-export const transactions = {
-  state: initState,
-  reducers: {
-    resetState: () => {
-      return initState;
-    },
-    
-    pushTransactions: (state: ITransactionsState): ITransactionsState => {
-      return { ...state, transactions: [], transactionsIsFetching: true };
-    },
+export const transactions = createModel<RootModel>()({
+	state: initState,
+	reducers: {
+		resetState: () => {
+			return initState;
+		},
 
-    pushTransactionsDone: (state: ITransactionsState, payload: ITransaction[]): ITransactionsState => {
-      return { ...state, transactions: payload, transactionsIsFetching: false, transactionsIsError: false };
-    },
+		pushTransactions: (state: ITransactionsState): ITransactionsState => {
+			return { ...state, transactions: [], transactionsIsFetching: true };
+		},
 
-    pushTransactionsFail: (state: ITransactionsState): ITransactionsState => {
-      return { ...state, transactionsIsFetching: false, transactionsIsError: true };
-    },
+		pushTransactionsDone: (state: ITransactionsState, payload: ITransaction[]): ITransactionsState => {
+			return { ...state, transactions: payload, transactionsIsFetching: false, transactionsIsError: false };
+		},
 
-    pushTransactionDetails: (state: ITransactionsState): ITransactionsState => {
-      return { ...state, transactionDetails: null, transactionDetailsIsFetching: true };
-    },
+		pushTransactionsFail: (state: ITransactionsState): ITransactionsState => {
+			return { ...state, transactionsIsFetching: false, transactionsIsError: true };
+		},
 
-    pushTransactionDetailsDone: (state: ITransactionsState, payload: ITransactionDetails): ITransactionsState => {
-      return { ...state, transactionDetails: payload, transactionDetailsIsFetching: false, transactionDetailsIsError: false };
-    },
+		pushTransactionDetails: (state: ITransactionsState): ITransactionsState => {
+			return { ...state, transactionDetails: null, transactionDetailsIsFetching: true };
+		},
 
-    pushTransactionDetailsFail: (state: ITransactionsState): ITransactionsState => {
-      return { ...state, transactionDetailsIsFetching: false, transactionDetailsIsError: true };
-    }
-  },
-  effects: dispatch => ({
-    pushTransactions: createLoggedAsyncAction<void, void>(
-      async () => {
-        const response = await callTransactions();
-        const isAuthenticatedError = isUnauthenticated(response as IMessageError);
+		pushTransactionDetailsDone: (state: ITransactionsState, payload: ITransactionDetails): ITransactionsState => {
+			return {
+				...state,
+				transactionDetails: payload,
+				transactionDetailsIsFetching: false,
+				transactionDetailsIsError: false
+			};
+		},
 
-        if (isAuthenticatedError) {
-          dispatch.app.doneTokenExist(false);
-          dispatch.transactions.pushTransactionsFail();
-          
-          return;
-        }
+		pushTransactionDetailsFail: (state: ITransactionsState): ITransactionsState => {
+			return { ...state, transactionDetailsIsFetching: false, transactionDetailsIsError: true };
+		}
+	},
+	effects: dispatch => ({
+		pushTransactions: createLoggedAsyncAction<void, void>(
+			async () => {
+				const response = await callTransactions();
+				const isAuthenticatedError = isUnauthenticated(response as IMessageError);
 
-        const checkedRes = response as ITransactionsData;
+				if (isAuthenticatedError) {
+					dispatch.app.doneTokenExist(false);
+					dispatch.transactions.pushTransactionsFail();
 
-        dispatch.transactions.pushTransactionsDone(checkedRes.data);
-      },
-      async () => {
-        dispatch.transactions.pushTransactionsFail();
-      }
-    ),
+					return;
+				}
 
-    pushTransactionDetails: createLoggedAsyncAction<ITransactionDetailsParams, void>(
-      async (params: ITransactionDetailsParams) => {
-        const response = await callTransactionDetails(params);
-        const isAuthenticatedError = isUnauthenticated(response as IMessageError);
+				const checkedRes = response as ITransactionsData;
 
-        if (isAuthenticatedError) {
-          dispatch.app.doneTokenExist(false);
-          dispatch.transactions.pushTransactionDetailsFail();
-          
-          return;
-        }
+				dispatch.transactions.pushTransactionsDone(checkedRes.data);
+			},
+			async () => {
+				dispatch.transactions.pushTransactionsFail();
+			}
+		),
 
-        const checkedRes = response as ITransactionDetails[];
+		pushTransactionDetails: createLoggedAsyncAction<ITransactionDetailsParams, void>(
+			async (params: ITransactionDetailsParams) => {
+				const response = await callTransactionDetails(params);
+				const isAuthenticatedError = isUnauthenticated(response as IMessageError);
 
-        dispatch.transactions.pushTransactionDetailsDone(checkedRes[0]);
-      },
-      async () => {
-        dispatch.transactions.pushTransactionDetailsFail();
-      }
-    )
-  })
-};
+				if (isAuthenticatedError) {
+					dispatch.app.doneTokenExist(false);
+					dispatch.transactions.pushTransactionDetailsFail();
+
+					return;
+				}
+
+				const checkedRes = response as ITransactionDetails[];
+
+				dispatch.transactions.pushTransactionDetailsDone(checkedRes[0]);
+			},
+			async () => {
+				dispatch.transactions.pushTransactionDetailsFail();
+			}
+		)
+	})
+});

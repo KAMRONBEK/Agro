@@ -5,7 +5,7 @@ import { styles } from "./styles";
 import { ChevronRight } from "../assets";
 import { Palette } from "styles";
 import RNPickerSelect from "react-native-picker-select";
-import I18n from "i18n-js";
+import localization from "../../../../locales/i18n";
 
 interface IOwnProps {
 	icon: JSX.Element;
@@ -24,7 +24,7 @@ export function SettingsSelectView({
 	onPress,
 	placeholder,
 	hasInput = false,
-	onChange,
+	onChange
 }: IOwnProps) {
 	return (
 		<RNPickerSelect
@@ -34,7 +34,7 @@ export function SettingsSelectView({
 				{ label: Locale.RU, value: Locale.RU },
 				{ label: Locale.UZ, value: Locale.UZ }
 			]}
-			value={I18n.currentLocale}
+			value={localization.getLanguage}
 			placeholder={{}}
 		>
 			<View style={[styles.button, showBorderBottom && styles.borderBottom]}>

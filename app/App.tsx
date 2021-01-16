@@ -2,65 +2,48 @@ import React, { Component } from "react";
 import FlashMessage from "react-native-flash-message";
 import { Provider } from "react-redux";
 import { store } from "store";
-import { apiQwerty, isTokenExist, setLocale } from "utils";
+import { isTokenExist } from "utils";
 import { AppLoadingView } from "widgets/ModuleAppLoading";
 import { MyStatusBar } from "widgets/ModuleShared";
 import TabNavigator from "./router/TabNavigator";
 import { NavigationContainer } from "@react-navigation/native";
 import AuthStack from "./router/stackNavigators/AuthStack";
-import { Locale } from "./const";
+import AsyncStorage from "@react-native-community/async-storage";
+import localization from "./locales/i18n";
 
 interface IState {
 	tokenExist: Boolean;
-	loading: boolean;
-	token?: string;
+	isLoading: Boolean;
 }
 
 export default class App extends Component<{}, IState> {
 	state: IState = {
 		tokenExist: null,
-		loading: true
+		isLoading: true
 	};
 
 	async componentDidMount() {
-		let hasToken;
 		try {
-			hasToken = await isTokenExist();
-		} catch (error) {}
-		apiQwerty.interceptors.request.use(val => {
-			val.headers = { ...val.headers, Authorization: !!hasToken ? hasToken : "" };
-			return val;
-		});
-		this.setState({ tokenExist: !!hasToken, loading: false, token: hasToken });
-	}
-
-	async componentDidUpdate(prevProps: Readonly<{}>, prevState: Readonly<IState>, snapshot?: any) {
-		if (await isTokenExist()) {
-			let hasToken;
-			try {
-				hasToken = await isTokenExist();
-			} catch (error) {}
-			apiQwerty.interceptors.request.use(val => {
-				val.headers = { ...val.headers, Authorization: !!hasToken ? hasToken : "" };
-				return val;
-			});
-			this.setState({ tokenExist: !!hasToken, loading: false, token: hasToken });
-		} else {
-			this.setState({ tokenExist: false, loading: false, token: null });
+			const hasToken = await isTokenExist();
+			const language = await AsyncStorage.getItem("locale");
+			localization.setLanguage(language);
+			this.setState({ tokenExist: hasToken });
+		} finally {
+			this.setState({ isLoading: false });
 		}
 	}
 
 	renderNavigator = () => {
-		const { tokenExist, loading } = this.state;
-		if (loading) {
+		const { tokenExist, isLoading } = this.state;
+		if (isLoading) {
 			return <AppLoadingView />;
 		}
 		switch (tokenExist) {
 			case true: {
-				return <TabNavigator />;
+				return <TabNavigator key={localization.getLanguage()} />;
 			}
 			case false: {
-				return <AuthStack />;
+				return <AuthStack key={localization.getLanguage()} />;
 			}
 		}
 	};

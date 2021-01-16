@@ -34,7 +34,7 @@ export const TRANSACTIONS = '/api/transactions';
 
 export const TRANSACTION_DETAILS = ({ id }: ITransactionDetailsParams) => `/api/transactions/show/${id}`;
 
-export const TRANSFER_CARD_TOKEN = '/api/transfers/tokenCard'; 
+export const TRANSFER_CARD_TOKEN = '/api/transfers/tokenCard';
 
 export const CARD_INFO = '/api/cards/info';
 
@@ -55,3 +55,5 @@ export const VISA_ACTIVATION = '/api/visas/activation';
 export const VISA_CARD_INFO = '/api/visas/info';
 
 export const VISA_CARD_BALANCE = ({ id }) => `/api/visas/balance?id=${id}`;
+
+export const USER_DATA = '/api/users'

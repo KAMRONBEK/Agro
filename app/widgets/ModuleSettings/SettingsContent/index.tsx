@@ -1,1 +1,1 @@
-export { SettingsContentView as SettingsContent } from './widget';
+export { SettingsContentConnect as SettingsContent } from './widget';

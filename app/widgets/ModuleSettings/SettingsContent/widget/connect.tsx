@@ -1,12 +1,16 @@
-import { connect, ConnectedProps } from "react-redux";
+import { connect } from "react-redux";
 
 import { SettingsContentController } from "./controller";
 import { Dispatch, RootState } from "store";
 
-const mapState = ({  }: RootState) => ({});
+const mapState = ({ user, loading }: RootState) => ({
+	user: user.data,
+	isUserUpdating: loading.effects.user.updateUserData
+});
 
-const mapDispatch = ({ app }: Dispatch) => ({
-	app: app.doneTokenExist
+const mapDispatch = ({ user: { getUserData, updateUserData } }: Dispatch) => ({
+	getUserData,
+	updateUserData
 });
 
 export const SettingsContentConnect = connect(

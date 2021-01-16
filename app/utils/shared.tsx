@@ -2,7 +2,7 @@ import React from 'react';
 import AsyncStorage from '@react-native-community/async-storage';
 import {USER_TOKEN, Locale, UNAUTHENTICATED} from 'const';
 import moment from 'moment';
-import I18n from 'react-native-i18n';
+import localization from 'locales/i18n';
 import {IMessageError} from 'types';
 
 export const setAlpha = (rgbaHex: string, a: number): string => {
@@ -18,9 +18,9 @@ export const compose = <T extends {}>(...funcs: any[]) => {
     return (...args: any[]): T => newCompose(...args);
 };
 
-export const isTokenExist = async (): Promise<string> => {
+export const isTokenExist = async (): Promise<Boolean> => {
     const token = await AsyncStorage.getItem(USER_TOKEN);
-    return token;
+    return !!token;
 };
 
 export const isDataNull = (data: any): boolean => {
@@ -31,9 +31,9 @@ export function getFormatedDate(date: Date, format: string) {
     return moment(date).format(format);
 }
 
-export function setLocale(locale: Locale) {
-    I18n.locale = locale;
-    AsyncStorage.setItem('locale', locale);
+export async function setLocale(locale: Locale) {
+    localization.setLanguage(locale);
+    await AsyncStorage.setItem('locale', locale);
 }
 
 export function formatedMask(mask: string): string {

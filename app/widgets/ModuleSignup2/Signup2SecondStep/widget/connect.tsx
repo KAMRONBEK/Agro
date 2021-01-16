@@ -4,6 +4,7 @@ import { IStoreState, FieldType } from 'types';
 import { IDispatch } from 'store';
 import { ComponentType } from 'react';
 import { compose } from 'utils';
+import {withNavigation} from "../../../../router/withNavigation";
 
 const mapState = ({ signup2: signup2State }: IStoreState) => ({
   phone: signup2State.fields.find(field => field.type === FieldType.Phone),
@@ -26,4 +27,5 @@ export const Signup2SecondStepConnect = compose<ExportComponent>(
     mapState,
     mapDispatch
   ),
+    withNavigation
 )(Signup2SecondStepController);

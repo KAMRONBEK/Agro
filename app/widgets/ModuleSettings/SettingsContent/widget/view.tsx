@@ -20,68 +20,56 @@ let userType = {
 	email: "example@example.com"
 };
 
-interface IProps {}
+interface IProps {
+	userData;
+	updateUserData;
+	isUserUpdating;
+}
 
-export let SettingsContentView = ({  }: IProps) => {
-	const [userData, setUserData] = useState<typeof userType>({});
-	const [loading, setLoading] = useState(false);
-
-	//TODO implement it for real!
-
-	let onSavePress = async () => {
-		setLoading(true);
-		try {
-			await apiQwerty.post("/api/users", userData);
-		} catch (error) {}
-		setLoading(false);
-	};
-
-	let effect = async () => {
-		let user = await apiQwerty.get<typeof userType>("/api/users");
-		setUserData(user.data);
-	};
-
-	let onFieldChange = (fieldName: string) => (value: string) => {
-		setUserData({ ...userData, [fieldName]: value });
+export let SettingsContentView = ({ userData, updateUserData, isUserUpdating }: IProps) => {
+	let [value, setValue] = useState({});
+	let onFieldChange = (name, value) => {
+		setValue(prevState => ({
+			...prevState,
+			[name]: value
+		}));
 	};
 
 	useEffect(() => {
-		effect();
-	}, []);
+		setValue(userData)
+	}, [userData])
 
-	let onChange = () => {};
-	let [value, setValue] = useState();
 	return (
 		<View style={styles.container}>
 			<SettingsCategory label={strings("accountRecord")}>
 				<>
 					<SettingsButton
 						hasInput
-						onChange={onFieldChange("name")}
+						onChange={e => onFieldChange("name", e)}
 						icon={<Profile />}
-						name={userData.name}
+						name={value.name}
 						placeholder={userType.name}
 						showBorderBottom
 					/>
 					<SettingsButton
 						hasInput
-						onChange={onFieldChange("email")}
+						onChange={e => onFieldChange("email", e)}
 						icon={<Email />}
-						name={userData.email}
+						name={value.email}
 						placeholder={userType.email}
 						showBorderBottom
 					/>
 					<SettingsButton
 						hasInput
-						onChange={onFieldChange("email")}
+						onChange={e => onFieldChange("phone", e)}
 						icon={<Phone />}
-						name={userData.phone}
+						name={value.phone}
 						placeholder={userType.phone}
 						showBorderBottom={false}
 					/>
 				</>
 			</SettingsCategory>
-			<SettingsSaveButton text={strings("save")} onPress={onSavePress} loading={loading} />
+			<SettingsSaveButton text={strings("save")} onPress={() => updateUserData(value)} loading={isUserUpdating} />
 			<SettingsCategory containerStyle={styles.category} label={strings("settings")}>
 				<>
 					{/* <SettingsButton
@@ -104,7 +92,7 @@ export let SettingsContentView = ({  }: IProps) => {
 						icon={<Notify />}
 						name={strings("notification")}
 						showBorderBottom
-						onChange={onChange}
+						onChange={() => null}
 						value={value}
 					/>
 					{/* <SettingsSwitch icon={<Notify />} name="Подтверждать оплату" showBorderBottom /> */}

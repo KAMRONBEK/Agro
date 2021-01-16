@@ -1,163 +1,165 @@
-import { initState } from './state';
-import { 
-  ISignupState, 
-  ISignupField, 
-  IStoreState, 
-  IFieldState, 
-  FieldType, 
-  ISignupSmsCode, 
-  IError, 
-  IConfirmPhoneError, 
-  ISignup 
-} from 'types';
-import { setFieldValue, setConfirmError } from './utils';
-import { createLoggedAsyncAction, isFieldErrorExist } from 'utils';
-import { 
-  formatedSendSmsCodeRequestParams, 
-  formatedConfirmPhoneRequestParams, 
-  formatedSignupRequestParams
-} from './parser';
-import { validateSignupFields } from './validation';
-import { callSendSmsCode, callConfirmPhone, callSignup } from './request';
-import { AxiosResponse } from 'axios';
-import AsyncStorage from '@react-native-community/async-storage';
-import { USER_TOKEN, PHONE_NUMBER } from 'const';
-import { BEARER } from 'api';
+import { initState } from "./state";
+import {
+	ISignupState,
+	ISignupField,
+	IStoreState,
+	IFieldState,
+	FieldType,
+	ISignupSmsCode,
+	IError,
+	IConfirmPhoneError,
+	ISignup
+} from "types";
+import { setFieldValue, setConfirmError } from "./utils";
+import { createLoggedAsyncAction, isFieldErrorExist } from "utils";
+import {
+	formatedSendSmsCodeRequestParams,
+	formatedConfirmPhoneRequestParams,
+	formatedSignupRequestParams
+} from "./parser";
+import { validateSignupFields } from "./validation";
+import { callSendSmsCode, callConfirmPhone, callSignup } from "./request";
+import { AxiosResponse } from "axios";
+import AsyncStorage from "@react-native-community/async-storage";
+import { USER_TOKEN, PHONE_NUMBER } from "const";
+import { BEARER } from "api";
+import { createModel } from "@rematch/core";
+import { RootModel } from "../models";
 
-export const signup = {
-  state: initState,
-  reducers: {
-    resetState: () => {
-      return initState;
-    },
+export const signup = createModel<RootModel>()({
+	state: initState,
+	reducers: {
+		resetState: () => {
+			return initState;
+		},
 
-    setField: (state: ISignupState, payload: ISignupField): ISignupState => {
-      return { ...state, fields: setFieldValue(payload, state) }
-    },
+		setField: (state: ISignupState, payload: ISignupField): ISignupState => {
+			return { ...state, fields: setFieldValue(payload, state) };
+		},
 
-    setCode: (state: ISignupState, { value }: ISignupField): ISignupState => {
-      return { ...state, codeField: { ...state.codeField, value, errors: [] } }
-    },
+		setCode: (state: ISignupState, { value }: ISignupField): ISignupState => {
+			return { ...state, codeField: { ...state.codeField, value, errors: [] } };
+		},
 
-    toggleHidePassword: (state: ISignupState): ISignupState => {
-      return { ...state, hidePassword: !state.hidePassword }
-    },
+		toggleHidePassword: (state: ISignupState): ISignupState => {
+			return { ...state, hidePassword: !state.hidePassword };
+		},
 
-    pushSendCode: (state: ISignupState): ISignupState => {
-      return { ...state, codeIsFetching: true }
-    },
-    
-    pushSendCodeDone: (state: ISignupState, payload: ISignupSmsCode): ISignupState => {
-      return { ...state, code: payload, codeIsFetching: false, codeIsError: false }
-    },
+		pushSendCode: (state: ISignupState): ISignupState => {
+			return { ...state, codeIsFetching: true };
+		},
 
-    pushSendCodeFail: (state: ISignupState): ISignupState => {
-      return { ...state, codeIsFetching: false, codeIsError: true }
-    },
+		pushSendCodeDone: (state: ISignupState, payload: ISignupSmsCode): ISignupState => {
+			return { ...state, code: payload, codeIsFetching: false, codeIsError: false };
+		},
 
-    setSignupFieldErrors: (state: ISignupState, payload: IFieldState<FieldType>[]): ISignupState => {
-      return { ...state, fields: payload, codeIsFetching: false, codeIsError: true }
-    },
+		pushSendCodeFail: (state: ISignupState): ISignupState => {
+			return { ...state, codeIsFetching: false, codeIsError: true };
+		},
 
-    pushConfirmPhone: (state: ISignupState): ISignupState => {
-      return { ...state, confirmIsFetching: true }
-    },
-    
-    pushConfirmPhoneDone: (state: ISignupState): ISignupState => {
-      return { ...state, confirmPhone: true, confirmIsFetching: false, confirmIsError: false }
-    },
+		setSignupFieldErrors: (state: ISignupState, payload: IFieldState<FieldType>[]): ISignupState => {
+			return { ...state, fields: payload, codeIsFetching: false, codeIsError: true };
+		},
 
-    pushConfirmPhoneFail: (state: ISignupState): ISignupState => {
-      return { ...state, confirmPhone: false, confirmIsFetching: false, confirmIsError: true }
-    },
+		pushConfirmPhone: (state: ISignupState): ISignupState => {
+			return { ...state, confirmIsFetching: true };
+		},
 
-    setConfirmError: (state: ISignupState, error: IError<IConfirmPhoneError>): ISignupState => {
-      return setConfirmError(error, state);
-    },
+		pushConfirmPhoneDone: (state: ISignupState): ISignupState => {
+			return { ...state, confirmPhone: true, confirmIsFetching: false, confirmIsError: false };
+		},
 
-    pushSignup: (state: ISignupState): ISignupState => {
-      return { ...state, signupIsFetching: true }
-    },
-    
-    pushSignupDone: (state: ISignupState): ISignupState => {
-      return { ...state, signup: true, signupIsFetching: false, signupIsError: false }
-    },
+		pushConfirmPhoneFail: (state: ISignupState): ISignupState => {
+			return { ...state, confirmPhone: false, confirmIsFetching: false, confirmIsError: true };
+		},
 
-    pushSignupFail: (state: ISignupState): ISignupState => {
-      return { ...state, signup: false, signupIsFetching: false, signupIsError: true }
-    },
+		setConfirmError: (state: ISignupState, error: IError<IConfirmPhoneError>): ISignupState => {
+			return setConfirmError(error, state);
+		},
 
-    setSignupSuccessModalState: (state: ISignupState, payload: boolean): ISignupState => {
-      return { ...state, signupSuccessModalVisible: payload };
-    }
-  },
-  effects: dispatch => ({
-    pushSendCode: createLoggedAsyncAction<void, void>(
-      async (_: void, { signup }: IStoreState) => {
-        const requestParams = formatedSendSmsCodeRequestParams(signup);
-        console.log(requestParams);
-        const validatedSignupFields = validateSignupFields(signup);
-        
-        if (validatedSignupFields.isError) {
-          dispatch.signup.setSignupFieldErrors(validatedSignupFields.result);
+		pushSignup: (state: ISignupState): ISignupState => {
+			return { ...state, signupIsFetching: true };
+		},
 
-          return;
-        }
+		pushSignupDone: (state: ISignupState): ISignupState => {
+			return { ...state, signup: true, signupIsFetching: false, signupIsError: false };
+		},
 
-        const res = await callSendSmsCode(requestParams) as ISignupSmsCode;
+		pushSignupFail: (state: ISignupState): ISignupState => {
+			return { ...state, signup: false, signupIsFetching: false, signupIsError: true };
+		},
 
-        dispatch.signup.pushSendCodeDone(res);
-      },
-      async () => {
-        dispatch.signup.pushSendCodeFail();
-      }
-    ),
+		setSignupSuccessModalState: (state: ISignupState, payload: boolean): ISignupState => {
+			return { ...state, signupSuccessModalVisible: payload };
+		}
+	},
+	effects: dispatch => ({
+		pushSendCode: createLoggedAsyncAction<void, void>(
+			async (_: void, { signup }: IStoreState) => {
+				const requestParams = formatedSendSmsCodeRequestParams(signup);
+				console.log(requestParams);
+				const validatedSignupFields = validateSignupFields(signup);
 
-    pushConfirmPhone: createLoggedAsyncAction<void, void>(
-      async (_: void, { signup }: IStoreState) => {
-        const requestParams = formatedConfirmPhoneRequestParams(signup);
-        const res = await callConfirmPhone(requestParams) as AxiosResponse;
-        const isError = isFieldErrorExist(res.data);
+				if (validatedSignupFields.isError) {
+					dispatch.signup.setSignupFieldErrors(validatedSignupFields.result);
 
-        if (isError) {
-          dispatch.signup.setConfirmError(res.data);
-          
-          return;
-        }
+					return;
+				}
 
-        if (res.status === 204) {
-          dispatch.signup.pushConfirmPhoneDone();
-          dispatch.signup.pushSignup();
-        }
-      },
-      async () => {
-        dispatch.signup.pushConfirmPhoneFail();
-      }
-    ),
+				const res = (await callSendSmsCode(requestParams)) as ISignupSmsCode;
 
-    pushSignup: createLoggedAsyncAction<void, void>(
-      async (_: void, { signup }: IStoreState) => {
-        const requestParams = formatedSignupRequestParams(signup);
-        const res = await callSignup(requestParams)
-        const isError = isFieldErrorExist(res);
+				dispatch.signup.pushSendCodeDone(res);
+			},
+			async () => {
+				dispatch.signup.pushSendCodeFail();
+			}
+		),
 
-        if (isError) {
-          dispatch.signup.setConfirmError(res);
-          
-          return;
-        }
+		pushConfirmPhone: createLoggedAsyncAction<void, void>(
+			async (_: void, { signup }: IStoreState) => {
+				const requestParams = formatedConfirmPhoneRequestParams(signup);
+				const res = (await callConfirmPhone(requestParams)) as AxiosResponse;
+				const isError = isFieldErrorExist(res.data);
 
-        const checkedRes = res as ISignup;
+				if (isError) {
+					dispatch.signup.setConfirmError(res.data);
 
-        AsyncStorage.setItem(USER_TOKEN, BEARER + checkedRes.api_token);
-        AsyncStorage.setItem(PHONE_NUMBER, checkedRes.user.phone);
+					return;
+				}
 
-        dispatch.signup.setSignupSuccessModalState(true);
-        dispatch.signup.pushSignupDone();
-      },
-      async () => {
-        dispatch.signup.pushSignupFail();
-      }
-    )
-  })
-};
+				if (res.status === 204) {
+					dispatch.signup.pushConfirmPhoneDone();
+					dispatch.signup.pushSignup();
+				}
+			},
+			async () => {
+				dispatch.signup.pushConfirmPhoneFail();
+			}
+		),
+
+		pushSignup: createLoggedAsyncAction<void, void>(
+			async (_: void, { signup }: IStoreState) => {
+				const requestParams = formatedSignupRequestParams(signup);
+				const res = await callSignup(requestParams);
+				const isError = isFieldErrorExist(res);
+
+				if (isError) {
+					dispatch.signup.setConfirmError(res);
+
+					return;
+				}
+
+				const checkedRes = res as ISignup;
+
+				AsyncStorage.setItem(USER_TOKEN, BEARER + checkedRes.api_token);
+				AsyncStorage.setItem(PHONE_NUMBER, checkedRes.user.phone);
+
+				dispatch.signup.setSignupSuccessModalState(true);
+				dispatch.signup.pushSignupDone();
+			},
+			async () => {
+				dispatch.signup.pushSignupFail();
+			}
+		)
+	})
+});
