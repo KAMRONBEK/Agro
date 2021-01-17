@@ -27,7 +27,7 @@ export default class App extends Component<{}, IState> {
 			const hasToken = await isTokenExist();
 			const language = await AsyncStorage.getItem("locale");
 			localization.setLanguage(language);
-			this.setState({ tokenExist: hasToken });
+			this.setState({ tokenExist: !!hasToken });
 		} finally {
 			this.setState({ isLoading: false });
 		}

@@ -1,29 +1,25 @@
-import { isTokenExist } from "utils";
-import { IAppState, IUser } from "types";
 import { initState } from "./state";
 import { createModel } from "@rematch/core";
 import { RootModel } from "../models";
+import { apiQwerty } from "utils";
+import { BRANCHES } from "api";
+import { IBranch } from "types/store";
 
-export const app = createModel<RootModel>()({
+export const branches = createModel<RootModel>()({
 	state: initState,
 	reducers: {
-		reloadState(): IAppState {
-			return initState;
-		},
-
-		pushTokenExist: (state: IAppState = initState): IAppState => {
-			return state;
-		},
-
-		doneTokenExist: (state: IAppState = initState, status: boolean): IAppState => {
-			return { ...state, isLogged: status };
-		},
-
-		failTokenExist: (state: IAppState, status: boolean): IAppState => {
-			return { ...state, isLogged: status };
+		setBranches(store, payload: IBranch[]) {
+			return { ...store, payload };
 		}
 	},
 	effects: dispatch => ({
-
+		async getBranches() {
+			try {
+				const { data } = await apiQwerty.get(BRANCHES);
+				dispatch.branches.setBranches(data.data);
+			} catch (e) {
+				console.log(e);
+			}
+		}
 	})
 });

@@ -12,10 +12,12 @@ import { transactions } from "./transactions";
 import { cardOperations } from "./cardOperations";
 import { signup2 } from "./signup2";
 import { user } from "./user";
+import {branches} from "./branches";
 
 export interface RootModel extends Models<RootModel> {
 	// @ts-ignore
 	app: typeof app;
+	branches: typeof branches;
 	supplier: typeof supplier;
 	categories: typeof categories;
 	suppliers: typeof suppliers;
@@ -41,5 +43,6 @@ export const models: RootModel = {
 	transactions,
 	cardOperations,
 	signup2,
-	user
+	user,
+	branches,
 };

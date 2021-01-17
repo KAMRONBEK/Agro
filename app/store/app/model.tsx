@@ -1,8 +1,9 @@
-import { createLoggedAsyncAction, isTokenExist } from "utils";
+import { apiQwerty, createLoggedAsyncAction, isTokenExist } from "utils";
 import { IAppState, IUser } from "types";
 import { initState } from "./state";
 import { createModel } from "@rematch/core";
 import { RootModel } from "../models";
+import { AUTHORIZATION } from "../../api";
 
 export const app = createModel<RootModel>()({
 	state: initState,
@@ -21,13 +22,19 @@ export const app = createModel<RootModel>()({
 
 		failTokenExist: (state: IAppState, status: boolean): IAppState => {
 			return { ...state, isLogged: status };
+		},
+
+		setToken(state, token: string) {
+			return { ...state, token };
 		}
 	},
 	effects: dispatch => ({
 		pushTokenExist: createLoggedAsyncAction(
 			async () => {
 				const res = await isTokenExist();
-				dispatch.app.doneTokenExist(res);
+				dispatch.app.setToken(res);
+				apiQwerty.defaults.headers.common[AUTHORIZATION] = res;
+				dispatch.app.doneTokenExist(!!res);
 			},
 			async () => {
 				dispatch.app.failTokenExist(false);

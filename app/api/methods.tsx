@@ -56,4 +56,6 @@ export const VISA_CARD_INFO = '/api/visas/info';
 
 export const VISA_CARD_BALANCE = ({ id }) => `/api/visas/balance?id=${id}`;
 
-export const USER_DATA = '/api/users'
+export const USER_DATA = '/api/users';
+
+export const BRANCHES = '/api/branches'
