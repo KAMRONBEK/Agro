@@ -40,10 +40,10 @@ export default class App extends Component<{}, IState> {
 		}
 		switch (tokenExist) {
 			case true: {
-				return <TabNavigator key={localization.getLanguage()} />;
+				return <TabNavigator />;
 			}
 			case false: {
-				return <AuthStack key={localization.getLanguage()} />;
+				return <AuthStack />;
 			}
 		}
 	};
@@ -52,7 +52,7 @@ export default class App extends Component<{}, IState> {
 		return (
 			<Provider store={store}>
 				<MyStatusBar />
-				<NavigationContainer>{this.renderNavigator()}</NavigationContainer>
+				<NavigationContainer key={localization.getLanguage()}>{this.renderNavigator()}</NavigationContainer>
 				<FlashMessage position="top" />
 			</Provider>
 		);

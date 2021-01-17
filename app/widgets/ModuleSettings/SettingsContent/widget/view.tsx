@@ -27,7 +27,7 @@ interface IProps {
 }
 
 export let SettingsContentView = ({ userData, updateUserData, isUserUpdating }: IProps) => {
-	let [value, setValue] = useState({});
+	let [value, setValue] = useState<typeof userType>({});
 	let onFieldChange = (name, value) => {
 		setValue(prevState => ({
 			...prevState,

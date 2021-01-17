@@ -23,7 +23,7 @@ export const user = createModel<RootModel>()({
 				console.log(e);
 			}
 		},
-		async updateUserData(params) {
+		async updateUserData(params: object) {
 			try {
 				const data = await updateUserData(params);
 				dispatch.user.setUserData(data);

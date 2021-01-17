@@ -11,6 +11,7 @@ export const apiClick = Axios.create({
   timeout: 30000
 });
 
+
 export const apiQwerty = Axios.create({
   baseURL: API_ENDPOINT_QWERTY,
   headers: {
@@ -19,6 +20,25 @@ export const apiQwerty = Axios.create({
   },
   timeout: 30000
 });
+
+export const setToken = store => {
+  function select(state) {
+    return state.user.token
+  }
+
+  let currentValue;
+
+  function handleChange() {
+    let previousValue = currentValue;
+    currentValue = select(store.getState());
+    if (previousValue !== currentValue && currentValue) {
+      apiQwerty.defaults.headers.common['Authorization'] = `Bearer ${currentValue}`;
+    }
+  }
+
+  store.subscribe(handleChange);
+
+};
 
 export function generateServiceKey(): string {
   let timestamp = Math.floor(Number(new Date()) / 1000);

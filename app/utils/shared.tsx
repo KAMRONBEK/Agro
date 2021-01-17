@@ -4,6 +4,8 @@ import {USER_TOKEN, Locale, UNAUTHENTICATED} from 'const';
 import moment from 'moment';
 import localization from 'locales/i18n';
 import {IMessageError} from 'types';
+import {setToken} from "./api";
+import {store} from "../store";
 
 export const setAlpha = (rgbaHex: string, a: number): string => {
     const hexColor = rgbaHex.split('#')[1];
@@ -20,6 +22,9 @@ export const compose = <T extends {}>(...funcs: any[]) => {
 
 export const isTokenExist = async (): Promise<Boolean> => {
     const token = await AsyncStorage.getItem(USER_TOKEN);
+    if (token) {
+        setToken(store);
+    }
     return !!token;
 };
 
@@ -33,7 +38,7 @@ export function getFormatedDate(date: Date, format: string) {
 
 export async function setLocale(locale: Locale) {
     localization.setLanguage(locale);
-    await AsyncStorage.setItem('locale', locale);
+    AsyncStorage.setItem('locale', locale);
 }
 
 export function formatedMask(mask: string): string {
