@@ -16,26 +16,27 @@ export interface IOwnProps {
 }
 
 export class SettingsLogoutModalController extends Component<IConnectProps & IOwnProps> {
+
   componentDidUpdate(prevProps: IConnectProps) {
-    const { logout, navigation } = this.props;
+    const { logout, navigation, pushLogout } = this.props;
 
     if (logout !== prevProps.logout) {
       if (logout) {
-        const resetAction = StackActions.reset({
-          index: 0,
-          actions: [NavigationActions.navigate({ routeName: ROUTES.SCREEN_LOCALIZATION })],
-        });
-  
-        navigation.dispatch(resetAction);
+        // const resetAction = StackActions.reset({
+        //   index: 0,
+        //   actions: [NavigationActions.navigate({ routeName: ROUTES.SCREEN_LOCALIZATION })],
+        // });
+
+        // navigation.dispatch();
       }
     }
   }
 
   render() {
     const { isVisible, logoutIsFetching, close, pushLogout } = this.props;
-    
+
     return (
-      <SettingsLogoutModalView 
+      <SettingsLogoutModalView
         isVisible={isVisible}
         close={close}
         logout={pushLogout}

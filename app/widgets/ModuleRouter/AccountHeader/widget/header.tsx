@@ -1,11 +1,9 @@
-import React from 'react';
-import { NavigationScreenProp } from 'react-navigation';
-import { AccountHeaderController } from './controller';
-import { NavigationStackOptions } from 'react-navigation-stack';
+import React from "react";
+import { AccountHeaderController } from "./controller";
 
-export const AccountHeader = (title?: string) => ({ navigation }: { navigation: NavigationScreenProp<any,any> }): NavigationStackOptions => {
-  return {
-    header: () => <AccountHeaderController title={title} navigation={navigation} />,
-    headerLeft: null
-  };
+export const AccountHeader = (title?: string) => {
+	return {
+		header: ({ navigation }) => <AccountHeaderController title={title} navigation={navigation} />,
+		headerLeft: null
+	};
 };

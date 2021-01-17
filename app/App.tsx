@@ -1,61 +1,49 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
-import AsyncStorage from "@react-native-community/async-storage";
 import React, { Component } from "react";
-import { StyleSheet } from "react-native";
 import FlashMessage from "react-native-flash-message";
 import { Provider } from "react-redux";
-import { AppAuthWithNavigator, AppLoggedInWithNavigator } from "router";
 import { store } from "store";
-import reactotron from "store/reactotron-config";
-import { apiQwerty, isTokenExist } from "utils";
+import { isTokenExist } from "utils";
 import { AppLoadingView } from "widgets/ModuleAppLoading";
 import { MyStatusBar } from "widgets/ModuleShared";
+import TabNavigator from "./router/TabNavigator";
+import { NavigationContainer } from "@react-navigation/native";
+import AuthStack from "./router/stackNavigators/AuthStack";
+import AsyncStorage from "@react-native-community/async-storage";
+import localization from "./locales/i18n";
 
 interface IState {
 	tokenExist: Boolean;
-	loading: boolean;
-	token?: string;
+	isLoading: Boolean;
 }
 
 export default class App extends Component<{}, IState> {
 	state: IState = {
 		tokenExist: null,
-		loading: true
+		isLoading: true
 	};
 
 	async componentDidMount() {
-		let hasToken;
 		try {
-			hasToken = await isTokenExist();
-			let locale = await AsyncStorage.getItem("locale");
-			reactotron.log({ locale });
-			store.dispatch({ type: "appState/setLanguage", payload: locale });
-		} catch (error) {}
-		apiQwerty.interceptors.request.use(val => {
-			val.headers = { ...val.headers, Authorization: !!hasToken ? hasToken : "" };
-			return val;
-		});
-		this.setState({ tokenExist: !!hasToken, loading: false, token: hasToken });
+			const hasToken = await isTokenExist();
+			const language = await AsyncStorage.getItem("locale");
+			localization.setLanguage(language);
+			this.setState({ tokenExist: hasToken });
+		} finally {
+			this.setState({ isLoading: false });
+		}
 	}
 
 	renderNavigator = () => {
-		const { tokenExist, loading } = this.state;
-		if (loading) {
+		const { tokenExist, isLoading } = this.state;
+		if (isLoading) {
 			return <AppLoadingView />;
 		}
 		switch (tokenExist) {
 			case true: {
-				return <AppLoggedInWithNavigator key={store.getState().appState.appLang} />;
+				return <TabNavigator key={localization.getLanguage()} />;
 			}
 			case false: {
-				return <AppAuthWithNavigator key={store.getState().appState.appLang} />;
+				return <AuthStack key={localization.getLanguage()} />;
 			}
 		}
 	};
@@ -64,15 +52,9 @@ export default class App extends Component<{}, IState> {
 		return (
 			<Provider store={store}>
 				<MyStatusBar />
-				{this.renderNavigator()}
+				<NavigationContainer>{this.renderNavigator()}</NavigationContainer>
 				<FlashMessage position="top" />
 			</Provider>
 		);
 	}
 }
-
-const styles = StyleSheet.create({
-	safearea: {
-		flex: 1
-	}
-});

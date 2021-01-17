@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { ScreenAddCardView } from './view';
 import { ICard } from 'types';
-import { NavigationScreenProp } from 'react-navigation';
 
 interface IConnectProps {
-  navigation: NavigationScreenProp<void>;
+  navigation: any;
   verifyCard: ICard;
 }
 
@@ -15,7 +14,7 @@ export class ScreenAddCardController extends Component<IConnectProps> {
     if (verifyCard !== prevProps.verifyCard) {
       console.log('verifyCard done!');
       navigation.goBack();
-    } 
+    }
   }
 
   render() {

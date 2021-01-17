@@ -1,5 +1,4 @@
 import { connect } from "react-redux";
-import { withNavigation } from "react-navigation";
 import { ComponentType } from "react";
 import { CardOperationsTransferFooterButtonsController } from "./controller";
 import { IDispatch } from "store";
@@ -22,5 +21,4 @@ export const CardOperationsTransferFooterButtonsConnect = compose<ExportComponen
     mapState,
     mapDispatch
   ),
-  withNavigation
 )(CardOperationsTransferFooterButtonsController);

@@ -1,3 +1,5 @@
+import { Models } from "@rematch/core";
+
 import { app } from "./app";
 import { supplier } from "./supplier";
 import { categories } from "./categories";
@@ -9,9 +11,25 @@ import { payment } from "./payment";
 import { transactions } from "./transactions";
 import { cardOperations } from "./cardOperations";
 import { signup2 } from "./signup2";
-import { appState } from "./appState";
+import { user } from "./user";
 
-export const models = {
+export interface RootModel extends Models<RootModel> {
+	// @ts-ignore
+	app: typeof app;
+	supplier: typeof supplier;
+	categories: typeof categories;
+	suppliers: typeof suppliers;
+	cards: typeof cards;
+	signup: typeof signup;
+	login: typeof login;
+	payment: typeof payment;
+	transactions: typeof transactions;
+	cardOperations: typeof cardOperations;
+	signup2: typeof signup2;
+	user: typeof user;
+}
+
+export const models: RootModel = {
 	app,
 	supplier,
 	categories,
@@ -23,5 +41,5 @@ export const models = {
 	transactions,
 	cardOperations,
 	signup2,
-	appState
+	user
 };

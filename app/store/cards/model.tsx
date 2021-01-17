@@ -1,4 +1,4 @@
-import { initState } from './state';
+import { initState } from "./state";
 import {
 	ICardsState,
 	ICardField,
@@ -13,25 +13,27 @@ import {
 	ICardBalanceData,
 	VisaCurrencyType,
 	IChangeVisaVirtualParams
-} from 'types';
+} from "types";
 import {
 	createLoggedAsyncAction,
 	isFieldErrorExist,
 	isCreateCardErrorExist,
 	setCreateCardFieldValue,
 	isUnauthenticated
-} from 'utils';
-import { callCreateCard, callCards, callVerifyCard, callCardsBalance, callChangeVisaVirtualStatus } from './request';
+} from "utils";
+import { callCreateCard, callCards, callVerifyCard, callCardsBalance, callChangeVisaVirtualStatus } from "./request";
 import {
 	formatedCreateCardRequestParams,
 	formatedVerifyCardRequestParams,
 	formatedCardBalanceRequestParams
-} from './parser';
-import { showMessage } from 'react-native-flash-message';
-import { ERROR, DONE } from 'const';
-import { createVisaRequestType, formattedCards } from './utils';
+} from "./parser";
+import { showMessage } from "react-native-flash-message";
+import { ERROR, DONE } from "const";
+import { createVisaRequestType, formattedCards } from "./utils";
+import { createModel } from "@rematch/core";
+import { RootModel } from "../models";
 
-export const cards = {
+export const cards = createModel<RootModel>()({
 	state: initState,
 	reducers: {
 		resetState: () => {
@@ -254,7 +256,7 @@ export const cards = {
 				const { openVisaCurrencyType } = cards;
 				const res = await createVisaRequestType(openVisaCurrencyType, cards);
 				console.log(res);
-				if (typeof res === 'string') {
+				if (typeof res === "string") {
 					dispatch.cards.pushCreateVisaVirtualFail();
 
 					return;
@@ -274,7 +276,7 @@ export const cards = {
 
 					showMessage({
 						...DONE,
-						message: 'Виртуальная Visa карта успешно создана'
+						message: "Виртуальная Visa карта успешно создана"
 					});
 
 					dispatch.cards.pushCreateVisaVirtualDone(checkedRes);
@@ -319,4 +321,4 @@ export const cards = {
 			}
 		)
 	})
-};
+});

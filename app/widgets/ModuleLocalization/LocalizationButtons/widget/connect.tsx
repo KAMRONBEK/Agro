@@ -1,25 +1,21 @@
-import React, { ComponentType } from 'react';
-import { connect } from 'react-redux';
-import { IStoreState } from 'types';
-import { IDispatch } from 'store';
-import { LocalizationButtonsController } from './controller';
-import { withNavigation } from 'react-navigation';
-import { compose } from 'utils';
+import React, { ComponentType } from "react";
+import { connect } from "react-redux";
+import { IStoreState } from "types";
+import { Dispatch } from "store";
+import { LocalizationButtonsController } from "./controller";
+import { compose } from "utils";
+import { withNavigation } from "router/withNavigation";
 
-const mapState = ({}: IStoreState) => ({
+const mapState = ({  }: IStoreState) => ({});
 
-});
-
-const mapDispatch = ({}: IDispatch) => ({
-
-});
+const mapDispatch = ({  }: Dispatch) => ({});
 
 type ExportComponent = ComponentType<{}>;
 
 export const LocalizationButtonsConnect = compose<ExportComponent>(
-  withNavigation,
-  connect(
-    mapState,
-    mapDispatch
-  )
+	connect(
+		mapState,
+		mapDispatch
+	),
+	withNavigation
 )(LocalizationButtonsController);

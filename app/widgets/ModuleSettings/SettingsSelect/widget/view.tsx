@@ -3,9 +3,9 @@ import { TouchableOpacity, View, Text, TextInput } from "react-native";
 import { Locale, TOUCHABLE_OPACITY } from "const";
 import { styles } from "./styles";
 import { ChevronRight } from "../assets";
-import reactotron from "store/reactotron-config";
 import { Palette } from "styles";
 import RNPickerSelect from "react-native-picker-select";
+import localization from "../../../../locales/i18n";
 
 interface IOwnProps {
 	icon: JSX.Element;
@@ -24,8 +24,7 @@ export function SettingsSelectView({
 	onPress,
 	placeholder,
 	hasInput = false,
-	onChange,
-	value
+	onChange
 }: IOwnProps) {
 	return (
 		<RNPickerSelect
@@ -35,7 +34,7 @@ export function SettingsSelectView({
 				{ label: Locale.RU, value: Locale.RU },
 				{ label: Locale.UZ, value: Locale.UZ }
 			]}
-			value={value}
+			value={localization.getLanguage}
 			placeholder={{}}
 		>
 			<View style={[styles.button, showBorderBottom && styles.borderBottom]}>

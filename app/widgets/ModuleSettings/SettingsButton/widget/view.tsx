@@ -3,7 +3,7 @@ import { TouchableOpacity, View, Text, TextInput } from "react-native";
 import { TOUCHABLE_OPACITY } from "const";
 import { styles } from "./styles";
 import { ChevronRight } from "../assets";
-import reactotron from "store/reactotron-config";
+import reactotron from "store/ReactatronConfig";
 import { Palette } from "styles";
 
 interface IOwnProps {

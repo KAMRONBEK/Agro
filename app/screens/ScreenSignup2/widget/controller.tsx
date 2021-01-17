@@ -6,6 +6,7 @@ interface IConnectProps {
 }
 
 export class ScreenSignup2Controller extends Component<IConnectProps> {
+
   componentDidMount() {
     const { resetState } = this.props;
 

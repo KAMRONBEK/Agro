@@ -1,19 +1,18 @@
-import { init } from '@rematch/core';
-import selectPlugin from '@rematch/select';
-import { models } from './models';
-import reactotron from './reactotron-config';
+import {init, RematchDispatch, RematchRootState} from '@rematch/core'
+import loadingPlugin, {ExtraModelsFromLoading} from '@rematch/loading'
+import {models, RootModel} from './models'
+import reactotron from './ReactatronConfig'
 
-export const store = init({
+type FullModel = ExtraModelsFromLoading<RootModel>;
+
+export const store = init<RootModel, FullModel>({
 	models,
-	plugins: [selectPlugin()],
+	plugins: [loadingPlugin()],
 	redux: {
-		enhancers: [reactotron.createEnhancer()],
-		devtoolOptions: {
-			disabled: !__DEV__
-		}
-	}
+		enhancers: [reactotron.createEnhancer!()],
+	},
 });
 
-export const { select } = store;
-
-export type IDispatch = typeof store.dispatch;
+export type Store = typeof store
+export type Dispatch = RematchDispatch<RootModel>
+export type RootState = RematchRootState<RootModel, FullModel>

@@ -3,7 +3,6 @@ import { MainTransactionsHistoryController } from "./controller";
 import { IStoreState } from "types";
 import { ComponentType } from "react";
 import { compose } from "utils";
-import { withNavigation } from "react-navigation";
 import { IDispatch } from "store";
 
 const mapState = ({ transactions: transactionsState }: IStoreState) => ({
@@ -22,5 +21,4 @@ export const MainTransactionsHistoryConnect = compose<ExportComponent>(
     mapState,
     mapDispatch
   ),
-  withNavigation
 )(MainTransactionsHistoryController);

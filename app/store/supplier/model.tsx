@@ -1,109 +1,109 @@
-import { initState } from './state';
-import { 
-  ISupplierState, 
-  ISupplierForm, 
-  ISupplierParams, 
-  ISupplierData, 
-  ISupplierField, 
-  IStoreState, 
-  IFieldState, 
-  FieldType, 
-  IMessageError
-} from 'types';
-import { createLoggedAsyncAction, isUnauthenticated } from 'utils';
-import { callSupplier } from './request';
-import { validateField, validateFields } from './validation';
+import { initState } from "./state";
+import {
+	ISupplierState,
+	ISupplierForm,
+	ISupplierParams,
+	ISupplierData,
+	ISupplierField,
+	IStoreState,
+	IFieldState,
+	FieldType,
+	IMessageError
+} from "types";
+import { createLoggedAsyncAction, isUnauthenticated } from "utils";
+import { callSupplier } from "./request";
+import { validateField, validateFields } from "./validation";
+import { createModel } from "@rematch/core";
+import { RootModel } from "../models";
 
-export const supplier = {
-  state: initState,
-  reducers: {
-    resetState: (): ISupplierState => {
-      return initState;
-    },
+export const supplier = createModel<RootModel>()({
+	state: initState,
+	reducers: {
+		resetState: (): ISupplierState => {
+			return initState;
+		},
 
-    pushSupplier: (state: ISupplierState): ISupplierState => {
-      return { ...state, supplierIsFetching: true };
-    },
+		pushSupplier: (state: ISupplierState): ISupplierState => {
+			return { ...state, supplierIsFetching: true };
+		},
 
-    pushSupplierDone: (state: ISupplierState, payload: ISupplierForm[]): ISupplierState => {
-      return { ...state, form: payload, supplierIsFetching: false, supplierIsError: false };
-    },
+		pushSupplierDone: (state: ISupplierState, payload: ISupplierForm[]): ISupplierState => {
+			return { ...state, form: payload, supplierIsFetching: false, supplierIsError: false };
+		},
 
-    pushSupplierFail: (state: ISupplierState): ISupplierState => {
-      return { ...state, supplierIsFetching: false, supplierIsError: true };
-    },
+		pushSupplierFail: (state: ISupplierState): ISupplierState => {
+			return { ...state, supplierIsFetching: false, supplierIsError: true };
+		},
 
-    pushFieldValue: (state: ISupplierState): ISupplierState => {
-      return { ...state };
-    },
+		pushFieldValue: (state: ISupplierState): ISupplierState => {
+			return { ...state };
+		},
 
-    pushFieldValueDone: (state: ISupplierState, payload: IFieldState<FieldType>[]): ISupplierState => {
-      return { ...state, fields: payload };
-    },
+		pushFieldValueDone: (state: ISupplierState, payload: IFieldState<FieldType>[]): ISupplierState => {
+			return { ...state, fields: payload };
+		},
 
-    pushFieldValueFail: (state: ISupplierState): ISupplierState => {
-      return { ...state };
-    },
+		pushFieldValueFail: (state: ISupplierState): ISupplierState => {
+			return { ...state };
+		},
 
-    setCurrentStep: (state: ISupplierState, step: number): ISupplierState => {
-      return { ...state, currentStep: step };
-    },
+		setCurrentStep: (state: ISupplierState, step: number): ISupplierState => {
+			return { ...state, currentStep: step };
+		},
 
-    setSupplierId: (state: ISupplierState, id: number): ISupplierState => {
-      return { ...state, supplier_id: id };
-    },
+		setSupplierId: (state: ISupplierState, id: number): ISupplierState => {
+			return { ...state, supplier_id: id };
+		},
 
-    resetFields: (state: ISupplierState): ISupplierState => {
-      return { ...state, fields: initState.fields };
-    }
-  },
-  effects: dispatch => ({
-    pushSupplierPayment: createLoggedAsyncAction<void, void>(
-      async (_: void, { supplier }: IStoreState) => {
-        const validatedResult = validateFields(supplier);
+		resetFields: (state: ISupplierState): ISupplierState => {
+			return { ...state, fields: initState.fields };
+		}
+	},
+	effects: dispatch => ({
+		pushSupplierPayment: createLoggedAsyncAction<void, void>(async (_: void, { supplier }: IStoreState) => {
+			const validatedResult = validateFields(supplier);
 
-        if (validatedResult.isError) {
-          dispatch.supplier.pushFieldValueDone(validatedResult.result);
-          
-          return;
-        }
+			if (validatedResult.isError) {
+				dispatch.supplier.pushFieldValueDone(validatedResult.result);
 
-        dispatch.payment.pushPayment(validatedResult);
-      }
-    ),
+				return;
+			}
 
-    pushSupplier: createLoggedAsyncAction<ISupplierParams, void>(
-      async (params: ISupplierParams, { supplier }: IStoreState) => {
-        const response = await callSupplier(params);
-        const isAuthenticatedError = isUnauthenticated(response as IMessageError);
+			dispatch.payment.pushPayment(validatedResult);
+		}),
 
-        if (isAuthenticatedError) {
-          dispatch.app.doneTokenExist(false);
-          dispatch.supplier.pushSupplierFail();
-          
-          return;
-        }
+		pushSupplier: createLoggedAsyncAction<ISupplierParams, void>(
+			async (params: ISupplierParams, { supplier }: IStoreState) => {
+				const response = await callSupplier(params);
+				const isAuthenticatedError = isUnauthenticated(response as IMessageError);
 
-        const checkedRes = response as ISupplierData;
+				if (isAuthenticatedError) {
+					dispatch.app.doneTokenExist(false);
+					dispatch.supplier.pushSupplierFail();
 
-        dispatch.supplier.setCurrentStep(checkedRes.result.step);
-        dispatch.supplier.setSupplierId(params.service_id);
-        dispatch.supplier.pushSupplierDone([checkedRes.result])
-      },
-      async () => {
-        dispatch.supplier.pushSupplierFail();
-      }
-    ),
+					return;
+				}
 
-    pushFieldValue: createLoggedAsyncAction<ISupplierField, void>(
-      async (params: ISupplierField, { supplier }: IStoreState) => {
-        const validatedResult = validateField(params, supplier);
+				const checkedRes = response as ISupplierData;
 
-        dispatch.supplier.pushFieldValueDone(validatedResult);
-      },
-      async () => {
-        dispatch.supplier.pushFieldValueFail();
-      }
-    )
-  })
-};
+				dispatch.supplier.setCurrentStep(checkedRes.result.step);
+				dispatch.supplier.setSupplierId(params.service_id);
+				dispatch.supplier.pushSupplierDone([checkedRes.result]);
+			},
+			async () => {
+				dispatch.supplier.pushSupplierFail();
+			}
+		),
+
+		pushFieldValue: createLoggedAsyncAction<ISupplierField, void>(
+			async (params: ISupplierField, { supplier }: IStoreState) => {
+				const validatedResult = validateField(params, supplier);
+
+				dispatch.supplier.pushFieldValueDone(validatedResult);
+			},
+			async () => {
+				dispatch.supplier.pushFieldValueFail();
+			}
+		)
+	})
+});

@@ -1,11 +1,9 @@
-import React from 'react';
-import { NavigationScreenProp } from 'react-navigation';
-import { GreenHeaderController } from './controller';
-import { NavigationStackOptions } from 'react-navigation-stack';
+import React from "react";
+import { GreenHeaderController } from "./controller";
 
-export const GreenHeader = (title?: string) => ({ navigation }: { navigation: NavigationScreenProp<any,any> }): NavigationStackOptions => {
-  return {
-    header: () => <GreenHeaderController title={title} navigation={navigation} />,
-    headerLeft: null
-  };
+export const GreenHeader = (title?: string) => {
+	return {
+		header: ({ navigation }) => <GreenHeaderController title={title} navigation={navigation} />,
+		headerLeft: null
+	};
 };

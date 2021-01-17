@@ -1,14 +1,16 @@
-import { initState } from './state';
-import { ILoginState, ILogin, IStoreState, ILoginField, IError, ILoginError, ILogoutData } from 'types';
-import { createLoggedAsyncAction, isFieldErrorExist } from 'utils';
-import { callLogin, callLogout } from './request';
-import { formatedRequestParams } from './parser';
-import { setFieldValue, setLoginError, resetLoginError } from './utils';
-import AsyncStorage from '@react-native-community/async-storage';
-import { USER_TOKEN, PHONE_NUMBER } from 'const';
-import { BEARER } from 'api';
+import { initState } from "./state";
+import { ILoginState, ILogin, IStoreState, ILoginField, IError, ILoginError, ILogoutData } from "types";
+import { createLoggedAsyncAction, isFieldErrorExist } from "utils";
+import { callLogin, callLogout } from "./request";
+import { formatedRequestParams } from "./parser";
+import { setFieldValue, setLoginError, resetLoginError } from "./utils";
+import AsyncStorage from "@react-native-community/async-storage";
+import { USER_TOKEN, PHONE_NUMBER } from "const";
+import { BEARER } from "api";
+import { createModel } from "@rematch/core";
+import { RootModel } from "../models";
 
-export const login = {
+export const login = createModel<RootModel>()({
 	state: initState,
 	reducers: {
 		resetState: () => {
@@ -96,4 +98,4 @@ export const login = {
 			}
 		)
 	})
-};
+});

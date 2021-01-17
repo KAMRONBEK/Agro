@@ -1,8 +1,10 @@
-import { createLoggedAsyncAction, isTokenExist } from 'utils';
-import { IAppState, IUser } from 'types';
-import { initState } from './state';
+import { createLoggedAsyncAction, isTokenExist } from "utils";
+import { IAppState, IUser } from "types";
+import { initState } from "./state";
+import { createModel } from "@rematch/core";
+import { RootModel } from "../models";
 
-export const app = {
+export const app = createModel<RootModel>()({
 	state: initState,
 	reducers: {
 		reloadState(): IAppState {
@@ -43,4 +45,4 @@ export const app = {
 			dispatch.transactions.resetState();
 		}
 	})
-};
+});
