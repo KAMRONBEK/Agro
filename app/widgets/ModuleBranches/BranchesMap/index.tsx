@@ -1,1 +1,1 @@
-export { BranchesMapView as BranchesMap } from './widget';
+export { BranchesMapConnect as BranchesMap } from './widget';

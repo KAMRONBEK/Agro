@@ -1,7 +1,5 @@
-import { IAppState } from 'types';
-import {Locale} from "const";
+import { IBranchesState } from "types";
 
-export const initState: IAppState = {
-  isLogged: null,
-  language: Locale.RU
+export const initState: IBranchesState = {
+	data: []
 };
