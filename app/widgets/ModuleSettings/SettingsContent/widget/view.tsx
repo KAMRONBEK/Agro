@@ -7,6 +7,7 @@ import { styles } from "./styles";
 import { SettingsSaveButton } from "widgets/ModuleSettings";
 import { strings } from "locales/i18n";
 import { SettingsSelect } from "widgets/ModuleSettings/SettingsSelect";
+import { IUser } from "types";
 
 let userType = {
 	id: 29,
@@ -24,7 +25,7 @@ interface IProps {
 	userData;
 	updateUserData;
 	isUserUpdating;
-	onFieldChange: (name: string, value: string) => void;
+	onFieldChange: (key: keyof IUser, value: string) => void;
 }
 
 export let SettingsContentView = ({ userData, updateUserData, isUserUpdating, onFieldChange }: IProps) => {
@@ -81,7 +82,7 @@ export let SettingsContentView = ({ userData, updateUserData, isUserUpdating, on
 						name={strings("notification")}
 						showBorderBottom
 						onChange={() => null}
-						value={value}
+						value={true}
 					/>
 					<SettingsLogoutButton />
 				</>

@@ -24,7 +24,6 @@ export async function updateUserData(params) {
 		params,
 		{
 			headers: {
-				[AUTHORIZATION]: await AsyncStorage.getItem(USER_TOKEN),
 				[ACCEPT_LANGUAGE]: Locale.RU
 			}
 		},
