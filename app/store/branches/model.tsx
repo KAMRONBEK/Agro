@@ -8,15 +8,15 @@ import { IBranch } from "types/store";
 export const branches = createModel<RootModel>()({
 	state: initState,
 	reducers: {
-		setBranches(store, payload: IBranch[]) {
-			return { ...store, payload };
+		setBranches(store, data: IBranch[]) {
+			return { ...store, data };
 		}
 	},
 	effects: dispatch => ({
 		async getBranches() {
 			try {
 				const { data } = await apiQwerty.get(BRANCHES);
-				dispatch.branches.setBranches(data.data);
+				dispatch.branches.setBranches(data);
 			} catch (e) {
 				console.log(e);
 			}
