@@ -26,9 +26,16 @@ interface IProps {
 	updateUserData;
 	isUserUpdating;
 	onFieldChange: (key: keyof IUser, value: string) => void;
+	onSecurityPress: () => void;
 }
 
-export let SettingsContentView = ({ userData, updateUserData, isUserUpdating, onFieldChange }: IProps) => {
+export let SettingsContentView = ({
+	userData,
+	updateUserData,
+	isUserUpdating,
+	onFieldChange,
+	onSecurityPress
+}: IProps) => {
 	return (
 		<View style={styles.container}>
 			<SettingsCategory label={strings("accountRecord")}>
@@ -75,7 +82,7 @@ export let SettingsContentView = ({ userData, updateUserData, isUserUpdating, on
 						}}
 					/>
 					<SettingsButton
-						// onPress={onSecurityPress}
+						onPress={onSecurityPress}
 						icon={<Secure />}
 						name={strings("security")}
 						showBorderBottom

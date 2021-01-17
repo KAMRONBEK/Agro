@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 
 import { SettingsContentController } from "./controller";
 import { Dispatch, RootState } from "store";
+import { withNavigation } from "router/withNavigation";
 
 const mapState = ({ user, loading }: RootState) => ({
 	user: user.data,
@@ -17,7 +18,7 @@ const mapDispatch = ({ user: { getUserData, updateUserData, setUserData } }: Dis
 export const SettingsContentConnect = connect(
 	mapState,
 	mapDispatch
-)(SettingsContentController);
+)(withNavigation(SettingsContentController));
 
 type StateProps = ReturnType<typeof mapState>;
 type DisPatchProps = ReturnType<typeof mapDispatch>;

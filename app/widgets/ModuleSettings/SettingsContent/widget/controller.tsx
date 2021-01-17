@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { SettingsContentView } from "./view";
 import { Props } from "./connect";
 import { IUser } from "types";
+import { ROUTES } from "const";
 
 export class SettingsContentController extends Component<Props> {
 	componentDidMount() {
@@ -16,6 +17,10 @@ export class SettingsContentController extends Component<Props> {
 		this.props.setUserData({ ...this.props.user, [key]: value });
 	};
 
+	onSecurityPress = () => {
+		this.props.navigation.navigate(ROUTES.SCREEN_PIN_CODE);
+	};
+
 	render() {
 		return (
 			<SettingsContentView
@@ -23,6 +28,7 @@ export class SettingsContentController extends Component<Props> {
 				updateUserData={this.updateUserData}
 				isUserUpdating={this.props.isUserUpdating}
 				onFieldChange={this.onFieldChange}
+				onSecurityPress={this.onSecurityPress}
 			/>
 		);
 	}
