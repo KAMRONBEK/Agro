@@ -59,7 +59,11 @@ export let SettingsContentView = ({ userData, updateUserData, isUserUpdating, on
 					/>
 				</>
 			</SettingsCategory>
-			<SettingsSaveButton text={strings("save")} onPress={() => updateUserData(value)} loading={isUserUpdating} />
+			<SettingsSaveButton
+				text={strings("save")}
+				onPress={() => updateUserData(userData)}
+				loading={isUserUpdating}
+			/>
 			<SettingsCategory containerStyle={styles.category} label={strings("settings")}>
 				<>
 					<SettingsSelect
@@ -71,7 +75,7 @@ export let SettingsContentView = ({ userData, updateUserData, isUserUpdating, on
 						}}
 					/>
 					<SettingsButton
-						onPress={onSecurityPress}
+						// onPress={onSecurityPress}
 						icon={<Secure />}
 						name={strings("security")}
 						showBorderBottom
