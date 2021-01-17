@@ -8,7 +8,7 @@ export class BranchesMapController extends Component<Props> {
 	}
 
 	render() {
-		return <BranchesMapView />;
+		return <BranchesMapView branches={this.props.branches}/>;
 	}
 }
 

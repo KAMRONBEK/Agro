@@ -4,7 +4,7 @@ import { BranchesMapController } from "./controller";
 import { Dispatch, RootState } from "store";
 
 const mapState = ({ branches, loading }: RootState) => ({
-	user: branches.data,
+	branches: branches.data,
 	isLoading: loading.effects.branches.getBranches
 });
 
