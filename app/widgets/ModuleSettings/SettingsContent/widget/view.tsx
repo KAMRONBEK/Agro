@@ -24,21 +24,10 @@ interface IProps {
 	userData;
 	updateUserData;
 	isUserUpdating;
+	onFieldChange: (name: string, value: string) => void;
 }
 
-export let SettingsContentView = ({ userData, updateUserData, isUserUpdating }: IProps) => {
-	let [value, setValue] = useState({});
-	let onFieldChange = (name, value) => {
-		setValue(prevState => ({
-			...prevState,
-			[name]: value
-		}));
-	};
-
-	useEffect(() => {
-		setValue(userData)
-	}, [userData])
-
+export let SettingsContentView = ({ userData, updateUserData, isUserUpdating, onFieldChange }: IProps) => {
 	return (
 		<View style={styles.container}>
 			<SettingsCategory label={strings("accountRecord")}>
@@ -47,7 +36,7 @@ export let SettingsContentView = ({ userData, updateUserData, isUserUpdating }: 
 						hasInput
 						onChange={e => onFieldChange("name", e)}
 						icon={<Profile />}
-						name={value.name}
+						name={userData.name}
 						placeholder={userType.name}
 						showBorderBottom
 					/>
@@ -55,7 +44,7 @@ export let SettingsContentView = ({ userData, updateUserData, isUserUpdating }: 
 						hasInput
 						onChange={e => onFieldChange("email", e)}
 						icon={<Email />}
-						name={value.email}
+						name={userData.email}
 						placeholder={userType.email}
 						showBorderBottom
 					/>
@@ -63,7 +52,7 @@ export let SettingsContentView = ({ userData, updateUserData, isUserUpdating }: 
 						hasInput
 						onChange={e => onFieldChange("phone", e)}
 						icon={<Phone />}
-						name={value.phone}
+						name={userData.phone}
 						placeholder={userType.phone}
 						showBorderBottom={false}
 					/>
@@ -72,12 +61,6 @@ export let SettingsContentView = ({ userData, updateUserData, isUserUpdating }: 
 			<SettingsSaveButton text={strings("save")} onPress={() => updateUserData(value)} loading={isUserUpdating} />
 			<SettingsCategory containerStyle={styles.category} label={strings("settings")}>
 				<>
-					{/* <SettingsButton
-						icon={<Lang />}
-						name={strings("language")}
-						showBorderBottom
-						onPress={onLanguagePress}
-					/> */}
 					<SettingsSelect
 						icon={<Lang />}
 						name={strings("language")}
@@ -86,7 +69,12 @@ export let SettingsContentView = ({ userData, updateUserData, isUserUpdating }: 
 							setLocale(any);
 						}}
 					/>
-					<SettingsButton icon={<Secure />} name={strings("security")} showBorderBottom />
+					<SettingsButton
+						onPress={onSecurityPress}
+						icon={<Secure />}
+						name={strings("security")}
+						showBorderBottom
+					/>
 					<SettingsButton icon={<Review />} name={strings("feedback")} showBorderBottom />
 					<SettingsSwitch
 						icon={<Notify />}
@@ -95,7 +83,6 @@ export let SettingsContentView = ({ userData, updateUserData, isUserUpdating }: 
 						onChange={() => null}
 						value={value}
 					/>
-					{/* <SettingsSwitch icon={<Notify />} name="Подтверждать оплату" showBorderBottom /> */}
 					<SettingsLogoutButton />
 				</>
 			</SettingsCategory>
