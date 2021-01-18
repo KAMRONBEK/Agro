@@ -27,6 +27,9 @@ export class SettingsContentController extends Component<Props> {
 	changeAppLang = (language: Locale) => {
 		this.props.setLanguage(language);
 	};
+	onFeedbackPress = () => {
+		this.props.showFeedbackModal();
+	};
 
 	render() {
 		return (
@@ -37,6 +40,9 @@ export class SettingsContentController extends Component<Props> {
 				onFieldChange={this.onFieldChange}
 				onSecurityPress={this.onSecurityPress}
 				changeAppLang={this.changeAppLang}
+				onFeedbackPress={this.onFeedbackPress}
+				feedbackModalVisibility={this.props.feedbackModalVisibility}
+				hideFeedbackModal={this.props.hideFeedbackModal}
 			/>
 		);
 	}

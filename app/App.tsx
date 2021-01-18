@@ -10,6 +10,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import AuthStack from "./router/stackNavigators/AuthStack";
 import AsyncStorage from "@react-native-community/async-storage";
 import localization from "./locales/i18n";
+import { Locale } from "const";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 interface IState {
 	tokenExist: Boolean;
@@ -26,7 +28,7 @@ export default class App extends Component<{}, IState> {
 		try {
 			const hasToken = await isTokenExist();
 			const language = await AsyncStorage.getItem("locale");
-			localization.setLanguage(language);
+			localization.setLanguage(language ? language : Locale.RU);
 			this.setState({ tokenExist: !!hasToken });
 		} finally {
 			this.setState({ isLoading: false });
@@ -50,11 +52,15 @@ export default class App extends Component<{}, IState> {
 
 	render() {
 		return (
-			<Provider store={store}>
-				<MyStatusBar />
-				<NavigationContainer key={store.getState().app.language}>{this.renderNavigator()}</NavigationContainer>
-				<FlashMessage position="top" />
-			</Provider>
+			<SafeAreaView style={{ flex: 1 }}>
+				<Provider store={store}>
+					<MyStatusBar />
+					<NavigationContainer key={store.getState().app.language}>
+						{this.renderNavigator()}
+					</NavigationContainer>
+					<FlashMessage position="top" />
+				</Provider>
+			</SafeAreaView>
 		);
 	}
 }

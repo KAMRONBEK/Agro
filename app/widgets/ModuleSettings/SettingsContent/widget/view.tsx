@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { View } from "react-native";
+import { View, Text, Modal } from "react-native";
 import { apiQwerty, setLocale } from "utils";
 import { SettingsButton, SettingsCategory, SettingsLogoutButton, SettingsSwitch } from "widgets/ModuleSettings";
 import { Email, Lang, Notify, Phone, Profile, Review, Secure } from "../assets";
@@ -9,6 +9,9 @@ import { strings } from "locales/i18n";
 import { SettingsSelect } from "widgets/ModuleSettings/SettingsSelect";
 import { IUser } from "types";
 import { Locale } from "const";
+import { BorderlessButton, TextInput } from "react-native-gesture-handler";
+import { PaymentsButton } from "widgets/ModulePayment";
+import { SettingsModalButton } from "widgets/ModuleSettings/SettingsModalButton";
 
 let userType = {
 	id: 29,
@@ -29,6 +32,9 @@ interface IProps {
 	onFieldChange: (key: keyof IUser, value: string) => void;
 	onSecurityPress: () => void;
 	changeAppLang: (lang: Locale) => void;
+	onFeedbackPress: () => void;
+	feedbackModalVisibility: boolean;
+	hideFeedbackModal: () => void;
 }
 
 export let SettingsContentView = ({
@@ -37,10 +43,30 @@ export let SettingsContentView = ({
 	isUserUpdating,
 	onFieldChange,
 	onSecurityPress,
-	changeAppLang
+	changeAppLang,
+	onFeedbackPress,
+	feedbackModalVisibility,
+	hideFeedbackModal
 }: IProps) => {
 	return (
 		<View style={styles.container}>
+			<Modal
+				visible={feedbackModalVisibility}
+				presentationStyle="pageSheet"
+				hardwareAccelerated={true}
+				animationType="slide"
+			>
+				<View style={styles.modalContainer}>
+					<View style={styles.modalContent}>
+						<Text style={styles.titleText}>{strings("feedback")}</Text>
+						<Text style={styles.title}>{strings("title")} :</Text>
+						<TextInput style={styles.input} placeholder={strings("problemTitle")} />
+						<Text style={styles.title}>{strings("problemQuestion")} :</Text>
+						<TextInput style={styles.textArea} placeholder={strings("problemQuestion")} multiline={true} />
+					</View>
+					<SettingsModalButton onPress={hideFeedbackModal} text={strings("sendFeedback")} />
+				</View>
+			</Modal>
 			<SettingsCategory label={strings("accountRecord")}>
 				<>
 					<SettingsButton
@@ -90,7 +116,12 @@ export let SettingsContentView = ({
 						name={strings("security")}
 						showBorderBottom
 					/>
-					<SettingsButton icon={<Review />} name={strings("feedback")} showBorderBottom />
+					<SettingsButton
+						icon={<Review />}
+						name={strings("feedback")}
+						showBorderBottom
+						onPress={onFeedbackPress}
+					/>
 					<SettingsSwitch
 						icon={<Notify />}
 						name={strings("notification")}
