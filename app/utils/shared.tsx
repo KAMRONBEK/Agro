@@ -1,11 +1,8 @@
-import React from 'react';
 import AsyncStorage from '@react-native-community/async-storage';
-import {USER_TOKEN, Locale, UNAUTHENTICATED} from 'const';
-import moment from 'moment';
+import { Locale, UNAUTHENTICATED, USER_TOKEN } from 'const';
 import localization from 'locales/i18n';
-import {IMessageError} from 'types';
-import {setToken} from "./api";
-import {store} from "../store";
+import moment from 'moment';
+import { IMessageError } from 'types';
 
 export const setAlpha = (rgbaHex: string, a: number): string => {
     const hexColor = rgbaHex.split('#')[1];
