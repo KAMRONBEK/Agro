@@ -1,8 +1,8 @@
-import React from 'react';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import { styles } from './styles';
-import { TemplateGreenBackground } from 'templates';
-import { View } from 'react-native';
+import React from "react";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import { styles } from "./styles";
+import { TemplateGreenBackground } from "templates";
+import { View } from "react-native";
 import {
 	CardOperationsRecipientCard,
 	CardOperationsTransferAmount,
@@ -12,11 +12,12 @@ import {
 	CardOperationsRequestFooterButton,
 	CardOperationsInfo,
 	CardOperationsStatusModal
-} from 'widgets/ModuleCardOperations';
-import { OperationType, ICard, CardTypes } from 'types';
-import { Cards } from 'widgets/ModuleShared';
-import { strings } from 'locales/i18n';
-import { select } from 'store';
+} from "widgets/ModuleCardOperations";
+import { OperationType, ICard, CardTypes } from "types";
+import { Cards } from "widgets/ModuleShared";
+import { strings } from "locales/i18n";
+import { select } from "store";
+import { ScrollView } from "react-native-gesture-handler";
 
 interface IOwnProps {
 	cards: ICard[];
@@ -27,8 +28,8 @@ export function ScreenCardOperationsView({ cards, operationType }: IOwnProps) {
 	return (
 		<View style={styles.container}>
 			<TemplateGreenBackground showLogo={false} style={[styles.greenInnerBg]} />
-			<View
-				style={styles.scrollContainer}
+			<ScrollView
+				contentContainerStyle={styles.scrollContainer}
 				// enableAutomaticScroll
 				//  enableOnAndroid
 			>
@@ -37,7 +38,9 @@ export function ScreenCardOperationsView({ cards, operationType }: IOwnProps) {
 				<Cards
 					cards={cards}
 					activeCardTitle={
-						operationType === OperationType.Transfer ? strings('selectCardForDebit') : strings('selectCardForRecharge')
+						operationType === OperationType.Transfer
+							? strings("selectCardForDebit")
+							: strings("selectCardForRecharge")
 					}
 				/>
 				{operationType === OperationType.Transfer && <CardOperationsRecipientCard />}
@@ -49,7 +52,7 @@ export function ScreenCardOperationsView({ cards, operationType }: IOwnProps) {
 				) : (
 					<CardOperationsRequestFooterButton />
 				)}
-			</View>
+			</ScrollView>
 
 			<CardOperationsStatusModal />
 		</View>

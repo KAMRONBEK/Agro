@@ -1,4 +1,7 @@
 {
+	"location": "Адрес",
+	"phoneNumber": "Номер телефона",
+	"branchName": "Название филиала",
 	"selectCardForDebit": "Выбрать карту для списания",
 	"selectCardForRecharge": "Выбрать карту для пополнения",
 	"main": "Главная",
