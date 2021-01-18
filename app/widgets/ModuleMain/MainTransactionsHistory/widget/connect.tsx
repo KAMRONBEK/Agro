@@ -4,21 +4,22 @@ import { IStoreState } from "types";
 import { ComponentType } from "react";
 import { compose } from "utils";
 import { IDispatch } from "store";
+import { withNavigation } from "router/withNavigation";
 
 const mapState = ({ transactions: transactionsState }: IStoreState) => ({
-  transactions: transactionsState.transactions,
-  transactionsIsFetching: transactionsState.transactionsIsFetching
+	transactions: transactionsState.transactions,
+	transactionsIsFetching: transactionsState.transactionsIsFetching
 });
 
 const mapDispatch = ({ transactions: transactionsState }: IDispatch) => ({
-  pushTransactionDetails: transactionsState.pushTransactionDetails
+	pushTransactionDetails: transactionsState.pushTransactionDetails
 });
 
 type ExportComponent = ComponentType<{}>;
 
 export const MainTransactionsHistoryConnect = compose<ExportComponent>(
-  connect(
-    mapState,
-    mapDispatch
-  ),
-)(MainTransactionsHistoryController);
+	connect(
+		mapState,
+		mapDispatch
+	)
+)(withNavigation(MainTransactionsHistoryController));

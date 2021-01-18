@@ -1,8 +1,8 @@
 import AsyncStorage from '@react-native-community/async-storage';
-import { Locale, UNAUTHENTICATED, USER_TOKEN } from 'const';
+import {Locale, UNAUTHENTICATED, USER_TOKEN} from 'const';
 import localization from 'locales/i18n';
 import moment from 'moment';
-import { IMessageError } from 'types';
+import {IMessageError} from 'types';
 
 export const setAlpha = (rgbaHex: string, a: number): string => {
     const hexColor = rgbaHex.split('#')[1];
@@ -18,9 +18,7 @@ export const compose = <T extends {}>(...funcs: any[]) => {
 };
 
 export const isTokenExist = async (): Promise<string> => {
-    const token = await AsyncStorage.getItem(USER_TOKEN);
-    // setToken(store);
-    return token;
+    return await AsyncStorage.getItem(USER_TOKEN);
 };
 
 export const isDataNull = (data: any): boolean => {

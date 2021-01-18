@@ -45,15 +45,20 @@ export function BranchesMapView({ branches }: IProps) {
 				}}
 			>
 				{branches.map(
-					(branch: IBranch) =>
+					(branch: IBranch, i) =>
 						branch.location && (
 							<Marker
+								key={branch.id}
 								coordinate={getCoordsOfBranch(branch.location)}
 								tracksViewChanges={false}
 								tracksInfoWindowChanges={false}
 							>
 								<Callout>
-									<BranchCallout manzili={branch.manzili} nomi={branch.nomi} />
+									<BranchCallout
+										phoneNumber={branch.phone}
+										manzili={branch.manzili}
+										nomi={branch.nomi}
+									/>
 								</Callout>
 							</Marker>
 						)

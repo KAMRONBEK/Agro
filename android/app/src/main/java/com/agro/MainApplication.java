@@ -5,7 +5,6 @@ import android.content.Context;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
 import com.babisoft.ReactNativeLocalization.ReactNativeLocalizationPackage;
-import com.AlexanderZaytsev.RNI18n.RNI18nPackage;
 import com.oblador.keychain.KeychainPackage;
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 import com.RNTextInputMask.RNTextInputMaskPackage;

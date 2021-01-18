@@ -6,7 +6,7 @@ import { compose } from "utils";
 import { ComponentType } from "react";
 
 const mapState = ({ app: appState }: RootState) => ({
-	isLogged: appState.isLogged
+	isLogged: appState.isLogged,
 });
 
 const mapDispatch = ({

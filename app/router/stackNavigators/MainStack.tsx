@@ -9,7 +9,7 @@ import { strings } from "locales/i18n";
 import { ScreenCreateVisaVirtual } from "screens/ScreenCreateVisaVirtual";
 import { ScreenPaymentInnerList } from "../../screens/ScreenPaymentInnerList";
 import { ScreenCardOperations } from "../../screens/ScreenCardOperations";
-import { ScreenServicePayment } from "screens";
+import { ScreenOnlineConversion, ScreenServicePayment, ScreenTransactionDetails } from "screens";
 
 type Nav = {
 	[ROUTES.SCREEN_MAIN];
@@ -18,6 +18,8 @@ type Nav = {
 	[ROUTES.SCREEN_PAYMENT_INNER_LIST];
 	[ROUTES.SCREEN_CARD_OPERATIONS];
 	[ROUTES.SCREEN_SERVICE_PAYMENT];
+	[ROUTES.SCREEN_TRANSACTION_DETAILS];
+	[ROUTES.SCREEN_ONLINE_CONVERSION];
 };
 
 const Stack = createStackNavigator<Nav>();
@@ -64,6 +66,20 @@ const MainStack = () => (
 			component={ScreenCardOperations}
 			options={{
 				...BackGreenHeader(strings("paylentWithCard"))
+			}}
+		/>
+		<Stack.Screen
+			name={ROUTES.SCREEN_ONLINE_CONVERSION}
+			component={ScreenOnlineConversion}
+			options={{
+				...BackGreenHeader(strings("onlineConversion"))
+			}}
+		/>
+		<Stack.Screen
+			name={ROUTES.SCREEN_TRANSACTION_DETAILS}
+			component={ScreenTransactionDetails}
+			options={{
+				...BackGreenHeader(strings("details"))
 			}}
 		/>
 	</Stack.Navigator>

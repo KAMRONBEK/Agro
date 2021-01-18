@@ -25,7 +25,7 @@ export class SettingsContentController extends Component<Props> {
 		});
 	};
 	changeAppLang = (language: Locale) => {
-		this.props.setLanguage(language);
+		this.props.changeAppLanguage(language);
 	};
 	onFeedbackPress = () => {
 		this.props.showFeedbackModal();

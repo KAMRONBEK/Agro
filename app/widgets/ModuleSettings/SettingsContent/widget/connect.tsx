@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+import { StackNavigationProp } from "@react-navigation/stack";
 
 import { SettingsContentController } from "./controller";
 import { Dispatch, RootState } from "store";
@@ -9,6 +10,7 @@ const mapState = ({ user, loading, settings }: RootState) => ({
 	isUserUpdating: loading.effects.user.updateUserData,
 	feedbackModalVisibility: settings.feedbackModal
 });
+
 
 const mapDispatch = ({
 	user: { getUserData, updateUserData, setUserData },
@@ -21,7 +23,8 @@ const mapDispatch = ({
 	setLanguage,
 	showFeedbackModal,
 	hideFeedbackModal
-});
+
+
 
 export const SettingsContentConnect = connect(
 	mapState,
@@ -31,4 +34,4 @@ export const SettingsContentConnect = connect(
 type StateProps = ReturnType<typeof mapState>;
 type DisPatchProps = ReturnType<typeof mapDispatch>;
 
-export type Props = StateProps & DisPatchProps;
+export type Props = { navigation: StackNavigationProp<any> } & StateProps & DisPatchProps;
