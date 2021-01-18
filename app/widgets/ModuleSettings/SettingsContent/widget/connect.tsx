@@ -8,9 +8,10 @@ const mapState = ({ user, loading }: RootState) => ({
 	isUserUpdating: loading.effects.user.updateUserData
 });
 
-const mapDispatch = ({ user: { getUserData, updateUserData } }: Dispatch) => ({
+const mapDispatch = ({ user: { getUserData, updateUserData }, app: {setLanguage} }: Dispatch) => ({
 	getUserData,
-	updateUserData
+	updateUserData,
+	setLanguage
 });
 
 export const SettingsContentConnect = connect(

@@ -7,6 +7,8 @@ import { styles } from "./styles";
 import { SettingsSaveButton } from "widgets/ModuleSettings";
 import { strings } from "locales/i18n";
 import { SettingsSelect } from "widgets/ModuleSettings/SettingsSelect";
+import { IUser } from "../../../../types/shared";
+import { Locale } from "../../../../const";
 
 let userType = {
 	id: 29,
@@ -21,12 +23,13 @@ let userType = {
 };
 
 interface IProps {
-	userData;
+	userData: IUser;
 	updateUserData;
-	isUserUpdating;
+	isUserUpdating: boolean;
+	changeAppLang: (lang: Locale) => void;
 }
 
-export let SettingsContentView = ({ userData, updateUserData, isUserUpdating }: IProps) => {
+export let SettingsContentView = ({ userData, updateUserData, isUserUpdating, changeAppLang }: IProps) => {
 	let [value, setValue] = useState<typeof userType>({});
 	let onFieldChange = (name, value) => {
 		setValue(prevState => ({
@@ -36,8 +39,8 @@ export let SettingsContentView = ({ userData, updateUserData, isUserUpdating }: 
 	};
 
 	useEffect(() => {
-		setValue(userData)
-	}, [userData])
+		setValue(userData);
+	}, [userData]);
 
 	return (
 		<View style={styles.container}>
@@ -83,7 +86,7 @@ export let SettingsContentView = ({ userData, updateUserData, isUserUpdating }: 
 						name={strings("language")}
 						showBorderBottom
 						onPress={any => {
-							setLocale(any);
+							changeAppLang(any);
 						}}
 					/>
 					<SettingsButton icon={<Secure />} name={strings("security")} showBorderBottom />

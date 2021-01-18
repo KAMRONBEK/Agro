@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { SettingsContentView } from "./view";
 import { Props } from "./connect";
+import { Locale } from "const";
 
 export class SettingsContentController extends Component<Props> {
 	componentDidMount() {
@@ -11,12 +12,19 @@ export class SettingsContentController extends Component<Props> {
 		this.props.updateUserData({ ...this.props.user, ...values });
 	};
 
+	changeAppLang = (language: Locale) => {
+		this.props.setLanguage(language);
+	};
+
 	render() {
-		return <SettingsContentView
-			userData={this.props.user}
-			updateUserData={this.updateUserData}
-			isUserUpdating={this.props.isUserUpdating}
-		/>;
+		return (
+			<SettingsContentView
+				changeAppLang={this.changeAppLang}
+				userData={this.props.user}
+				updateUserData={this.updateUserData}
+				isUserUpdating={this.props.isUserUpdating}
+			/>
+		);
 	}
 }
 

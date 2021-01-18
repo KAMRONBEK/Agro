@@ -15,20 +15,19 @@ import { user } from "./user";
 import {branches} from "./branches";
 
 export interface RootModel extends Models<RootModel> {
-	// @ts-ignore
-	app: typeof app;
 	branches: typeof branches;
-	supplier: typeof supplier;
-	categories: typeof categories;
-	suppliers: typeof suppliers;
 	cards: typeof cards;
-	signup: typeof signup;
-	login: typeof login;
 	payment: typeof payment;
+	login: typeof login;
 	transactions: typeof transactions;
 	cardOperations: typeof cardOperations;
+	signup: typeof signup;
 	signup2: typeof signup2;
 	user: typeof user;
+	suppliers: typeof suppliers;
+	categories: typeof categories;
+	supplier: typeof supplier;
+	app: typeof app;
 }
 
 export const models: RootModel = {
