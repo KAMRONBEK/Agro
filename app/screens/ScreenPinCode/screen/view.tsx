@@ -22,7 +22,6 @@ export let PinCodeView = () => {
 
     return (
         <View style={styles.container}>
-            <Text>LOLLL</Text>
             <PINCode finishProcess={onFinish} status={isSetup ? "choose" : "enter"}/>
         </View>
     );

@@ -63,8 +63,10 @@ const AuthStack = () => (
 			name={ROUTES.SCREEN_PIN_CODE}
 			component={ScreenPinCode}
 			options={{
-				header: NoHeader
+				header: NoHeader,
+				headerShown: false
 			}}
+			initialParams={{ isSetup: true }}
 		/>
 	</Navigator>
 );
