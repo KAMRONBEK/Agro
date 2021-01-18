@@ -8,6 +8,7 @@ import AuthStack from "./router/stackNavigators/AuthStack";
 import {Dispatch, RootState} from "./store";
 import {connect} from "react-redux";
 import AsyncStorage from "@react-native-community/async-storage";
+import {Locale} from "./const";
 
 
 class App extends Component<Props> {
@@ -15,9 +16,8 @@ class App extends Component<Props> {
 
     async componentDidMount() {
         const language = await AsyncStorage.getItem('locale');
-        this.props.changeAppLanguage(language);
+        this.props.changeAppLanguage(Locale[language]);
         this.props.pushTokenExist();
-
     }
 
     renderNavigator = () => {

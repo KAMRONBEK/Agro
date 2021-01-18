@@ -1,6 +1,13 @@
 import React from "react";
 import { ROUTES } from "const";
-import { CardTransfer } from "../assets";
+import {
+	CardTransfer,
+	OnlineConversion,
+	OnlineCredit,
+	OnlineDeposit,
+	OnTimePayment,
+	RepaymentOfLoans
+} from "../assets";
 import { strings } from "locales/i18n";
 
 export interface IService {
@@ -13,7 +20,7 @@ export const SERVICES: IService[] = [
 	{
 		name: strings("onlineConversion"),
 		routeName: ROUTES.SCREEN_ONLINE_CONVERSION,
-		icon: <CardTransfer />
+		icon: <OnlineConversion />
 	},
 	{
 		name: strings("transferToCard"),
@@ -22,18 +29,18 @@ export const SERVICES: IService[] = [
 	},
 	{
 		name: strings("onlineDeposit"),
-		icon: <CardTransfer />
+		icon: <OnlineDeposit />
 	},
 	{
 		name: strings("onlineCredit"),
-		icon: <CardTransfer />
+		icon: <OnlineCredit />
 	},
 	{
 		name: strings("oneTimePayment"),
-		icon: <CardTransfer />
+		icon: <OnTimePayment />
 	},
 	{
 		name: strings("repaymentCredit"),
-		icon: <CardTransfer />
+		icon: <OnlineCredit />
 	}
 ];
