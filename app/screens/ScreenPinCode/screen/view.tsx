@@ -1,10 +1,9 @@
 import PINCode from "@haskkor/react-native-pincode";
-import {ROUTES} from "const";
-import React, {useEffect} from "react";
-import {View} from "react-native";
-import {Text} from "react-native-svg";
-import {styles} from "./styles";
-import {useNavigation} from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
+import { ROUTES } from "const";
+import React, { useEffect } from "react";
+import { View } from "react-native";
+import { styles } from "./styles";
 
 export let PinCodeView = () => {
 

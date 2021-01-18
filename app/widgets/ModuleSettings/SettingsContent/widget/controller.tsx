@@ -19,7 +19,10 @@ export class SettingsContentController extends Component<Props> {
 	};
 
 	onSecurityPress = () => {
-		this.props.navigation.navigate(ROUTES.SCREEN_PIN_CODE);
+		this.props.navigation.navigate(ROUTES.SCREEN_AUTHORIZATION, {
+			screen: ROUTES.SCREEN_PIN_CODE,
+			params: { isSetup: true }
+		});
 	};
 	changeAppLang = (language: Locale) => {
 		this.props.setLanguage(language);
@@ -33,6 +36,7 @@ export class SettingsContentController extends Component<Props> {
 				isUserUpdating={this.props.isUserUpdating}
 				onFieldChange={this.onFieldChange}
 				onSecurityPress={this.onSecurityPress}
+				changeAppLang={this.changeAppLang}
 			/>
 		);
 	}
