@@ -91,5 +91,10 @@
 	"whatIsVirtualVisaCard": "Что такое виртуальная Visa карта?",
 	"visaVirtualPossibilities": "Возможности виртуальной Visa карты",
 	"whatIsVirtualVisaCardAnswer": "Это формат международной карты без физического носителя, предназначенная для интернет покупок",
-	"visaVirtualPossibilitiesAnswer": "При помощи этой карты вы можете совершать покупки в зарубежных интернет-магазинах"
+	"visaVirtualPossibilitiesAnswer": "При помощи этой карты вы можете совершать покупки в зарубежных интернет-магазинах",
+	"close": "Закрыть",
+	"problemTitle": "Название проблемы",
+	"title": "Титул",
+	"problemQuestion": "Проблема или вопрос",
+	"sendFeedback": "Отправить отзыв"
 }

@@ -1,7 +1,7 @@
-import {Locale} from "const";
+import { Locale } from "const";
 
 export interface IAppState {
-  isLogged: boolean;
-  language: Locale,
-  token: string
+	isLogged: boolean;
+	language: Locale;
+	token: string;
 }

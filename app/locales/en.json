@@ -1,4 +1,7 @@
 {
 	"selectCardForDebit": "Выбрать карту для списания",
-	"selectCardForRecharge": "Выбрать карту для пополнения"
+	"selectCardForRecharge": "Выбрать карту для пополнения",
+	"close": "Close",
+	"feedback": "Feedback",
+	"writeTitle": "Write Title"
 }
