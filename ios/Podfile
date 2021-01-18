@@ -47,8 +47,6 @@ target 'Agro' do
 
   pod 'RNKeychain', :path => '../node_modules/react-native-keychain'
 
-  pod 'RNI18n', :path => '../node_modules/react-native-i18n'
-
   pod 'ReactNativeLocalization', :path => '../node_modules/react-native-localization'
 
   target 'AgroTests' do

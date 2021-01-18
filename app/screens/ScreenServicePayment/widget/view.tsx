@@ -1,19 +1,17 @@
-import React, { useEffect } from "react";
-import { View, ActivityIndicator, Text, ScrollView } from "react-native";
-import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
-import { styles } from "./styles";
+import React from "react";
+import { ActivityIndicator, ScrollView, Text, View } from "react-native";
 import { TemplateGreenBackground } from "templates";
+import { ICard } from "types";
 import {
-	ServicePaymentFooterButtons,
-	ServicePaymentField,
 	ServicePaymentAmount,
+	ServicePaymentField,
+	ServicePaymentFooterButtons,
 	ServicePaymentSavePattern,
 	ServicePaymentSelectContent,
 	ServicePaymentStatusModal
 } from "widgets/ModuleServicePayment";
 import { Cards } from "widgets/ModuleShared";
-import { ICard, CardTypes } from "types";
-import reactotron from "store/ReactatronConfig";
+import { styles } from "./styles";
 
 interface IOwnProps {
 	supplierIsFetching: boolean;
