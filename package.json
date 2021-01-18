@@ -42,7 +42,6 @@
 		"react-native-confirmation-code-input": "1.0.4",
 		"react-native-flash-message": "^0.1.15",
 		"react-native-gesture-handler": "^1.9.0",
-		"react-native-i18n": "^2.0.15",
 		"react-native-keyboard-aware-scroll-view": "0.9.1",
 		"react-native-keychain": "^6.2.0",
 		"react-native-level-fs": "^3.0.1",

@@ -293,8 +293,6 @@ PODS:
     - React-Core
   - RNGestureHandler (1.9.0):
     - React-Core
-  - RNI18n (2.0.15):
-    - React
   - RNInputMask (4.1.0)
   - RNKeychain (6.2.0):
     - React
@@ -356,7 +354,6 @@ DEPENDENCIES:
   - "RNCMaskedView (from `../node_modules/@react-native-community/masked-view`)"
   - "RNCPicker (from `../node_modules/@react-native-picker/picker`)"
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
-  - RNI18n (from `../node_modules/react-native-i18n`)
   - RNInputMask (from `../node_modules/react-native-text-input-mask/ios/InputMask`)
   - RNKeychain (from `../node_modules/react-native-keychain`)
   - RNOS (from `../node_modules/react-native-os`)
@@ -449,8 +446,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-picker/picker"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
-  RNI18n:
-    :path: "../node_modules/react-native-i18n"
   RNInputMask:
     :path: "../node_modules/react-native-text-input-mask/ios/InputMask"
   RNKeychain:
@@ -513,7 +508,6 @@ SPEC CHECKSUMS:
   RNCMaskedView: 5a8ec07677aa885546a0d98da336457e2bea557f
   RNCPicker: 77183d9b1cd80ae55505322f8ad09ba0036e29ba
   RNGestureHandler: 9b7e605a741412e20e13c512738a31bd1611759b
-  RNI18n: e2f7e76389fcc6e84f2c8733ea89b92502351fd8
   RNInputMask: 815461ebdf396beb62cf58916c35cf6930adb991
   RNKeychain: b8e0711b959a19c5b057d1e970d3c83d159b6da5
   RNOS: 6f2f9a70895bbbfbdad7196abd952e7b01d45027
@@ -525,6 +519,6 @@ SPEC CHECKSUMS:
   TouchID: ba4c656d849cceabc2e4eef722dea5e55959ecf4
   Yoga: 4bd86afe9883422a7c4028c00e34790f560923d6
 
-PODFILE CHECKSUM: b713906fa8fcaa2e51ca8b52444d78a2ef6adfb7
+PODFILE CHECKSUM: 089ebed0ce0edc841a7beb8f1d1b261c5afbfa40
 
 COCOAPODS: 1.10.0
