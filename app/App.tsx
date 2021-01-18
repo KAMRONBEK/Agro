@@ -52,7 +52,7 @@ export default class App extends Component<{}, IState> {
 		return (
 			<Provider store={store}>
 				<MyStatusBar />
-				<NavigationContainer key={localization.getLanguage()}>{this.renderNavigator()}</NavigationContainer>
+				<NavigationContainer key={store.getState().app.language}>{this.renderNavigator()}</NavigationContainer>
 				<FlashMessage position="top" />
 			</Provider>
 		);

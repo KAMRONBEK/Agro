@@ -8,6 +8,7 @@ import { SettingsSaveButton } from "widgets/ModuleSettings";
 import { strings } from "locales/i18n";
 import { SettingsSelect } from "widgets/ModuleSettings/SettingsSelect";
 import { IUser } from "types";
+import { Locale } from "const";
 
 let userType = {
 	id: 29,
@@ -22,11 +23,12 @@ let userType = {
 };
 
 interface IProps {
-	userData;
+	userData: IUser;
 	updateUserData;
 	isUserUpdating;
 	onFieldChange: (key: keyof IUser, value: string) => void;
 	onSecurityPress: () => void;
+	changeAppLang: (lang: Locale) => void;
 }
 
 export let SettingsContentView = ({
@@ -34,7 +36,8 @@ export let SettingsContentView = ({
 	updateUserData,
 	isUserUpdating,
 	onFieldChange,
-	onSecurityPress
+	onSecurityPress,
+	changeAppLang
 }: IProps) => {
 	return (
 		<View style={styles.container}>
@@ -78,7 +81,7 @@ export let SettingsContentView = ({
 						name={strings("language")}
 						showBorderBottom
 						onPress={any => {
-							setLocale(any);
+							changeAppLang(any);
 						}}
 					/>
 					<SettingsButton

@@ -1,9 +1,11 @@
 import { apiQwerty, createLoggedAsyncAction, isTokenExist } from "utils";
-import { IAppState, IUser } from "types";
+import { IAppState } from "types";
 import { initState } from "./state";
 import { createModel } from "@rematch/core";
 import { RootModel } from "../models";
-import { AUTHORIZATION } from "../../api";
+import { AUTHORIZATION } from "api";
+import { Locale } from "const";
+import AsyncStorage from "@react-native-community/async-storage";
 
 export const app = createModel<RootModel>()({
 	state: initState,
@@ -24,15 +26,22 @@ export const app = createModel<RootModel>()({
 			return { ...state, isLogged: status };
 		},
 
-		setToken(state, token: string) {
+		setToken(state, token: string): IAppState {
 			return { ...state, token };
+		},
+
+		setLanguage(state, language: Locale): IAppState {
+			AsyncStorage.setItem("locale", language);
+			return { ...state, language };
 		}
 	},
 	effects: dispatch => ({
 		pushTokenExist: createLoggedAsyncAction(
 			async () => {
 				const res = await isTokenExist();
+				const language = await AsyncStorage.getItem("locale");
 				dispatch.app.setToken(res);
+				dispatch.app.setLanguage(language || Locale.RU);
 				apiQwerty.defaults.headers.common[AUTHORIZATION] = res;
 				dispatch.app.doneTokenExist(!!res);
 			},

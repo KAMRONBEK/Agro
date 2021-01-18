@@ -3,6 +3,7 @@ import { SettingsContentView } from "./view";
 import { Props } from "./connect";
 import { IUser } from "types";
 import { ROUTES } from "const";
+import { Locale } from "const";
 
 export class SettingsContentController extends Component<Props> {
 	componentDidMount() {
@@ -19,6 +20,9 @@ export class SettingsContentController extends Component<Props> {
 
 	onSecurityPress = () => {
 		this.props.navigation.navigate(ROUTES.SCREEN_PIN_CODE);
+	};
+	changeAppLang = (language: Locale) => {
+		this.props.setLanguage(language);
 	};
 
 	render() {
