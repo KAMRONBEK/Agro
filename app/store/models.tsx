@@ -12,7 +12,8 @@ import { transactions } from "./transactions";
 import { cardOperations } from "./cardOperations";
 import { signup2 } from "./signup2";
 import { user } from "./user";
-import {branches} from "./branches";
+import { branches } from "./branches";
+import { settings } from "./settings";
 
 export interface RootModel extends Models<RootModel> {
 	branches: typeof branches;
@@ -28,6 +29,7 @@ export interface RootModel extends Models<RootModel> {
 	categories: typeof categories;
 	supplier: typeof supplier;
 	app: typeof app;
+	settings: typeof settings;
 }
 
 export const models: RootModel = {
@@ -44,4 +46,5 @@ export const models: RootModel = {
 	signup2,
 	user,
 	branches,
+	settings
 };

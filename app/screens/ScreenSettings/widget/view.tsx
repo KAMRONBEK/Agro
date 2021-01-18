@@ -6,7 +6,7 @@ import { SettingsContent } from "widgets/ModuleSettings";
 export function ScreenSettingsView({ setLanguage }) {
 	return (
 		<ScrollView contentContainerStyle={styles.container}>
-			<SettingsContent  />
+			<SettingsContent />
 		</ScrollView>
 	);
 }

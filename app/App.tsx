@@ -9,6 +9,12 @@ import {Dispatch, RootState} from "./store";
 import {connect} from "react-redux";
 import AsyncStorage from "@react-native-community/async-storage";
 
+import localization from "./locales/i18n";
+import { Locale } from "const";
+import { SafeAreaView } from "react-native-safe-area-context";
+
+
+
 
 class App extends Component<Props> {
 
@@ -44,6 +50,7 @@ class App extends Component<Props> {
             </>
         );
     }
+
 }
 
 const mapState = ({app: {language, isLogged}, loading}: RootState) => ({
