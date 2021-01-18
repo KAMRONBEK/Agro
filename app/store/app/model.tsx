@@ -6,6 +6,7 @@ import { RootModel } from "../models";
 import { AUTHORIZATION } from "api";
 import { Locale } from "const";
 import AsyncStorage from "@react-native-community/async-storage";
+import localization from "../../locales/i18n";
 
 export const app = createModel<RootModel>()({
 	state: initState,
@@ -30,8 +31,7 @@ export const app = createModel<RootModel>()({
 			return { ...state, token };
 		},
 
-		setLanguage(state, language: Locale): IAppState {
-			AsyncStorage.setItem("locale", language);
+		setAppLanguage(state, language: Locale): IAppState {
 			return { ...state, language };
 		}
 	},
@@ -39,16 +39,20 @@ export const app = createModel<RootModel>()({
 		pushTokenExist: createLoggedAsyncAction(
 			async () => {
 				const res = await isTokenExist();
-				const language = await AsyncStorage.getItem("locale");
 				dispatch.app.setToken(res);
-				dispatch.app.setLanguage(language || Locale.RU);
+				dispatch.app.doneTokenExist(true);
 				apiQwerty.defaults.headers.common[AUTHORIZATION] = res;
-				dispatch.app.doneTokenExist(!!res);
 			},
 			async () => {
 				dispatch.app.failTokenExist(false);
 			}
 		),
+
+		async changeAppLanguage(language: Locale) {
+			await AsyncStorage.setItem("locale", language);
+			localization.setLanguage(language);
+			dispatch.app.setAppLanguage(language);
+		},
 
 		pushResetApp: () => {
 			dispatch.login.resetState();

@@ -1,60 +1,66 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import FlashMessage from "react-native-flash-message";
-import { Provider } from "react-redux";
-import { store } from "store";
-import { isTokenExist } from "utils";
-import { AppLoadingView } from "widgets/ModuleAppLoading";
-import { MyStatusBar } from "widgets/ModuleShared";
+import {AppLoadingView} from "widgets/ModuleAppLoading";
+import {MyStatusBar} from "widgets/ModuleShared";
 import TabNavigator from "./router/TabNavigator";
-import { NavigationContainer } from "@react-navigation/native";
+import {NavigationContainer} from "@react-navigation/native";
 import AuthStack from "./router/stackNavigators/AuthStack";
+import {Dispatch, RootState} from "./store";
+import {connect} from "react-redux";
 import AsyncStorage from "@react-native-community/async-storage";
-import localization from "./locales/i18n";
 
-interface IState {
-	tokenExist: Boolean;
-	isLoading: Boolean;
+
+class App extends Component<Props> {
+
+
+    async componentDidMount() {
+        const language = await AsyncStorage.getItem('locale');
+        this.props.changeAppLanguage(language);
+        this.props.pushTokenExist();
+
+    }
+
+    renderNavigator = () => {
+        const {isLogged, isLangLoading, isAppLoading} = this.props;
+        if (isAppLoading || isLangLoading) {
+            return <AppLoadingView/>;
+        }
+        switch (isLogged) {
+            case true: {
+                return <TabNavigator/>;
+            }
+            case false: {
+                return <AuthStack/>;
+            }
+        }
+    };
+
+    render() {
+        return (
+            <>
+                <MyStatusBar/>
+                <NavigationContainer>{this.renderNavigator()}</NavigationContainer>
+                <FlashMessage position="top"/>
+            </>
+        );
+    }
 }
 
-export default class App extends Component<{}, IState> {
-	state: IState = {
-		tokenExist: null,
-		isLoading: true
-	};
+const mapState = ({app: {language, isLogged}, loading}: RootState) => ({
+    language,
+    isLogged,
+    isLangLoading: loading.effects.app.changeAppLanguage,
+    isAppLoading: loading.effects.app.pushTokenExist,
+});
 
-	async componentDidMount() {
-		try {
-			const hasToken = await isTokenExist();
-			const language = await AsyncStorage.getItem("locale");
-			localization.setLanguage(language);
-			this.setState({ tokenExist: !!hasToken });
-		} finally {
-			this.setState({ isLoading: false });
-		}
-	}
+const mapDispatch = ({app: {changeAppLanguage, pushTokenExist}}: Dispatch) => ({
+    changeAppLanguage,
+    pushTokenExist
+});
 
-	renderNavigator = () => {
-		const { tokenExist, isLoading } = this.state;
-		if (isLoading) {
-			return <AppLoadingView />;
-		}
-		switch (tokenExist) {
-			case true: {
-				return <TabNavigator />;
-			}
-			case false: {
-				return <AuthStack />;
-			}
-		}
-	};
 
-	render() {
-		return (
-			<Provider store={store}>
-				<MyStatusBar />
-				<NavigationContainer key={store.getState().app.language}>{this.renderNavigator()}</NavigationContainer>
-				<FlashMessage position="top" />
-			</Provider>
-		);
-	}
-}
+type StateProps = ReturnType<typeof mapState>;
+type DisPatchProps = ReturnType<typeof mapDispatch>;
+type Props = StateProps & DisPatchProps;
+
+export default connect(mapState, mapDispatch)(App);
