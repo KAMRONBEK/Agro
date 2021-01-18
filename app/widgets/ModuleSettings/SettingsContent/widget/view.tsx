@@ -53,7 +53,7 @@ export let SettingsContentView = ({
 			<Modal
 				visible={feedbackModalVisibility}
 				presentationStyle="pageSheet"
-				hardwareAccelerated={true}
+				// hardwareAccelerated={true}
 				animationType="slide"
 			>
 				<View style={styles.modalContainer}>
@@ -62,7 +62,7 @@ export let SettingsContentView = ({
 						<Text style={styles.title}>{strings("title")} :</Text>
 						<TextInput style={styles.input} placeholder={strings("problemTitle")} />
 						<Text style={styles.title}>{strings("problemQuestion")} :</Text>
-						<TextInput style={styles.textArea} placeholder={strings("problemQuestion")} multiline={true} />
+						<TextInput style={styles.textArea} placeholder={strings("problemQuestion")} multiline={true} textAlignVertical={"top"} />
 					</View>
 					<SettingsModalButton onPress={hideFeedbackModal} text={strings("sendFeedback")} />
 				</View>

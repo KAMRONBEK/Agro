@@ -1,12 +1,11 @@
-import { strings } from "locales/i18n";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { TouchableOpacity, Text, View } from "react-native";
 import { styles } from "./styles";
+import {TOUCHABLE_OPACITY} from "const";
 
 export const SettingsModalButtonView = ({ text, onPress }) => {
 	return (
-		<TouchableOpacity onPress={onPress}>
+		<TouchableOpacity activeOpacity={TOUCHABLE_OPACITY} onPress={onPress}>
 			<View style={styles.container}>
 				<Text style={styles.text}>{text}</Text>
 			</View>

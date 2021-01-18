@@ -38,6 +38,6 @@ export const styles = StyleSheet.create({
 		padding: 20,
 		borderWidth: 0.5,
 		borderColor: Palette.greyWarm,
-		height: 200
+		height: 200,
 	}
 });
