@@ -11,20 +11,18 @@ const mapState = ({ user, loading, settings }: RootState) => ({
 	feedbackModalVisibility: settings.feedbackModal
 });
 
-
 const mapDispatch = ({
 	user: { getUserData, updateUserData, setUserData },
-	app: { setLanguage },
+	app: { changeAppLanguage },
 	settings: { showFeedbackModal, hideFeedbackModal }
 }: Dispatch) => ({
 	getUserData,
 	updateUserData,
 	setUserData,
-	setLanguage,
 	showFeedbackModal,
-	hideFeedbackModal
-
-
+	hideFeedbackModal,
+	changeAppLanguage
+});
 
 export const SettingsContentConnect = connect(
 	mapState,
