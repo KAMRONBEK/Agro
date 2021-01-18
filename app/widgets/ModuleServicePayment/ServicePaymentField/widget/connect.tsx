@@ -4,6 +4,7 @@ import { IStoreState, FieldType } from 'types';
 import { IDispatch } from 'store';
 import { compose } from 'utils';
 import { ComponentType } from 'react';
+import { withNavigation } from 'router/withNavigation';
 
 const mapState = ({ supplier, suppliers: suppliersData }: IStoreState) => ({
   suppliers: suppliersData.suppliers,
@@ -23,4 +24,4 @@ export const ServicePaymentFieldConnect = compose<ExportComponent>(
     mapState,
     mapDispatch
   ),
-)(ServicePaymentFieldController);
+)(withNavigation(ServicePaymentFieldController));

@@ -3,6 +3,7 @@ import { ServicePaymentFieldView } from './view';
 import { ISupplierField, FieldType, IFieldState, ISupplier, ISupplierForm, FormTypes } from 'types';
 import { NavigationScreenProp } from 'react-navigation';
 import { SUPPLIER_ID } from './consts';
+import reactotron from 'store/ReactatronConfig';
 
 interface IConnectProps {
   supplierForm: ISupplierForm;
@@ -43,8 +44,9 @@ export class ServicePaymentFieldController extends Component<IConnectProps> {
   }
 
   render() {
-    const { field, suppliers, navigation } = this.props;
-    const supplier_id = navigation.getParam(SUPPLIER_ID);
+	const { field, suppliers, navigation,route } = this.props;
+	reactotron.log({suppliers,navigation,route});
+    const supplier_id =route.params[SUPPLIER_ID]; //navigation.getParam(SUPPLIER_ID);
     const supplier_logo = suppliers.find(item => item.id === supplier_id).image;
     const supplierInputFormData = this.filteredSupplierInputFormData();
 
