@@ -15,6 +15,7 @@ import { callSupplier } from "./request";
 import { validateField, validateFields } from "./validation";
 import { createModel } from "@rematch/core";
 import { RootModel } from "../models";
+import reactotron from "store/ReactatronConfig";
 
 export const supplier = createModel<RootModel>()({
 	state: initState,
@@ -62,7 +63,7 @@ export const supplier = createModel<RootModel>()({
 	effects: dispatch => ({
 		pushSupplierPayment: createLoggedAsyncAction<void, void>(async (_: void, { supplier }: IStoreState) => {
 			const validatedResult = validateFields(supplier);
-
+			reactotron.logImportant({ validatedResult });
 			if (validatedResult.isError) {
 				dispatch.supplier.pushFieldValueDone(validatedResult.result);
 

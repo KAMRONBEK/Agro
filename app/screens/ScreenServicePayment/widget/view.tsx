@@ -1,18 +1,17 @@
 import React from "react";
-import { View, ActivityIndicator, Text } from "react-native";
-import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
-import { styles } from "./styles";
+import { ActivityIndicator, ScrollView, Text, View } from "react-native";
 import { TemplateGreenBackground } from "templates";
+import { ICard } from "types";
 import {
-	ServicePaymentFooterButtons,
-	ServicePaymentField,
 	ServicePaymentAmount,
+	ServicePaymentField,
+	ServicePaymentFooterButtons,
 	ServicePaymentSavePattern,
 	ServicePaymentSelectContent,
 	ServicePaymentStatusModal
 } from "widgets/ModuleServicePayment";
 import { Cards } from "widgets/ModuleShared";
-import { ICard, CardTypes } from "types";
+import { styles } from "./styles";
 
 interface IOwnProps {
 	supplierIsFetching: boolean;
@@ -42,18 +41,13 @@ export function ScreenServicePaymentView({ supplierIsFetching, cards }: IOwnProp
 	return (
 		<View style={styles.container}>
 			<TemplateGreenBackground showLogo={false} style={[styles.greenBg]} />
-			<KeyboardAwareScrollView
-				contentContainerStyle={styles.scrollContainer}
-				enableAutomaticScroll
-				enableOnAndroid
-			>
+			<ScrollView contentContainerStyle={styles.scrollContainer}>
 				<TemplateGreenBackground showLogo={false} style={[styles.greenInnerBg]} />
 				<Cards cards={cards} showAddCard={false} />
 				{supplierIsFetching ? renderLoader() : renderForm()}
 				<ServicePaymentSavePattern />
 				<ServicePaymentFooterButtons />
-			</KeyboardAwareScrollView>
-
+			</ScrollView>
 			<ServicePaymentStatusModal />
 		</View>
 	);

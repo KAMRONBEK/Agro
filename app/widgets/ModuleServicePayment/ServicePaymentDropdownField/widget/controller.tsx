@@ -48,8 +48,8 @@ export class ServicePaymentDropdownFieldController extends Component<IConnectPro
   }
 
   render() {
-    const { field, suppliers, navigation } = this.props;
-    const supplier_id = navigation.getParam(SUPPLIER_ID);
+    const { field, suppliers, navigation,route } = this.props;
+    const supplier_id = route.params[SUPPLIER_ID];
     const supplier_logo = suppliers.find(item => item.id === supplier_id).image;
     const supplierInputFormData = this.filteredSupplierInputFormData();
 
