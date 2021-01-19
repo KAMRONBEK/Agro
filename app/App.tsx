@@ -1,21 +1,14 @@
-import React, {Component} from "react";
-import FlashMessage from "react-native-flash-message";
-import {AppLoadingView} from "widgets/ModuleAppLoading";
-import {MyStatusBar} from "widgets/ModuleShared";
-import TabNavigator from "./router/TabNavigator";
-import {NavigationContainer} from "@react-navigation/native";
-import AuthStack from "./router/stackNavigators/AuthStack";
-import {Dispatch, RootState} from "./store";
-import {connect} from "react-redux";
 import AsyncStorage from "@react-native-community/async-storage";
-import {Locale} from "./const";
-
-import localization from "./locales/i18n";
-import { Locale } from "const";
-import { SafeAreaView } from "react-native-safe-area-context";
-
-
-
+import { NavigationContainer } from "@react-navigation/native";
+import React, { Component } from "react";
+import FlashMessage from "react-native-flash-message";
+import { connect } from "react-redux";
+import { AppLoadingView } from "widgets/ModuleAppLoading";
+import { MyStatusBar } from "widgets/ModuleShared";
+import { Locale } from "./const";
+import AuthStack from "./router/stackNavigators/AuthStack";
+import TabNavigator from "./router/TabNavigator";
+import { Dispatch, RootState } from "./store";
 
 class App extends Component<Props> {
 
