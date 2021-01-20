@@ -34,7 +34,7 @@ export function SettingsSelectView({
 				{ label: Locale.RU, value: Locale.RU },
 				{ label: Locale.UZ, value: Locale.UZ }
 			]}
-			value={localization.getLanguage}
+			value={localization.getLanguage()}
 			placeholder={{}}
 		>
 			<View style={[styles.button, showBorderBottom && styles.borderBottom]}>
