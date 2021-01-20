@@ -1,13 +1,21 @@
+import { TOUCHABLE_OPACITY } from "const";
 import { strings } from "locales/i18n";
 import React from "react";
 import { View } from "react-native";
-import { PaymentsButton } from "widgets/ModulePayment";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import { PaymentsButton } from "widgets/ModulePayment/PaymentsButton";
 import { styles } from "./styles";
 
-export function PaymentsATMView() {
+interface OwnProps {
+	onPress: () => void;
+}
+
+export function PaymentsATMView({ onPress }: OwnProps) {
 	return (
-		<View style={styles.container}>
-			<PaymentsButton title={strings("atms")} />
-		</View>
+		<TouchableOpacity activeOpacity={TOUCHABLE_OPACITY} onPress={onPress}>
+			<View style={styles.container}>
+				<PaymentsButton title={strings("atms")} />
+			</View>
+		</TouchableOpacity>
 	);
 }

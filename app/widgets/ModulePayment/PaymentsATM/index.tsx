@@ -1,1 +1,1 @@
-export { PaymentsATMView as PaymentsATM } from './widget';
+export * from "./widget";

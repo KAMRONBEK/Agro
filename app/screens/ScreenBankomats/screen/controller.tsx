@@ -1,10 +1,22 @@
-import React, { Component } from 'react';
-import { PinCodeView as ScreenPinCodeView } from './view';
+import React, { Component } from "react";
+import { ScreenBankomatsView } from "./view";
 
-interface IConnectProps {}
+interface IConnectProps {
+	regions: [];
+	getRegions: () => void;
+	bankomats: [];
+	getBankomats: (id: number) => void;
+}
 
-export class ScreenPinController extends Component<IConnectProps> {
+export class ScreenBankomatsController extends Component<IConnectProps> {
 	render() {
-		return <ScreenPinCodeView {...this.props} />;
+		return (
+			<ScreenBankomatsView
+				regions={this.props.regions}
+				getRegions={this.props.getRegions}
+				bankomats={this.props.bankomats}
+				getBankomats={this.props.getBankomats}
+			/>
+		);
 	}
 }

@@ -7,13 +7,15 @@ import { AccountHeader, BackGreenHeader } from "widgets/ModuleRouter";
 import { strings } from "../../locales/i18n";
 import { ScreenPaymentInnerList } from "../../screens/ScreenPaymentInnerList";
 import { ScreenOnlineConversion } from "../../screens/ScreenOnlineConversion";
-import {ScreenCardOperations} from "../../screens/ScreenCardOperations";
+import { ScreenCardOperations } from "../../screens/ScreenCardOperations";
+import { ScreenBankomats } from "screens/ScreenBankomats";
 
 type Nav = {
 	[ROUTES.SCREEN_PAYMENT];
 	[ROUTES.SCREEN_PAYMENT_INNER_LIST];
 	[ROUTES.SCREEN_ONLINE_CONVERSION];
 	[ROUTES.SCREEN_CARD_OPERATIONS];
+	[ROUTES.SCREEN_BANKOMAT];
 };
 
 const { Navigator, Screen } = createStackNavigator<Nav>();
@@ -46,6 +48,13 @@ const PaymentStack = () => (
 			component={ScreenCardOperations}
 			options={{
 				...BackGreenHeader(strings("paylentWithCard"))
+			}}
+		/>
+		<Screen
+			name={ROUTES.SCREEN_BANKOMAT}
+			component={ScreenBankomats}
+			options={{
+				...BackGreenHeader(strings("bankomats"))
 			}}
 		/>
 	</Navigator>

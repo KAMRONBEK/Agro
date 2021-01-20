@@ -1,1 +1,1 @@
-export { ScreenPinCode } from './screen';
+export { ScreenBankomatsConnect as ScreenBankomats } from "./screen";

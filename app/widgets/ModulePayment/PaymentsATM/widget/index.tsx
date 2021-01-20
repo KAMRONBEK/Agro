@@ -1,1 +1,1 @@
-export * from './view';
+export { PaymentsATMConnect as PaymentsATM } from "./connect";
