@@ -1,1 +1,1 @@
-export { PaymentsContentView as PaymentsContent } from './widget';
+export { PaymentsContentView as PaymentsContent } from "./widget";

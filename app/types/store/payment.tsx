@@ -1,25 +1,27 @@
 export interface IPaymentState {
-  payment: IPayment;
-  paymentIsFetching: boolean;
-  paymentIsError: boolean;
+	payment: IPayment;
+	paymentIsFetching: boolean;
+	paymentIsError: boolean;
+	regions: [];
+	bankomats: [];
 }
 
 export interface IPaymentData {
-  id: number;
-  jsonrpc: number,
-  result: IPayment
+	id: number;
+	jsonrpc: number;
+	result: IPayment;
 }
 
 export interface IPayment {
-  payment_id: string;
-  payment_status: number;
-  status_description: string;
-  datetime: string;
-  external_id: string;
+	payment_id: string;
+	payment_status: number;
+	status_description: string;
+	datetime: string;
+	external_id: string;
 }
 
 export interface IPaymentParams {
-  card_token: string;
-  service_id: number;
-  parameters: Object;
+	card_token: string;
+	service_id: number;
+	parameters: Object;
 }

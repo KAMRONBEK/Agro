@@ -96,5 +96,7 @@
 	"problemTitle": "Название проблемы",
 	"title": "Титул",
 	"problemQuestion": "Проблема или вопрос",
-	"sendFeedback": "Отправить отзыв"
+	"sendFeedback": "Отправить отзыв",
+	"bankomats": "Банкоматы",
+	"news": "Новости"
 }

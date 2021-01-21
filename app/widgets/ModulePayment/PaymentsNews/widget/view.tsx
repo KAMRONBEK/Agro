@@ -7,7 +7,7 @@ import { styles } from "./styles";
 export function PaymentsNewsView() {
 	return (
 		<View style={styles.container}>
-			<PaymentsButton title={strings("atms")} />
+			<PaymentsButton title={strings("news")} />
 		</View>
 	);
 }
