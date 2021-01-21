@@ -4,10 +4,10 @@ const { width } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
   },
   scrollContainer: {
-    paddingBottom: 130
+    // paddingBottom: 130,
   },
   greenBg: {
     height: 280,

@@ -1,5 +1,5 @@
 import React, { RefObject } from "react";
-import { View, Image, Text, TouchableOpacity, Platform } from "react-native";
+import { View, Image, Text, TouchableOpacity, Platform, Dimensions } from "react-native";
 import { TouchableOpacity as TouchableOpacityGH } from "react-native-gesture-handler";
 import BottomSheet from "reanimated-bottom-sheet";
 import { styles } from "./styles";
@@ -23,6 +23,8 @@ export function MainTransactionsHistoryView({
 	openModal,
 	details
 }: IOwnProps) {
+	const { height } = Dimensions.get("window");
+
 	const bottomSheetMaxPoint = 400;
 
 	function renderEmptyList() {
@@ -121,8 +123,8 @@ export function MainTransactionsHistoryView({
 	return (
 		<BottomSheet
 			ref={modalRef}
-			initialSnap={0}
-			snapPoints={[110, bottomSheetMaxPoint]}
+			snapPoints={[110, height * 0.33, height * 0.85]}
+			initialSnap={1}
 			callbackThreshold={5}
 			renderHeader={renderHeader}
 			renderContent={renderContent}

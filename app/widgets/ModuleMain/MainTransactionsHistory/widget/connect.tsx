@@ -1,17 +1,16 @@
 import { connect } from "react-redux";
 import { MainTransactionsHistoryController } from "./controller";
-import { IStoreState } from "types";
 import { ComponentType } from "react";
 import { compose } from "utils";
-import { IDispatch } from "store";
+import { Dispatch, RootState } from "store";
 import { withNavigation } from "router/withNavigation";
 
-const mapState = ({ transactions: transactionsState }: IStoreState) => ({
+const mapState = ({ transactions: transactionsState }: RootState) => ({
 	transactions: transactionsState.transactions,
 	transactionsIsFetching: transactionsState.transactionsIsFetching
 });
 
-const mapDispatch = ({ transactions: transactionsState }: IDispatch) => ({
+const mapDispatch = ({ transactions: transactionsState }: Dispatch) => ({
 	pushTransactionDetails: transactionsState.pushTransactionDetails
 });
 

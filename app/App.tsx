@@ -12,20 +12,38 @@ import { Locale } from "const";
 import RootRouter from "router/RootRouter";
 
 class App extends Component<Props> {
+	// async componentDidMount() {
+	// 	const language = await AsyncStorage.getItem("locale");
+	// 	this.props.changeAppLanguage(Locale[language]);
+	// 	this.props.pushTokenExist();
+	// }
+
+	state = {
+		isLoading: true
+	};
+
 	async componentDidMount() {
 		const language = await AsyncStorage.getItem("locale");
 		this.props.changeAppLanguage(Locale[language]);
 		this.props.pushTokenExist();
+		this.setState({ isLoading: false });
 	}
+
+	// componentDidUpdate(prevProps: Readonly<Props>, prevState: Readonly<{}>, snapshot?: any) {
+	//     if(prevProps.language !== this.props.language) {
+	//         this.forceUpdate();
+	//     }
+	// }
 
 	renderNavigator = () => {
 		const { isLogged, isLangLoading, isAppLoading } = this.props;
-		if (isAppLoading || isLangLoading) {
+
+		if (isAppLoading || isLangLoading || this.state.isLoading) {
 			return <AppLoadingView />;
 		}
 		switch (isLogged) {
 			case true: {
-				return <RootRouter />;
+				return <TabNavigator />;
 			}
 			case false: {
 				return <AuthStack />;

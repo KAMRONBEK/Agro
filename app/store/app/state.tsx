@@ -2,7 +2,7 @@ import { IAppState } from 'types';
 import {Locale} from "const";
 
 export const initState: IAppState = {
-  isLogged: null,
+  isLogged: false,
   language: Locale.RU,
   token: null
 };

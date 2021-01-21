@@ -18,7 +18,9 @@ export const compose = <T extends {}>(...funcs: any[]) => {
 };
 
 export const isTokenExist = async (): Promise<string> => {
-    return await AsyncStorage.getItem(USER_TOKEN);
+    const res = await AsyncStorage.getItem(USER_TOKEN);
+    console.log(res);
+    return res;
 };
 
 export const isDataNull = (data: any): boolean => {

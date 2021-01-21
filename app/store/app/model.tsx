@@ -39,8 +39,8 @@ export const app = createModel<RootModel>()({
 		pushTokenExist: createLoggedAsyncAction(
 			async () => {
 				const res = await isTokenExist();
-				dispatch.app.setToken(res);
-				dispatch.app.doneTokenExist(true);
+				await dispatch.app.setToken(res);
+				await dispatch.app.doneTokenExist(!!res);
 				apiQwerty.defaults.headers.common[AUTHORIZATION] = res;
 			},
 			async () => {
