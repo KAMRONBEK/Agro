@@ -1,4 +1,6 @@
 {
+	"enterPinCode": "Введите ПИН-код",
+	"confirmPinCode": "Подтвердите PIN-код",
 	"selectCardForDebit": "Yechim uchun kartani tanlash",
 	"selectCardForRecharge": "Kirim uchun kartani tanlash",
 	"main": "Bosh",

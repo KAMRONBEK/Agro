@@ -1,4 +1,6 @@
 {
+	"enterPinCode": "Введите ПИН-код",
+	"confirmPinCode": "Подтвердите PIN-код",
 	"selectCardForDebit": "Select card for debiting",
 	"selectCardForRecharge": "Select card for replenishment",
 	"main": "Main",

@@ -1,4 +1,6 @@
 {
+	"enterPinCode": "Введите ПИН-код",
+	"confirmPinCode": "Подтвердите PIN-код",
 	"location": "Адрес",
 	"phoneNumber": "Номер телефона",
 	"branchName": "Название филиала",
