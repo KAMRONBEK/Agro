@@ -1,7 +1,7 @@
 import { initState } from "./state";
 import { IPaymentState, IPayment, IStoreState, IPaymentData, IMessageError } from "types";
 import { createLoggedAsyncAction, isUnauthenticated, isErrorExist } from "utils";
-import { callPayment } from "./request";
+import { callPayment, getBankomats, getRegions } from "./request";
 import { formatedPaymentRequestParams } from "./parser";
 import { createModel } from "@rematch/core";
 import { RootModel } from "../models";
@@ -23,6 +23,19 @@ export const payment = createModel<RootModel>()({
 
 		pushPaymentFail: (state: IPaymentState): IPaymentState => {
 			return { ...state, paymentIsFetching: false, paymentIsError: true };
+		},
+		pushRegions: (state: IPaymentState, regions): IPaymentState => {
+			return {
+				...state,
+				regions: regions
+			};
+		},
+		pushBankomats: (state: IPaymentState, bankomats): IPaymentState => {
+			return {
+				...state,
+				bankomats: bankomats,
+				regions: []
+			};
 		}
 	},
 	effects: dispatch => ({
@@ -57,6 +70,19 @@ export const payment = createModel<RootModel>()({
 			async () => {
 				dispatch.payment.pushPaymentFail();
 			}
-		)
+		),
+		getRegions: async () => {
+			let res = await getRegions();
+			dispatch.payment.pushRegions(res);
+		},
+		getBankomats: async id => {
+			console.log(id);
+			try {
+				let res = await getBankomats(id);
+				dispatch.payment.pushBankomats(res);
+			} catch (error) {
+				console.log(error);
+			}
+		}
 	})
 });
