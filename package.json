@@ -11,7 +11,8 @@
 		"reverse": "adb reverse tcp:8081 tcp:8081",
 		"connect": "yarn debug & yarn reverse",
 		"test": "jest",
-		"lint": "eslint ."
+		"lint": "eslint .",
+		"build-android":"cd ./android &&./gradlew assembleRelease&&open ./app/builds/outputs/apk/release"
 	},
 	"dependencies": {
 		"@haskkor/react-native-pincode": "^1.22.5",
