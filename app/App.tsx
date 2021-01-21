@@ -12,10 +12,16 @@ import {Locale} from "const";
 
 
 class App extends Component<Props> {
+
+	state = {
+		isLoading: true
+	}
+
 	async componentDidMount() {
 		const language = await AsyncStorage.getItem("locale");
 		this.props.changeAppLanguage(Locale[language]);
 		this.props.pushTokenExist();
+		this.setState({isLoading: false})
 	}
 
 	// componentDidUpdate(prevProps: Readonly<Props>, prevState: Readonly<{}>, snapshot?: any) {
@@ -27,7 +33,7 @@ class App extends Component<Props> {
 	renderNavigator = () => {
 		const { isLogged, isLangLoading, isAppLoading } = this.props;
 
-		if (isAppLoading || isLangLoading) {
+		if (isAppLoading || isLangLoading || this.state.isLoading) {
 			return <AppLoadingView />;
 		}
 		switch (isLogged) {
