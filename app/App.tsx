@@ -12,38 +12,43 @@ import {Locale} from "const";
 
 
 class App extends Component<Props> {
+	async componentDidMount() {
+		const language = await AsyncStorage.getItem("locale");
+		this.props.changeAppLanguage(Locale[language]);
+		this.props.pushTokenExist();
+	}
 
-    async componentDidMount() {
-        const language = await AsyncStorage.getItem('locale');
-        this.props.changeAppLanguage(Locale[language]);
-        this.props.pushTokenExist();
-    }
+	// componentDidUpdate(prevProps: Readonly<Props>, prevState: Readonly<{}>, snapshot?: any) {
+	//     if(prevProps.language !== this.props.language) {
+	//         this.forceUpdate();
+    //     }
+    // }
 
-    renderNavigator = () => {
-        const {isLogged, isLangLoading, isAppLoading} = this.props;
-        if (isAppLoading || isLangLoading) {
-            return <AppLoadingView/>;
-        }
-        switch (isLogged) {
-            case true: {
-                return <TabNavigator/>;
-            }
-            case false: {
-                return <AuthStack/>;
-            }
-        }
-    };
+	renderNavigator = () => {
+		const { isLogged, isLangLoading, isAppLoading } = this.props;
 
-    render() {
-        return (
-            <>
-                <MyStatusBar/>
-                <NavigationContainer>{this.renderNavigator()}</NavigationContainer>
-                <FlashMessage position="top"/>
-            </>
-        );
-    }
+		if (isAppLoading || isLangLoading) {
+			return <AppLoadingView />;
+		}
+		switch (isLogged) {
+			case true: {
+				return <TabNavigator />;
+			}
+			case false: {
+				return <AuthStack />;
+			}
+		}
+	};
 
+	render() {
+		return (
+			<>
+				<MyStatusBar />
+				<NavigationContainer>{this.renderNavigator()}</NavigationContainer>
+				<FlashMessage position="top" />
+			</>
+		);
+	}
 }
 
 const mapState = ({app: {language, isLogged}, loading}: RootState) => ({

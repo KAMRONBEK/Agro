@@ -121,11 +121,14 @@ export function MainTransactionsHistoryView({
 	return (
 		<BottomSheet
 			ref={modalRef}
-			initialSnap={0}
 			snapPoints={[110, bottomSheetMaxPoint]}
 			callbackThreshold={5}
 			renderHeader={renderHeader}
 			renderContent={renderContent}
 		/>
+		// <>
+		// 	{renderHeader()}
+		// 	{renderContent()}
+		// </>
 	);
 }
