@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { PinCodeView as ScreenPinCodeView } from './view';
+import React, { Component } from "react";
+import { PinCodeView as ScreenPinCodeView } from "./view";
 
 interface IConnectProps {}
 

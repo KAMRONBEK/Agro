@@ -1,28 +1,40 @@
 import PINCode from "@haskkor/react-native-pincode";
 import { useNavigation } from "@react-navigation/native";
 import { ROUTES } from "const";
+import { strings } from "locales/i18n";
 import React, { useEffect } from "react";
 import { View } from "react-native";
+import reactotron from "store/ReactatronConfig";
 import { styles } from "./styles";
 
-export let PinCodeView = ({pushTokenExist,route}) => {
+export let PinCodeView = ({ pushTokenExist, route }) => {
+	const navigation = useNavigation();
 
-    const navigation = useNavigation()
+	useEffect(() => {
+		console.log("IT IS PIN CODE");
+		reactotron.log({ route });
+	}, []);
 
-    useEffect(() => {
-        console.log("IT IS PIN CODE");
-    }, []);
-
-    const onFinish = () => {
+	const onFinish = () => {
 		pushTokenExist();
-        navigation.navigate(ROUTES.SCREEN_MAIN);
-    };
+		// navigation.navigate(ROUTES.ROOT);
+	};
 
-    const isSetup = route.params?.isSetup;
+	const isSetup = route.params?.isSetup;
 
-    return (
-        <View style={styles.container}>
-            <PINCode finishProcess={onFinish} status={isSetup ? "choose" : "enter"}/>
-        </View>
-    );
+	return (
+		<View style={styles.container}>
+			<PINCode
+				titleConfirm={strings("confirmPinCode")}
+				titleChoose={strings("enterPinCode")}
+				titleEnter={strings("enterPinCode")}
+				subtitleChoose=" "
+				subtitleConfirm=" "
+				subtitleEnter=" "
+				subtitleError=" "
+				finishProcess={onFinish}
+				status={isSetup ? "choose" : "enter"}
+			/>
+		</View>
+	);
 };
