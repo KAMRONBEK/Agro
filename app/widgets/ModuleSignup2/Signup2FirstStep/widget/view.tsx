@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import { styles } from './styles';
 import { Signup2PhoneField } from 'widgets/ModuleSignup2';
+import {strings} from "../../../../locales/i18n";
 
 interface IOwnProps {
 
@@ -17,7 +18,7 @@ export function Signup2FirstStepView({
       </View>
 
       <View style={styles.titleBox}>
-        <Text style={styles.title}>На указанный номер будет отправлен СМС код с активацией</Text>
+        <Text style={styles.title}>{strings('toEnteredNumber')}</Text>
       </View>
     </View>
   )

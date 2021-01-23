@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
   container: {
     borderRadius: 12,
     backgroundColor: Palette.white,
-    padding: 15,
+    paddingHorizontal: 15,
     marginHorizontal: 5,
     shadowOffset: {
       width: 0,

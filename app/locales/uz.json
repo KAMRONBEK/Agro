@@ -88,5 +88,18 @@
 	"whatIsVirtualVisaCard": "Virtual Visa kartasi nima?",
 	"visaVirtualPossibilities": "Virtual Visa kartaning imkoniyatlari",
 	"whatIsVirtualVisaCardAnswer": "Bu internet xaridlar uchun mo'ljallangan xalqaro kartaning jismoniy tashuvchisiz shakli",
-	"visaVirtualPossibilitiesAnswer": "Ushbu karta yordamida chet el internet-do'konlarda xarid qilishingiz mumkin"
+	"visaVirtualPossibilitiesAnswer": "Ushbu karta yordamida chet el internet-do'konlarda xarid qilishingiz mumkin",
+	"close": "Yopish",
+	"problemTitle": "Muammo nomi",
+	"title": "Sarlavha",
+	"problemQuestion": "Savol yoki muammo",
+		"sendFeedback": "Sharh yuborish",
+	"bankomats": "Bankomatlar",
+	"news": "Yangiliklar",
+	"toEnteredNumber": "Belgilangan raqamga SMS aktivizatsiya kodi yuboriladi",
+	"mainInformation": "Umumiy ma'lumot",
+	"smsActivation": "SMS aktivizatsiya",
+	"activationProcess": "Avtorizatsiya jarayoni",
+	"next": "Davom etish",
+	"back": "Orqaga"
 }

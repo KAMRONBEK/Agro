@@ -1,9 +1,11 @@
-import React from 'react';
-import { View, Text, TouchableOpacity, ActivityIndicator } from 'react-native';
-import { styles } from './styles';
-import { Signup2FirstStep, Signup2SecondStep } from 'widgets/ModuleSignup2';
-import { TOUCHABLE_OPACITY } from 'const';
-import { Palette } from 'styles';
+import React from "react";
+import { View, Text, TouchableOpacity, ActivityIndicator } from "react-native";
+import { styles } from "./styles";
+import { Signup2FirstStep, Signup2SecondStep } from "widgets/ModuleSignup2";
+import { TOUCHABLE_OPACITY } from "const";
+import { Palette } from "styles";
+import { string } from "prop-types";
+import { strings } from "../../../../locales/i18n";
 
 interface IOwnProps {
 	activeStep: number;
@@ -30,7 +32,7 @@ export function Signup2StepsView({
 					disabled={isDisabledFirstStep()}
 					style={[styles.nextBtn, isDisabledFirstStep() && styles.btnDisabled]}
 				>
-					<Text style={styles.btnText}>Далее</Text>
+					<Text style={styles.btnText}>{strings("next")}</Text>
 				</TouchableOpacity>
 			</View>
 		);
@@ -46,7 +48,7 @@ export function Signup2StepsView({
 						activeOpacity={TOUCHABLE_OPACITY}
 						style={[styles.backBtn, styles.btnFlexGrow]}
 					>
-						<Text style={styles.btnText}>Назад</Text>
+						<Text style={styles.btnText}>{strings("back")}</Text>
 					</TouchableOpacity>
 				</View>
 			</View>
@@ -68,7 +70,7 @@ export function Signup2StepsView({
 			<View style={styles.signupProcessBox}>
 				<View style={styles.signupProcess}>
 					<ActivityIndicator size="large" color={Palette.white} animating={true} />
-					<Text style={styles.signupProcessText}>Процесс авторизации...</Text>
+					<Text style={styles.signupProcessText}>{strings("activationProcess")}...</Text>
 				</View>
 			</View>
 		);
@@ -96,9 +98,13 @@ export function Signup2StepsView({
 						</Text>
 					</View>
 					<Text
-						style={[styles.stepName, activeStep === 1 && styles.stepNameActive, activeStep > 1 && styles.stepNameDone]}
+						style={[
+							styles.stepName,
+							activeStep === 1 && styles.stepNameActive,
+							activeStep > 1 && styles.stepNameDone
+						]}
 					>
-						Главная информация
+						{strings("mainInformation")}
 					</Text>
 				</View>
 				<View style={[styles.progressLine, activeStep > 1 && styles.progressLineDone]} />
@@ -121,9 +127,13 @@ export function Signup2StepsView({
 						</Text>
 					</View>
 					<Text
-						style={[styles.stepName, activeStep === 2 && styles.stepNameActive, activeStep > 2 && styles.stepNameDone]}
+						style={[
+							styles.stepName,
+							activeStep === 2 && styles.stepNameActive,
+							activeStep > 2 && styles.stepNameDone
+						]}
 					>
-						СМС активация
+						{strings("smsActivation")}
 					</Text>
 				</View>
 			</View>
