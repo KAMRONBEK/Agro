@@ -12,7 +12,7 @@
 		"connect": "yarn debug & yarn reverse",
 		"test": "jest",
 		"lint": "eslint .",
-		"build-android":"cd ./android &&./gradlew assembleRelease&&open ./app/builds/outputs/apk/release"
+		"build-android": "cd ./android &&./gradlew assembleRelease&&open ./app/builds/outputs/apk/release"
 	},
 	"dependencies": {
 		"@haskkor/react-native-pincode": "^1.22.5",
@@ -26,6 +26,7 @@
 		"@rematch/core": "^2.0.0-next.10",
 		"@rematch/loading": "^2.0.0-next.11",
 		"@rematch/select": "^3.0.0-next.10",
+		"@sentry/react-native": "^2.1.1",
 		"@types/axios": "^0.14.0",
 		"@types/react-native-i18n": "^2.0.0",
 		"assert": "^2.0.0",
