@@ -49,6 +49,8 @@ target 'Agro' do
 
   pod 'ReactNativeLocalization', :path => '../node_modules/react-native-localization'
 
+  pod 'RNSentry', :path => '../node_modules/@sentry/react-native'
+
   target 'AgroTests' do
     inherit! :search_paths
     # Pods for testing
