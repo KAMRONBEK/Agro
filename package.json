@@ -12,7 +12,7 @@
 		"connect": "yarn debug & yarn reverse",
 		"test": "jest",
 		"lint": "eslint .",
-		"build-android":"cd ./android &&./gradlew assembleRelease&&open ./app/builds/outputs/apk/release"
+		"build-android":"cd ./android &&./gradlew assembleRelease&&open ./app/build/outputs/apk/release"
 	},
 	"dependencies": {
 		"@haskkor/react-native-pincode": "^1.22.5",
