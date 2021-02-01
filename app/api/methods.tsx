@@ -63,3 +63,7 @@ export const BRANCHES = "/api/branches";
 export const REGIONS = "/api/regions";
 
 export const BANKOMATS = id => `/api/bankomats?region_id=${id}`;
+
+export const NEWS = "/api/news/index";
+
+export const NEWSSINGLE = id => `/api/news/view?id=${id}`;

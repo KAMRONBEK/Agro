@@ -1,1 +1,1 @@
-export { PaymentsNewsView as PaymentsNews } from './widget';
+export { PaymentsNewsConnect as PaymentsNews } from "./widget";

@@ -1,7 +1,7 @@
 import { initState } from "./state";
 import { IPaymentState, IPayment, IStoreState, IPaymentData, IMessageError } from "types";
 import { createLoggedAsyncAction, isUnauthenticated, isErrorExist } from "utils";
-import { callPayment, getBankomats, getRegions } from "./request";
+import { callPayment, getBankomats, getNewsList, getRegions, getNewsSingle } from "./request";
 import { formatedPaymentRequestParams } from "./parser";
 import { createModel } from "@rematch/core";
 import { RootModel } from "../models";
@@ -35,6 +35,18 @@ export const payment = createModel<RootModel>()({
 				...state,
 				bankomats: bankomats,
 				regions: []
+			};
+		},
+		pushNews: (state: IPaymentState, news): IPaymentState => {
+			return {
+				...state,
+				news: news
+			};
+		},
+		pushCurrentNews: (state: IPaymentState, currentNews): IPaymentState => {
+			return {
+				...state,
+				currentNews: currentNews
 			};
 		}
 	},
@@ -80,6 +92,22 @@ export const payment = createModel<RootModel>()({
 			try {
 				let res = await getBankomats(id);
 				dispatch.payment.pushBankomats(res);
+			} catch (error) {
+				console.log(error);
+			}
+		},
+		getNews: async () => {
+			try {
+				let res = await getNewsList();
+				dispatch.payment.pushNews(res);
+			} catch (error) {
+				console.log(error);
+			}
+		},
+		getNewsSingle: async id => {
+			try {
+				let res = await getNewsSingle(id);
+				dispatch.payment.pushCurrentNews(res);
 			} catch (error) {
 				console.log(error);
 			}

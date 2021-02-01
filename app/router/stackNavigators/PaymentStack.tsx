@@ -9,6 +9,8 @@ import { ScreenPaymentInnerList } from "../../screens/ScreenPaymentInnerList";
 import { ScreenOnlineConversion } from "../../screens/ScreenOnlineConversion";
 import { ScreenCardOperations } from "../../screens/ScreenCardOperations";
 import { ScreenBankomats } from "screens/ScreenBankomats";
+import { ScreenNews } from "screens/ScreenNews";
+import { ScreenNewsSingle } from "screens/ScreenNewsSingle";
 
 type Nav = {
 	[ROUTES.SCREEN_PAYMENT];
@@ -16,6 +18,8 @@ type Nav = {
 	[ROUTES.SCREEN_ONLINE_CONVERSION];
 	[ROUTES.SCREEN_CARD_OPERATIONS];
 	[ROUTES.SCREEN_BANKOMAT];
+	[ROUTES.SCREEN_NEWS_SINGLE];
+	[ROUTES.SCREEN_NEWS];
 };
 
 const { Navigator, Screen } = createStackNavigator<Nav>();
@@ -55,6 +59,20 @@ const PaymentStack = () => (
 			component={ScreenBankomats}
 			options={{
 				...BackGreenHeader(strings("bankomats"))
+			}}
+		/>
+		<Screen
+			name={ROUTES.SCREEN_NEWS_SINGLE}
+			component={ScreenNewsSingle}
+			options={{
+				...BackGreenHeader(strings("news"))
+			}}
+		/>
+		<Screen
+			name={ROUTES.SCREEN_NEWS}
+			component={ScreenNews}
+			options={{
+				...BackGreenHeader(strings("news"))
 			}}
 		/>
 	</Navigator>

@@ -5,5 +5,7 @@ export const initState: IPaymentState = {
 	paymentIsFetching: false,
 	paymentIsError: false,
 	regions: [],
-	bankomats: []
+	bankomats: [],
+	news: [],
+	currentNews: {}
 };

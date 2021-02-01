@@ -4,6 +4,8 @@ export interface IPaymentState {
 	paymentIsError: boolean;
 	regions: [];
 	bankomats: [];
+	news: [];
+	currentNews: {};
 }
 
 export interface IPaymentData {
