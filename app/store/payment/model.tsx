@@ -27,30 +27,30 @@ export const payment = createModel<RootModel>()({
 		pushRegions: (state: IPaymentState, regions): IPaymentState => {
 			return {
 				...state,
-				regions: regions
+				regions: regions,
 			};
 		},
 		pushBankomats: (state: IPaymentState, bankomats): IPaymentState => {
 			return {
 				...state,
 				bankomats: bankomats,
-				regions: []
+				regions: [],
 			};
 		},
 		pushNews: (state: IPaymentState, news): IPaymentState => {
 			return {
 				...state,
-				news: news
+				news: news,
 			};
 		},
 		pushCurrentNews: (state: IPaymentState, currentNews): IPaymentState => {
 			return {
 				...state,
-				currentNews: currentNews
+				currentNews: currentNews,
 			};
-		}
+		},
 	},
-	effects: dispatch => ({
+	effects: (dispatch) => ({
 		pushPayment: createLoggedAsyncAction<void, void>(
 			async (_: void, rootState: IStoreState) => {
 				const requestParams = formatedPaymentRequestParams(rootState);
@@ -87,7 +87,7 @@ export const payment = createModel<RootModel>()({
 			let res = await getRegions();
 			dispatch.payment.pushRegions(res);
 		},
-		getBankomats: async id => {
+		getBankomats: async (id) => {
 			console.log(id);
 			try {
 				let res = await getBankomats(id);
@@ -104,13 +104,13 @@ export const payment = createModel<RootModel>()({
 				console.log(error);
 			}
 		},
-		getNewsSingle: async id => {
+		getNewsSingle: async (id) => {
 			try {
 				let res = await getNewsSingle(id);
 				dispatch.payment.pushCurrentNews(res);
 			} catch (error) {
 				console.log(error);
 			}
-		}
-	})
+		},
+	}),
 });

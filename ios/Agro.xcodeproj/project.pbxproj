@@ -29,7 +29,6 @@
 		4F2F335F4FD82413B1B541FD /* libPods-AgroTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98D9AF6F3471480DB5D57444 /* libPods-AgroTests.a */; };
 		518AD16AAAB4726576AC5520 /* libPods-Agro-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 855919AEF9BA53996E088884 /* libPods-Agro-tvOSTests.a */; };
 		54F04496771E40EC59387047 /* libPods-Agro-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F1347D9E6E0EE02BB67814E /* libPods-Agro-tvOS.a */; };
-		62CC826425AC6C580080FFFD /* libRNI18n.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62CC826325AC6C580080FFFD /* libRNI18n.a */; };
 		B80C291EFDDBFB168FDE1E1E /* libPods-Agro.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9463F1EFAAA5962CDE7CBFE /* libPods-Agro.a */; };
 /* End PBXBuildFile section */
 
@@ -139,7 +138,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62CC826425AC6C580080FFFD /* libRNI18n.a in Frameworks */,
 				B80C291EFDDBFB168FDE1E1E /* libPods-Agro.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

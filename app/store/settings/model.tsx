@@ -11,6 +11,12 @@ export const settings = createModel<RootModel>()({
 		},
 		hideFeedbackModal(state: ISettingsState = initState): ISettingsState {
 			return { ...state, feedbackModal: false };
+		},
+		showLanguageModal(state: ISettingsState = initState): ISettingsState {
+			return { ...state, languageModal: true };
+		},
+		hideLanguageModal(state: ISettingsState = initState): ISettingsState {
+			return { ...state, languageModal: false };
 		}
 	},
 	effects: dispatch => ({})

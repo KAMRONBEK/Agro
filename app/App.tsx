@@ -10,6 +10,15 @@ import { connect } from "react-redux";
 import AsyncStorage from "@react-native-community/async-storage";
 import { Locale } from "const";
 import RootRouter from "router/RootRouter";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { Platform, StatusBar, UIManager } from "react-native";
+import { Palette } from "styles";
+
+if (Platform.OS === "android") {
+	if (UIManager.setLayoutAnimationEnabledExperimental) {
+		UIManager.setLayoutAnimationEnabledExperimental(true);
+	}
+}
 
 class App extends Component<Props> {
 	// async componentDidMount() {
@@ -19,7 +28,7 @@ class App extends Component<Props> {
 	// }
 
 	state = {
-		isLoading: true
+		isLoading: true,
 	};
 
 	async componentDidMount() {
@@ -55,7 +64,9 @@ class App extends Component<Props> {
 		return (
 			<>
 				<MyStatusBar />
+
 				<NavigationContainer>{this.renderNavigator()}</NavigationContainer>
+
 				<FlashMessage position="top" />
 			</>
 		);
@@ -66,19 +77,16 @@ const mapState = ({ app: { language, isLogged }, loading }: RootState) => ({
 	language,
 	isLogged,
 	isLangLoading: loading.effects.app.changeAppLanguage,
-	isAppLoading: loading.effects.app.pushTokenExist
+	isAppLoading: loading.effects.app.pushTokenExist,
 });
 
 const mapDispatch = ({ app: { changeAppLanguage, pushTokenExist } }: Dispatch) => ({
 	changeAppLanguage,
-	pushTokenExist
+	pushTokenExist,
 });
 
 type StateProps = ReturnType<typeof mapState>;
 type DisPatchProps = ReturnType<typeof mapDispatch>;
 type Props = StateProps & DisPatchProps;
 
-export default connect(
-	mapState,
-	mapDispatch
-)(App);
+export default connect(mapState, mapDispatch)(App);

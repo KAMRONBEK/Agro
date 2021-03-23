@@ -1,10 +1,10 @@
-import React from 'react';
-import { View, Text, TouchableOpacity, Image } from 'react-native';
-import { styles } from './styles';
-import { TOUCHABLE_OPACITY } from 'const';
-import { Notification } from '../assets';
-import LinearGradient from 'react-native-linear-gradient';
-import { Palette } from 'styles';
+import React from "react";
+import { View, Text, TouchableOpacity, Image } from "react-native";
+import { styles } from "./styles";
+import { TOUCHABLE_OPACITY } from "const";
+import { Notification } from "../assets";
+import LinearGradient from "react-native-linear-gradient";
+import { Palette } from "styles";
 
 interface IOwnProps {
 	title: string;
@@ -22,7 +22,7 @@ export function AccountHeaderView({ title }: IOwnProps) {
 				<View style={styles.titleContainer}>
 					<TouchableOpacity activeOpacity={TOUCHABLE_OPACITY} style={styles.accountButton}>
 						<Image
-							source={require('../assets/Avatar/fresh-logo.png')}
+							source={require("../assets/Avatar/fresh-logo.png")}
 							resizeMode="contain"
 							style={styles.accountAvatar}
 						/>

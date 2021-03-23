@@ -9,6 +9,7 @@ import { ITransactionsState } from "./transactions";
 import { ICardOperationsState } from "./cardOperations";
 import { IAppState } from "./app";
 import { IAppStateModel } from "./appState";
+import { IDepositsState } from "./deposits";
 
 export interface IStoreState {
 	app: IAppState;
@@ -23,4 +24,5 @@ export interface IStoreState {
 	transactions: ITransactionsState;
 	cardOperations: ICardOperationsState;
 	signup2: ISignupState;
+	deposits: IDepositsState;
 }

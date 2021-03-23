@@ -24,9 +24,19 @@ export class SettingsContentController extends Component<Props> {
 			params: { isSetup: true }
 		});
 	};
-	changeAppLang = (language: Locale) => {
-		this.props.changeAppLanguage(language);
+	onPressLanguage = () => {
+		this.props.showLanguageModal();
 	};
+
+	onSelectLanguage = (language: Locale) => {
+		this.props.changeAppLanguage(language);
+		this.props.hideLanguageModal();
+	};
+
+	onCloseLanguageModal = () => {
+		this.props.hideLanguageModal();
+	};
+
 	onFeedbackPress = () => {
 		this.props.showFeedbackModal();
 	};
@@ -39,10 +49,13 @@ export class SettingsContentController extends Component<Props> {
 				isUserUpdating={this.props.isUserUpdating}
 				onFieldChange={this.onFieldChange}
 				onSecurityPress={this.onSecurityPress}
-				changeAppLang={this.changeAppLang}
+				onPressLanguage={this.onPressLanguage}
+				onSelectLanguage={this.onSelectLanguage}
 				onFeedbackPress={this.onFeedbackPress}
 				feedbackModalVisibility={this.props.feedbackModalVisibility}
+				langaugeModalVisibility={this.props.languageModalVisibility}
 				hideFeedbackModal={this.props.hideFeedbackModal}
+				onCloseLanguageModal={this.onCloseLanguageModal}
 			/>
 		);
 	}

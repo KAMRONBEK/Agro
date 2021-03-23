@@ -62,8 +62,16 @@ export const BRANCHES = "/api/branches";
 
 export const REGIONS = "/api/regions";
 
-export const BANKOMATS = id => `/api/bankomats?region_id=${id}`;
+export const BANKOMATS = (id) => `/api/bankomats?region_id=${id}`;
 
 export const NEWS = "/api/news/index";
 
-export const NEWSSINGLE = id => `/api/news/view?id=${id}`;
+export const NEWSSINGLE = (id) => `/api/news/view?id=${id}`;
+
+export const ACTIVE_DEPOSITS = "/api/deposit/user/active";
+
+export const ALL_DEPOSITS = "/api/deposit/products";
+
+export const DEPOSIT_INFO = (code) => `/api/deposit/product/${code}`;
+
+export const CREATE_DEPOSIT = "/api/deposit/create";

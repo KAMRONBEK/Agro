@@ -1,1 +1,1 @@
-export { ScreenPinCode } from './screen';
+export { ScreenPinCode } from "./screen";

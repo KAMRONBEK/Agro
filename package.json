@@ -12,7 +12,7 @@
 		"connect": "yarn debug & yarn reverse",
 		"test": "jest",
 		"lint": "eslint .",
-		"build-android":"cd ./android &&./gradlew assembleRelease&&open ./app/builds/outputs/apk/release"
+		"build-android": "cd ./android &&./gradlew assembleRelease&&open ./app/builds/outputs/apk/release"
 	},
 	"dependencies": {
 		"@haskkor/react-native-pincode": "^1.22.5",
@@ -27,13 +27,13 @@
 		"@rematch/loading": "^2.0.0-next.11",
 		"@rematch/select": "^3.0.0-next.10",
 		"@types/axios": "^0.14.0",
-		"@types/react-native-i18n": "^2.0.0",
 		"assert": "^2.0.0",
 		"axios": "^0.19.2",
 		"buffer": "^5.5.0",
 		"constants-browserify": "^1.0.0",
 		"crypto-browserify": "^3.12.0",
 		"crypto-js": "3.1.9-1",
+		"jetifier": "^1.6.6",
 		"lodash": "^4.17.15",
 		"moment": "2.24.0",
 		"node-rsa": "^1.0.7",
@@ -50,7 +50,7 @@
 		"react-native-localization": "^2.1.6",
 		"react-native-maps": "0.26.1",
 		"react-native-masked-text": "1.13.0",
-		"react-native-modal": "^11.5.4",
+		"react-native-modal": "^11.7.0",
 		"react-native-modal-dropdown": "^0.7.0",
 		"react-native-os": "^1.2.6",
 		"react-native-picker-select": "^8.0.4",
@@ -72,6 +72,7 @@
 		"reanimated-bottom-sheet": "1.0.0-alpha.16",
 		"rn-sliding-up-panel": "2.4.0",
 		"stream": "0.0.2",
+		"toggle-switch-react-native": "^3.2.0",
 		"vm": "^0.1.0"
 	},
 	"devDependencies": {

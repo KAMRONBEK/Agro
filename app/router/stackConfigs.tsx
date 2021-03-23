@@ -33,7 +33,7 @@ export const tabBarOptions = {
 		marginBottom: 5
 	},
 	style: {
-		height: 70,
+		height: Platform.OS === "ios" ? 100 : 80,
 		borderTopWidth: Platform.OS === "ios" ? 0 : 1,
 		borderTopColor: setAlpha(Palette.black, 0.1),
 		shadowOffset: {

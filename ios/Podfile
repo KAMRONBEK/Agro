@@ -42,7 +42,6 @@ target 'Agro' do
 
   pod 'RNInputMask', :path => '../node_modules/react-native-text-input-mask/ios/InputMask'
 
-
   pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-community/async-storage'
 
   pod 'RNKeychain', :path => '../node_modules/react-native-keychain'
