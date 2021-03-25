@@ -14,11 +14,12 @@ export const app = createModel<RootModel>()({
 		reloadState(): IAppState {
 			return initState;
 		},
-
 		pushTokenExist: (state: IAppState = initState): IAppState => {
 			return state;
 		},
-
+		setLoggedTime(state) {
+			return { ...state, loggedTime: new Date() };
+		},
 		doneTokenExist: (state: IAppState = initState, status: boolean): IAppState => {
 			return { ...state, isLogged: status };
 		},

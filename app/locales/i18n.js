@@ -1,4 +1,3 @@
-import { Locale } from "const";
 import LocalizedStrings from "react-native-localization";
 
 // Import all locales

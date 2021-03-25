@@ -48,11 +48,13 @@ export let SettingsContentView = ({
 	feedbackModalVisibility,
 	hideFeedbackModal
 }: IProps) => {
+	const [notification, setNotification] = useState(true);
 	return (
 		<View style={styles.container}>
 			<Modal
 				visible={feedbackModalVisibility}
 				presentationStyle="pageSheet"
+				onRequestClose={hideFeedbackModal}
 				// hardwareAccelerated={true}
 				animationType="slide"
 			>
@@ -62,7 +64,12 @@ export let SettingsContentView = ({
 						<Text style={styles.title}>{strings("title")} :</Text>
 						<TextInput style={styles.input} placeholder={strings("problemTitle")} />
 						<Text style={styles.title}>{strings("problemQuestion")} :</Text>
-						<TextInput style={styles.textArea} placeholder={strings("problemQuestion")} multiline={true} textAlignVertical={"top"} />
+						<TextInput
+							style={styles.textArea}
+							placeholder={strings("problemQuestion")}
+							multiline={true}
+							textAlignVertical={"top"}
+						/>
 					</View>
 					<SettingsModalButton onPress={hideFeedbackModal} text={strings("sendFeedback")} />
 				</View>
@@ -126,8 +133,8 @@ export let SettingsContentView = ({
 						icon={<Notify />}
 						name={strings("notification")}
 						showBorderBottom
-						onChange={() => null}
-						value={true}
+						onChange={() => setNotification(!notification)}
+						value={notification}
 					/>
 					<SettingsLogoutButton />
 				</>

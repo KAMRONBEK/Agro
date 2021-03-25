@@ -302,10 +302,16 @@ PODS:
     - React-Core
   - RNScreens (2.16.1):
     - React-Core
+  - RNSentry (2.1.1):
+    - React-Core
+    - Sentry (= 6.0.9)
   - RNSVG (9.13.6):
     - React
   - RNVectorIcons (6.6.0):
     - React
+  - Sentry (6.0.9):
+    - Sentry/Core (= 6.0.9)
+  - Sentry/Core (6.0.9)
   - TcpSockets (3.3.2):
     - React
   - TouchID (4.4.1):
@@ -359,6 +365,7 @@ DEPENDENCIES:
   - RNOS (from `../node_modules/react-native-os`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
+  - "RNSentry (from `../node_modules/@sentry/react-native`)"
   - RNSVG (from `../node_modules/react-native-svg`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - TcpSockets (from `../node_modules/react-native-tcp`)
@@ -370,6 +377,7 @@ SPEC REPOS:
     - boost-for-react-native
     - Google-Maps-iOS-Utils
     - GoogleMaps
+    - Sentry
 
 EXTERNAL SOURCES:
   BVLinearGradient:
@@ -456,6 +464,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-reanimated"
   RNScreens:
     :path: "../node_modules/react-native-screens"
+  RNSentry:
+    :path: "../node_modules/@sentry/react-native"
   RNSVG:
     :path: "../node_modules/react-native-svg"
   RNVectorIcons:
@@ -513,12 +523,14 @@ SPEC CHECKSUMS:
   RNOS: 6f2f9a70895bbbfbdad7196abd952e7b01d45027
   RNReanimated: e03f7425cb7a38dcf1b644d680d1bfc91c3337ad
   RNScreens: 45c457af3d2ee9e08fc01e70da87e653d46b1198
+  RNSentry: 6b46b6fc1d715a378fbaa5d7d43bc9ce99b500e5
   RNSVG: 8ba35cbeb385a52fd960fd28db9d7d18b4c2974f
   RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
+  Sentry: 388c9dc093b2fd3a264466a5c5b21e25959610a9
   TcpSockets: 14306fb79f9750ea7d2ddd02d8bed182abb01797
   TouchID: ba4c656d849cceabc2e4eef722dea5e55959ecf4
   Yoga: 4bd86afe9883422a7c4028c00e34790f560923d6
 
-PODFILE CHECKSUM: 089ebed0ce0edc841a7beb8f1d1b261c5afbfa40
+PODFILE CHECKSUM: 452fe9155aeb5b58a660e6168b808f93423b5b0b
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.10.1

@@ -8,9 +8,10 @@ import { BranchCallout } from "../../BranchCallout";
 
 interface IProps {
 	branches: IBranch[];
+	currentLocation: any;
 }
 
-export function BranchesMapView({ branches }: IProps) {
+export function BranchesMapView({ branches, currentLocation }: IProps) {
 	const getCoordsOfBranch = (cords: string) => {
 		const normalizedCords = cords.split(",");
 		if (normalizedCords.length > 2 || !(+normalizedCords[0] && +normalizedCords[1])) {
@@ -31,6 +32,11 @@ export function BranchesMapView({ branches }: IProps) {
 			<MapView
 				customMapStyle={mapStyle}
 				mapType="standard"
+				followsUserLocation
+				showsCompass={false}
+				showsMyLocationButton={true}
+				showsUserLocation={true}
+				rotateEnabled={false}
 				provider={PROVIDER_GOOGLE}
 				pitchEnabled={false}
 				style={styles.map}
@@ -38,8 +44,7 @@ export function BranchesMapView({ branches }: IProps) {
 				loadingEnabled={true}
 				loadingIndicatorColor={Palette.blackText}
 				region={{
-					latitude: 41.26465,
-					longitude: 69.240562,
+					...currentLocation,
 					latitudeDelta: 0.0922,
 					longitudeDelta: 0.0421
 				}}

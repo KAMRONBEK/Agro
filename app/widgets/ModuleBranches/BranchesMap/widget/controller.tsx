@@ -1,14 +1,43 @@
 import React, { Component } from "react";
 import { BranchesMapView } from "./view";
 import { Props } from "./connect";
+import Geolocation from "react-native-geolocation-service";
+import { PermissionsAndroid, Platform } from "react-native";
 
 export class BranchesMapController extends Component<Props> {
-	componentDidMount() {
+	state = {
+		currentLocation: {
+			latitude: 41.26465,
+			longitude: 69.240562
+		}
+	};
+
+	requestPermission = async () => {
+		let hasPermission;
+		if (Platform.OS === "android") {
+			hasPermission = await PermissionsAndroid.check(PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION);
+			const status = await PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION);
+		}
+	};
+
+	async componentDidMount() {
 		this.props.getBranches();
+		await this.requestPermission();
+		await Geolocation.getCurrentPosition(
+			position => {
+				this.setState({
+					currentLocation: position.coords
+				});
+			},
+			error => {
+				console.log(error.code, error.message);
+			},
+			{ enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
+		);
 	}
 
 	render() {
-		return <BranchesMapView branches={this.props.branches} />;
+		return <BranchesMapView currentLocation={this.state.currentLocation} branches={this.props.branches} />;
 	}
 }
 

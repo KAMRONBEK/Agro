@@ -12,7 +12,7 @@
 		"connect": "yarn debug & yarn reverse",
 		"test": "jest",
 		"lint": "eslint .",
-		"build-android":"cd ./android &&./gradlew assembleRelease&&open ./app/build/outputs/apk/release"
+		"build-android": "cd ./android &&./gradlew assembleRelease&&open ./app/build/outputs/apk/release"
 	},
 	"dependencies": {
 		"@haskkor/react-native-pincode": "^1.22.5",
@@ -43,6 +43,7 @@
 		"react-native": "^0.63.4",
 		"react-native-confirmation-code-input": "1.0.4",
 		"react-native-flash-message": "^0.1.15",
+		"react-native-geolocation-service": "^5.2.0",
 		"react-native-gesture-handler": "^1.9.0",
 		"react-native-keyboard-aware-scroll-view": "0.9.1",
 		"react-native-keychain": "^6.2.0",

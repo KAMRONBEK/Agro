@@ -4,6 +4,8 @@ import { Props } from "./connect";
 import { IUser } from "types";
 import { ROUTES } from "const";
 import { Locale } from "const";
+import { validateEmail } from "../../../../utils";
+import { Alert } from "react-native";
 
 export class SettingsContentController extends Component<Props> {
 	componentDidMount() {
@@ -11,6 +13,9 @@ export class SettingsContentController extends Component<Props> {
 	}
 
 	updateUserData = values => {
+		if (!validateEmail(values.email)) {
+			return Alert.alert("Ошибка", "Вы ввели не корректный email");
+		}
 		this.props.updateUserData({ ...this.props.user, ...values });
 	};
 

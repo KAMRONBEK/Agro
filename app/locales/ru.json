@@ -104,5 +104,6 @@
   "smsActivation": "СМС активация",
   "activationProcess": "Процесс авторизации",
   "next": "Далее",
-  "back": "Назад"
+  "back": "Назад",
+  "notifications": "Уведомление"
 }
