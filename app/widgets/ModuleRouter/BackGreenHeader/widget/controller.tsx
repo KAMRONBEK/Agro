@@ -16,7 +16,6 @@ export class BackGreenHeaderController extends Component<IOwnProps> {
   render() {
     const { title, navigation } = this.props;
     const navTitle = navigation.params?.title;
-
     return (
       <BackGreenHeaderView
         back={this.back}

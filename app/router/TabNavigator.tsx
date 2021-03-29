@@ -5,12 +5,17 @@ import PaymentStack from "./stackNavigators/PaymentStack";
 import MainStack from "./stackNavigators/MainStack";
 import BranchesStack from "./stackNavigators/BranchesStack";
 import SettingStack from "./stackNavigators/SettingsStack";
-import { Home } from "./assets/Home";
+import { Home } from "./assets";
 import { strings } from "../locales/i18n";
-import { Wallet } from "./assets/Wallet";
-import { Settings } from "./assets/Settings";
+import { Wallet } from "./assets";
+import { Settings } from "./assets";
 import { tabBarOptions } from "./stackConfigs";
-import { Place } from "./assets/Place";
+import { Place } from "./assets";
+import { useSelector } from "react-redux";
+import { RootState } from "../store";
+import { createStackNavigator } from "@react-navigation/stack";
+import { ScreenPinCode } from "../screens";
+import { NoHeader } from "../widgets/ModuleRouter";
 
 type Nav = {
 	[ROUTES.SCREEN_MAIN];
@@ -20,8 +25,22 @@ type Nav = {
 };
 
 const Tab = createBottomTabNavigator<Nav>();
+const { Navigator, Screen } = createStackNavigator<Nav>();
 
 const TabNavigator = () => (
+  const isAuthenticated = useSelector((state: RootState) => state.app.loggedTime);
+	return !isAuthenticated ? (
+		<Navigator>
+			<Screen
+				name={ROUTES.SCREEN_PIN_CODE}
+				component={ScreenPinCode}
+				options={{
+					header: NoHeader,
+					headerShown: false
+				}}
+			/>
+		</Navigator>
+	) : (
 	<Tab.Navigator initialRouteName={ROUTES.SCREEN_MAIN} tabBarOptions={tabBarOptions}>
 		<Tab.Screen
 			name={ROUTES.SCREEN_MAIN}
@@ -56,6 +75,6 @@ const TabNavigator = () => (
 			}}
 		/>
 	</Tab.Navigator>
+    );
 );
-
 export default TabNavigator;

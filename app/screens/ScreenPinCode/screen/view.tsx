@@ -7,8 +7,7 @@ import { View } from "react-native";
 import reactotron from "store/ReactatronConfig";
 import { styles } from "./styles";
 
-export let PinCodeView = ({ pushTokenExist, route }) => {
-	const navigation = useNavigation();
+export let PinCodeView = ({ pushTokenExist, route,setLoggedTime }) => {
 
 	useEffect(() => {
 		console.log("IT IS PIN CODE");
@@ -17,7 +16,7 @@ export let PinCodeView = ({ pushTokenExist, route }) => {
 
 	const onFinish = () => {
 		pushTokenExist();
-		// navigation.navigate(ROUTES.ROOT);
+		setLoggedTime()
 	};
 
 	const isSetup = route.params?.isSetup;

@@ -1,8 +1,6 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import { ROUTES } from "const";
 import React from "react";
-import { StyleSheet } from "react-native";
-import { ScreenPinCode } from "screens";
 import TabNavigator from "./TabNavigator";
 
 const Stack = createStackNavigator();
@@ -17,5 +15,3 @@ const RootRouter = () => {
 };
 
 export default RootRouter;
-
-const styles = StyleSheet.create({});

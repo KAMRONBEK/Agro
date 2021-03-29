@@ -1,8 +1,8 @@
-import React from 'react';
-import { View, Text, Switch } from 'react-native';
+import React from "react";
+import { View, Text, Switch } from "react-native";
 // import Switch from 'react-native-customisable-switch';
-import { styles } from './styles';
-import { Palette } from 'styles';
+import { styles } from "./styles";
+import { Palette } from "styles";
 
 interface IOwnProps {
 	icon: JSX.Element;
@@ -21,7 +21,7 @@ export function SettingsSwitchView({ icon, name, showBorderBottom, onChange, val
 			</View>
 			<View style={styles.buttonChevronBox}>
 				<Switch
-					defaultValue={true}
+					defaultValue={value}
 					activeBackgroundColor={Palette.greenAloe}
 					inactiveBackgroundColor={Palette.grey}
 					activeButtonBackgroundColor={Palette.white}
@@ -37,7 +37,7 @@ export function SettingsSwitchView({ icon, name, showBorderBottom, onChange, val
 					buttonBorderWidth={2.3}
 					animationTime={150}
 					// padding={false}
-					onChangeValue={onChange}
+					onValueChange={onChange}
 					value={value}
 				/>
 			</View>

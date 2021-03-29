@@ -20,20 +20,15 @@ if (Platform.OS === "android") {
 	}
 }
 
-class App extends Component<Props> {
-	// async componentDidMount() {
-	// 	const language = await AsyncStorage.getItem("locale");
-	// 	this.props.changeAppLanguage(Locale[language]);
-	// 	this.props.pushTokenExist();
-	// }
 
+class App extends Component<Props> {
 	state = {
 		isLoading: true,
 	};
 
 	async componentDidMount() {
-		const language = await AsyncStorage.getItem("locale");
-		this.props.changeAppLanguage(Locale[language]);
+		const language = (await AsyncStorage.getItem("locale")) ?? "ru";
+		// await this.props.changeAppLanguage(Locale[language]);
 		this.props.pushTokenExist();
 		this.setState({ isLoading: false });
 	}

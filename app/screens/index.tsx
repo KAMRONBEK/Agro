@@ -16,5 +16,9 @@ export * from "./ScreenTransactionDetails";
 export * from "./ScreenCreateVisaVirtual";
 export * from "./ScreenAddCard";
 export * from "./ScreenPinCode";
+
 export * from "./ScreenOnlineDepositsPayment";
 export * from "./ScreenOnlineDeposits";
+
+export * from "./ScreenNotifications";
+

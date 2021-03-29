@@ -8,9 +8,10 @@ import { Palette } from "styles";
 
 interface IOwnProps {
 	title: string;
+	goToNotifications: () => void;
 }
 
-export function AccountHeaderView({ title }: IOwnProps) {
+export function AccountHeaderView({ title, goToNotifications }: IOwnProps) {
 	return (
 		<View style={styles.headerBox}>
 			<LinearGradient
@@ -32,12 +33,13 @@ export function AccountHeaderView({ title }: IOwnProps) {
 						<Text style={styles.title}>{title}</Text>
 					</View>
 				</View>
-				<Notification />
-				<TouchableOpacity activeOpacity={TOUCHABLE_OPACITY} style={styles.notifyButton}>
+				<TouchableOpacity onPress={goToNotifications} activeOpacity={TOUCHABLE_OPACITY}>
+					<Notification />
 					{/* <View style={styles.notifiationCountBox}>
 						<Text style={styles.notificationCount}>0</Text>
 					</View> */}
 				</TouchableOpacity>
+				<TouchableOpacity activeOpacity={TOUCHABLE_OPACITY} style={styles.notifyButton} />
 				<View style={styles.bottomLine} />
 			</LinearGradient>
 		</View>

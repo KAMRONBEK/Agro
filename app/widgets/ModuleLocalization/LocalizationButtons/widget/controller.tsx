@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { LocalizationButtonsView } from "./view";
 import { Locale, ROUTES } from "const";
-import { NavigationScreenProp } from "react-navigation";
 import { setLocale } from "utils";
 
 interface IConnectProps {
-	navigation: NavigationScreenProp<void>;
+	navigation: any;
+	changeAppLanguage: (lang: Locale) => void;
 }
 
 export class LocalizationButtonsController extends Component<IConnectProps> {

@@ -9,8 +9,10 @@ import { strings } from "locales/i18n";
 import { ScreenCreateVisaVirtual } from "screens/ScreenCreateVisaVirtual";
 import { ScreenPaymentInnerList } from "../../screens/ScreenPaymentInnerList";
 import { ScreenCardOperations } from "../../screens/ScreenCardOperations";
+
 import { ScreenOnlineConversion, ScreenServicePayment, ScreenTransactionDetails } from "screens";
 import { ScreenOnlineDeposits } from "screens/ScreenOnlineDepositsPayment";
+
 
 type Nav = {
 	[ROUTES.SCREEN_MAIN];
@@ -21,6 +23,7 @@ type Nav = {
 	[ROUTES.SCREEN_SERVICE_PAYMENT];
 	[ROUTES.SCREEN_TRANSACTION_DETAILS];
 	[ROUTES.SCREEN_ONLINE_CONVERSION];
+	[ROUTES.SCREEN_NOTIFICATIONS];
 };
 
 const Stack = createStackNavigator<Nav>();
@@ -81,6 +84,13 @@ const MainStack = () => (
 			component={ScreenTransactionDetails}
 			options={{
 				...BackGreenHeader(strings("details"))
+			}}
+		/>
+		<Stack.Screen
+			name={ROUTES.SCREEN_NOTIFICATIONS}
+			component={ScreenNotifications}
+			options={{
+				...BackGreenHeader(strings("notifications"))
 			}}
 		/>
 	</Stack.Navigator>

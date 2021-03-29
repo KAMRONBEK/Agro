@@ -1,27 +1,22 @@
-import React, { Component } from 'react';
-import { NavigationScreenProp } from 'react-navigation';
-import { BackHeaderView } from './view';
+import React, { Component } from "react";
+import { NavigationScreenProp } from "react-navigation";
+import { BackHeaderView } from "./view";
 
 interface IOwnProps {
-  navigation: NavigationScreenProp<void>;
-  title: string;
+	navigation: NavigationScreenProp<void>;
+	title: string;
 }
 
 export class BackHeaderController extends Component<IOwnProps> {
-  back = () => {
-    const { navigation } = this.props;
+	back = () => {
+		const { navigation } = this.props;
 
-    navigation.goBack();
-  };
+		navigation.goBack();
+	};
 
-  render() {
-    const { title } = this.props;
-
-    return (
-      <BackHeaderView
-        back={this.back}
-        title={title}
-      />
-    )
-  }
+	render() {
+		const { title } = this.props;
+		console.log("xaxaxaxaxaxaxa", title);
+		return <BackHeaderView back={this.back} title={title} />;
+	}
 }

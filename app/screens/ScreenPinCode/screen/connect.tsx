@@ -8,7 +8,7 @@ const mapState = ({ app: {} }: IStoreState) => ({});
 
 type ExportComponent = ComponentType<{}>;
 
-let mapDispatch = ({ app: { pushTokenExist } }: Dispatch) => ({ pushTokenExist });
+let mapDispatch = ({ app: { pushTokenExist, setLoggedTime } }: Dispatch) => ({ pushTokenExist, setLoggedTime });
 
 export let ScreenPinCode = connect(
 	mapState,

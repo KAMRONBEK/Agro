@@ -1,8 +1,9 @@
-import { IAppState } from 'types';
-import {Locale} from "const";
+import { IAppState } from "types";
+import { Locale } from "const";
 
 export const initState: IAppState = {
-  isLogged: false,
-  language: Locale.RU,
-  token: null
+	isLogged: false,
+	language: Locale.RU,
+	token: null,
+	loggedTime: null
 };

@@ -57,14 +57,15 @@ export let SettingsContentView = ({
 	langaugeModalVisibility,
 	onCloseLanguageModal,
 }: IProps) => {
+	const [notification, setNotification] = useState(true);
 	return (
 		<View style={styles.container}>
 			<Modal
-				isVisible={feedbackModalVisibility}
-				swipeDirection="down"
-				//swipeDirection={["up", "down", "left", "right"]}
-				onSwipeComplete={hideFeedbackModal}
-				backdropOpacity={0.5}
+visible={feedbackModalVisibility}
+				presentationStyle="pageSheet"
+				onRequestClose={hideFeedbackModal}
+				// hardwareAccelerated={true}
+				animationType="slide"
 			>
 				<View style={styles.modalContainer}>
 					<View style={styles.modalContent}>
@@ -203,8 +204,8 @@ export let SettingsContentView = ({
 						icon={<Notify />}
 						name={strings("notification")}
 						showBorderBottom
-						onChange={() => null}
-						value={true}
+						onChange={() => setNotification(!notification)}
+						value={notification}
 					/>
 					<SettingsLogoutButton />
 				</>
