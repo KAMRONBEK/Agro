@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { IStoreState } from "types";
 import { ServicePaymentFooterButtonsController } from "./controller";
-import { IDispatch } from "store";
+import { Dispatch } from "store";
 import { ComponentType } from "react";
 import { compose } from "utils";
 
@@ -11,7 +11,7 @@ const mapState = ({ supplier: supplierState, payment: paymentState }: IStoreStat
   paymentIsFetching: paymentState.paymentIsFetching
 });
 
-const mapDispatch = ({ supplier: supplierState }: IDispatch) => ({
+const mapDispatch = ({ supplier: supplierState }: Dispatch) => ({
   pushSupplierPayment: supplierState.pushSupplierPayment
 });
 

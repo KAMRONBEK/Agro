@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, Modal } from "react-native";
+import { View, Text, Modal as RNModal, TextInput, TouchableOpacity, ImageBackground, Image } from "react-native";
 import { apiQwerty, setLocale } from "utils";
 import { SettingsButton, SettingsCategory, SettingsLogoutButton, SettingsSwitch } from "widgets/ModuleSettings";
 import { Email, Lang, Notify, Phone, Profile, Review, Secure } from "../assets";
@@ -8,10 +8,13 @@ import { SettingsSaveButton } from "widgets/ModuleSettings";
 import { strings } from "locales/i18n";
 import { SettingsSelect } from "widgets/ModuleSettings/SettingsSelect";
 import { IUser } from "types";
-import { Locale } from "const";
-import { BorderlessButton, TextInput } from "react-native-gesture-handler";
+import { Locale, TOUCHABLE_OPACITY, TOUCHABLE_OPACITY_2 } from "const";
 import { PaymentsButton } from "widgets/ModulePayment";
 import { SettingsModalButton } from "widgets/ModuleSettings/SettingsModalButton";
+import AntDesign from "react-native-vector-icons/AntDesign";
+import { Palette } from "styles";
+import images from "assets/images";
+import Modal from "react-native-modal";
 
 let userType = {
 	id: 29,
@@ -22,7 +25,7 @@ let userType = {
 	gender: null,
 	created_at: "2020-08-24T12:15:36.000000Z",
 	updated_at: "2020-09-04T12:35:29.000000Z",
-	email: "example@example.com"
+	email: "example@example.com",
 };
 
 interface IProps {
@@ -31,10 +34,13 @@ interface IProps {
 	isUserUpdating;
 	onFieldChange: (key: keyof IUser, value: string) => void;
 	onSecurityPress: () => void;
-	changeAppLang: (lang: Locale) => void;
+	onPressLanguage: () => void;
+	onSelectLanguage: (lang: Locale) => void;
 	onFeedbackPress: () => void;
 	feedbackModalVisibility: boolean;
 	hideFeedbackModal: () => void;
+	langaugeModalVisibility: boolean;
+	onCloseLanguageModal: () => void;
 }
 
 export let SettingsContentView = ({
@@ -43,16 +49,19 @@ export let SettingsContentView = ({
 	isUserUpdating,
 	onFieldChange,
 	onSecurityPress,
-	changeAppLang,
+	onPressLanguage,
+	onSelectLanguage,
 	onFeedbackPress,
 	feedbackModalVisibility,
-	hideFeedbackModal
+	hideFeedbackModal,
+	langaugeModalVisibility,
+	onCloseLanguageModal,
 }: IProps) => {
 	const [notification, setNotification] = useState(true);
 	return (
 		<View style={styles.container}>
 			<Modal
-				visible={feedbackModalVisibility}
+visible={feedbackModalVisibility}
 				presentationStyle="pageSheet"
 				onRequestClose={hideFeedbackModal}
 				// hardwareAccelerated={true}
@@ -74,11 +83,72 @@ export let SettingsContentView = ({
 					<SettingsModalButton onPress={hideFeedbackModal} text={strings("sendFeedback")} />
 				</View>
 			</Modal>
+
+			<RNModal
+				visible={langaugeModalVisibility}
+				presentationStyle="overFullScreen"
+				animationType="slide"
+				transparent={true}
+			>
+				<ImageBackground
+					style={styles.langContainer}
+					source={images.globe}
+					imageStyle={{
+						borderRadius: 20,
+						opacity: 0.05,
+					}}
+				>
+					<TouchableOpacity activeOpacity={TOUCHABLE_OPACITY} onPress={onCloseLanguageModal}>
+						<View style={styles.langCloseWrapper}>
+							<AntDesign name="close" size={24} color={Palette.white} />
+						</View>
+					</TouchableOpacity>
+
+					<View style={styles.langTop}>
+						<Text style={styles.langTitle}>{strings("selectLanguage")}</Text>
+					</View>
+					<View style={styles.imgWrapper}>
+						<TouchableOpacity
+							activeOpacity={TOUCHABLE_OPACITY}
+							onPress={() => {
+								onSelectLanguage(Locale.RU);
+							}}
+						>
+							<View>
+								<Image source={images.russia} style={styles.langImage} />
+								<Text style={styles.name}>{strings("russian")}</Text>
+							</View>
+						</TouchableOpacity>
+						<TouchableOpacity
+							activeOpacity={TOUCHABLE_OPACITY}
+							onPress={() => {
+								onSelectLanguage(Locale.UZ);
+							}}
+						>
+							<View>
+								<Image source={images.uzbekistan} style={styles.langImage} />
+								<Text style={styles.name}> {strings("uzbek")}</Text>
+							</View>
+						</TouchableOpacity>
+						<TouchableOpacity
+							activeOpacity={TOUCHABLE_OPACITY}
+							onPress={() => {
+								onSelectLanguage(Locale.EN);
+							}}
+						>
+							<View>
+								<Image source={images.unitedStates} style={styles.langImage} />
+								<Text style={styles.name}> {strings("english")}</Text>
+							</View>
+						</TouchableOpacity>
+					</View>
+				</ImageBackground>
+			</RNModal>
 			<SettingsCategory label={strings("accountRecord")}>
 				<>
 					<SettingsButton
 						hasInput
-						onChange={e => onFieldChange("name", e)}
+						onChange={(e) => onFieldChange("name", e)}
 						icon={<Profile />}
 						name={userData.name}
 						placeholder={userType.name}
@@ -86,7 +156,7 @@ export let SettingsContentView = ({
 					/>
 					<SettingsButton
 						hasInput
-						onChange={e => onFieldChange("email", e)}
+						onChange={(e) => onFieldChange("email", e)}
 						icon={<Email />}
 						name={userData.email}
 						placeholder={userType.email}
@@ -94,7 +164,7 @@ export let SettingsContentView = ({
 					/>
 					<SettingsButton
 						hasInput
-						onChange={e => onFieldChange("phone", e)}
+						onChange={(e) => onFieldChange("phone", e)}
 						icon={<Phone />}
 						name={userData.phone}
 						placeholder={userType.phone}
@@ -113,9 +183,10 @@ export let SettingsContentView = ({
 						icon={<Lang />}
 						name={strings("language")}
 						showBorderBottom
-						onPress={any => {
-							changeAppLang(any);
+						onPress={(any) => {
+							onSelectLanguage(any);
 						}}
+						onPressLanguage={onPressLanguage}
 					/>
 					<SettingsButton
 						onPress={onSecurityPress}

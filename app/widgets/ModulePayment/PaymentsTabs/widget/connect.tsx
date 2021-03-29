@@ -3,9 +3,7 @@ import { PaymentsTabsController } from "./controller";
 import { IStoreState } from "types";
 
 const mapState = ({ cards: cardsState }: IStoreState) => ({
-  cards: cardsState.cards
+	cards: cardsState.cards
 });
 
-export const PaymentsTabsConnect = connect(
-  mapState
-)(PaymentsTabsController);
+export const PaymentsTabsConnect = connect(mapState)(PaymentsTabsController);

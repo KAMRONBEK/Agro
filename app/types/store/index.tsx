@@ -14,3 +14,4 @@ export * from "./cardOperations";
 export * from "./appState";
 export * from "./user";
 export * from "./branches";
+export * from "./deposits";

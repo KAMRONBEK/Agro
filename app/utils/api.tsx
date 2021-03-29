@@ -8,25 +8,25 @@ import {
 	API_ENDPOINT_QWERTY,
 	ACCEPT,
 	CONTENT_TYPE,
-	AUTHORIZATION
+	AUTHORIZATION,
 } from "api";
 
 export const apiClick = Axios.create({
 	baseURL: API_ENDPOINT,
 	headers: {
 		[ACCEPT]: APPLICATION_JSON,
-		[CONTENT_TYPE]: APPLICATION_JSON
+		[CONTENT_TYPE]: APPLICATION_JSON,
 	},
-	timeout: 30000
+	timeout: 30000,
 });
 
 export const apiQwerty = Axios.create({
 	baseURL: API_ENDPOINT_QWERTY,
 	headers: {
 		[ACCEPT]: APPLICATION_JSON,
-		[CONTENT_TYPE]: APPLICATION_JSON
+		[CONTENT_TYPE]: APPLICATION_JSON,
 	},
-	timeout: 30000
+	timeout: 30000,
 });
 
 // export const setToken = async store => {
@@ -56,3 +56,26 @@ export function generateServiceKey(): string {
 
 	return service_key;
 }
+
+export let formData = (rawData) => {
+	let form = new FormData();
+	Object.keys(rawData).forEach((key) => {
+		if (Array.isArray(rawData[key])) {
+			let obj = rawData[key];
+			for (let index in obj) {
+				form.append(`${key}[${index}]`, obj[index]);
+			}
+			return;
+		}
+		if (typeof rawData[key] === "object") {
+			let obj = rawData[key];
+			let i = 0;
+			Object.keys(obj).forEach((id, index) => {
+				if (obj[id]) form.append(`${key}[${i++}]`, parseInt(id));
+			});
+			return;
+		}
+		form.append(key, rawData[key]);
+	});
+	return form;
+};

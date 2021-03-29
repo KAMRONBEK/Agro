@@ -14,16 +14,12 @@ export function ScreenMainView() {
 	return (
 		<View style={styles.container}>
 			<TemplateGreenBackground style={[styles.greenBg]} />
-			<ScrollView
-				showsVerticalScrollIndicator={false}
-				contentContainerStyle={styles.scrollContainer}
-			>
+			<ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContainer}>
 				<MainSelectCurrency />
 				<MainTabs />
 				<MainPaymentTypeButtons />
 			</ScrollView>
 			<MainTransactionsHistory />
-
 			<MainLoginSuccessModal />
 		</View>
 	);

@@ -8,20 +8,23 @@ import { withNavigation } from "router/withNavigation";
 const mapState = ({ user, loading, settings }: RootState) => ({
 	user: user.data,
 	isUserUpdating: loading.effects.user.updateUserData,
-	feedbackModalVisibility: settings.feedbackModal
+	feedbackModalVisibility: settings.feedbackModal,
+	languageModalVisibility: settings.languageModal
 });
 
 const mapDispatch = ({
 	user: { getUserData, updateUserData, setUserData },
 	app: { changeAppLanguage },
-	settings: { showFeedbackModal, hideFeedbackModal }
+	settings: { showFeedbackModal, hideFeedbackModal, hideLanguageModal, showLanguageModal }
 }: Dispatch) => ({
 	getUserData,
 	updateUserData,
 	setUserData,
 	showFeedbackModal,
 	hideFeedbackModal,
-	changeAppLanguage
+	changeAppLanguage,
+	showLanguageModal,
+	hideLanguageModal
 });
 
 export const SettingsContentConnect = connect(

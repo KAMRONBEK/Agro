@@ -1,7 +1,7 @@
 import { initState } from "./state";
 import { IPaymentState, IPayment, IStoreState, IPaymentData, IMessageError } from "types";
 import { createLoggedAsyncAction, isUnauthenticated, isErrorExist } from "utils";
-import { callPayment, getBankomats, getRegions } from "./request";
+import { callPayment, getBankomats, getNewsList, getRegions, getNewsSingle } from "./request";
 import { formatedPaymentRequestParams } from "./parser";
 import { createModel } from "@rematch/core";
 import { RootModel } from "../models";
@@ -27,18 +27,30 @@ export const payment = createModel<RootModel>()({
 		pushRegions: (state: IPaymentState, regions): IPaymentState => {
 			return {
 				...state,
-				regions: regions
+				regions: regions,
 			};
 		},
 		pushBankomats: (state: IPaymentState, bankomats): IPaymentState => {
 			return {
 				...state,
 				bankomats: bankomats,
-				regions: []
+				regions: [],
 			};
-		}
+		},
+		pushNews: (state: IPaymentState, news): IPaymentState => {
+			return {
+				...state,
+				news: news,
+			};
+		},
+		pushCurrentNews: (state: IPaymentState, currentNews): IPaymentState => {
+			return {
+				...state,
+				currentNews: currentNews,
+			};
+		},
 	},
-	effects: dispatch => ({
+	effects: (dispatch) => ({
 		pushPayment: createLoggedAsyncAction<void, void>(
 			async (_: void, rootState: IStoreState) => {
 				const requestParams = formatedPaymentRequestParams(rootState);
@@ -75,7 +87,7 @@ export const payment = createModel<RootModel>()({
 			let res = await getRegions();
 			dispatch.payment.pushRegions(res);
 		},
-		getBankomats: async id => {
+		getBankomats: async (id) => {
 			console.log(id);
 			try {
 				let res = await getBankomats(id);
@@ -83,6 +95,22 @@ export const payment = createModel<RootModel>()({
 			} catch (error) {
 				console.log(error);
 			}
-		}
-	})
+		},
+		getNews: async () => {
+			try {
+				let res = await getNewsList();
+				dispatch.payment.pushNews(res);
+			} catch (error) {
+				console.log(error);
+			}
+		},
+		getNewsSingle: async (id) => {
+			try {
+				let res = await getNewsSingle(id);
+				dispatch.payment.pushCurrentNews(res);
+			} catch (error) {
+				console.log(error);
+			}
+		},
+	}),
 });

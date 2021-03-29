@@ -1,6 +1,7 @@
 import { ISupplierField, ISupplierState, IFieldState, FieldType, FormTypes, ISupplierFormData } from "types";
 import { formatedPureValue } from "utils";
 import { REQUIRED_FIELD, WRONG_FORMAT, MIN_LENGTH, MIN_AMOUNT, MAX_AMOUNT } from "const";
+import { strings } from "locales/i18n";
 
 export function validateFields(state: ISupplierState): { isError: boolean, result: IFieldState<FieldType>[] } {
   const { fields, form: formData, currentStep } = state;
@@ -97,11 +98,11 @@ export function checkInput(params: ISupplierField, fieldForm: ISupplierFormData,
 }
 
 export function validateByRegEx(params: ISupplierField, regex: string): string {
-  return !new RegExp(regex).test(formatedPureValue(params.value)) && WRONG_FORMAT;
+  return !new RegExp(regex).test(formatedPureValue(params.value)) && strings("incorrectFormat");
 }
 
 export function validateRequiredField(required: boolean, params: ISupplierField): string {
-  return !params.value.length && required && REQUIRED_FIELD;
+  return !params.value.length && required && strings("requiredFields");
 }
 
 export function getErrors(value: string[]): string[] {
@@ -109,9 +110,9 @@ export function getErrors(value: string[]): string[] {
 }
 
 export function validateLengthField(minLength: number, params: ISupplierField): string {
-  return params.value.length < minLength && MIN_LENGTH + minLength;
+  return params.value.length < minLength && strings("minLength") + minLength;
 }
 
 export function validateAmountMinMaxAmount(params: ISupplierField, { options: { min, max, input_currency } }: ISupplierFormData): string {
-  return (Number(params.value) < min && MIN_AMOUNT + min + ` ${input_currency}`) || (Number(params.value) > max && MAX_AMOUNT + max + ` ${input_currency}`);
+  return (Number(params.value) < min && strings("minAmount") + min + ` ${input_currency}`) || (Number(params.value) > max && strings('maxAmount') + max + ` ${input_currency}`);
 }

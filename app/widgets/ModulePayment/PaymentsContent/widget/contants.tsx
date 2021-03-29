@@ -29,7 +29,8 @@ export const SERVICES: IService[] = [
 	},
 	{
 		name: strings("onlineDeposit"),
-		icon: <OnlineDeposit />
+		icon: <OnlineDeposit />,
+		routeName: ROUTES.SCREEN_ONLINE_DEPOSITS
 	},
 	{
 		name: strings("onlineCredit"),

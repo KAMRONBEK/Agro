@@ -1,8 +1,9 @@
-import React from 'react';
-import { View, Text } from 'react-native';
+import React from "react";
+import { View, Text } from "react-native";
 // import Switch from 'react-native-customisable-switch';
-import { styles } from './styles';
-import { Palette } from 'styles';
+import { styles } from "./styles";
+import { Palette } from "styles";
+import ToggleSwitch from "toggle-switch-react-native";
 
 export function ServicePaymentSavePatternView() {
 	return (
@@ -29,6 +30,15 @@ export function ServicePaymentSavePatternView() {
           console.log(value);
         }}
       /> */}
+			<ToggleSwitch
+				isOn={true}
+				onColor={Palette.greenAloe}
+				offColor={Palette.greyLightText}
+				label=""
+				// labelStyle={{ color: "black", fontWeight: "900" }}
+				size="small"
+				onToggle={isOn => console.log("changed to : ", isOn)}
+			/>
 		</View>
 	);
 }

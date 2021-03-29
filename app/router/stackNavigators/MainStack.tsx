@@ -9,7 +9,10 @@ import { strings } from "locales/i18n";
 import { ScreenCreateVisaVirtual } from "screens/ScreenCreateVisaVirtual";
 import { ScreenPaymentInnerList } from "../../screens/ScreenPaymentInnerList";
 import { ScreenCardOperations } from "../../screens/ScreenCardOperations";
-import { ScreenOnlineConversion, ScreenServicePayment, ScreenTransactionDetails, ScreenNotifications } from "screens";
+
+import { ScreenOnlineConversion, ScreenServicePayment, ScreenTransactionDetails } from "screens";
+import { ScreenOnlineDeposits } from "screens/ScreenOnlineDepositsPayment";
+
 
 type Nav = {
 	[ROUTES.SCREEN_MAIN];
