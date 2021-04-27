@@ -61,7 +61,7 @@ export let SettingsContentView = ({
 	return (
 		<View style={styles.container}>
 			<Modal
-visible={feedbackModalVisibility}
+				visible={feedbackModalVisibility}
 				presentationStyle="pageSheet"
 				onRequestClose={hideFeedbackModal}
 				// hardwareAccelerated={true}

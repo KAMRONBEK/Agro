@@ -21,7 +21,7 @@ export function MainTransactionsHistoryView({
 	transactions,
 	transactionsIsFetching,
 	openModal,
-	details
+	details,
 }: IOwnProps) {
 	const { height } = Dimensions.get("window");
 
@@ -123,8 +123,8 @@ export function MainTransactionsHistoryView({
 	return (
 		<BottomSheet
 			ref={modalRef}
-			snapPoints={[110, height * 0.33, height * 0.85]}
-			initialSnap={1}
+			snapPoints={[60, height * 0.33, height - 200]}
+			initialSnap={0}
 			callbackThreshold={5}
 			renderHeader={renderHeader}
 			renderContent={renderContent}
