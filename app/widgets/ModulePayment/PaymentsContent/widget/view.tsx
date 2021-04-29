@@ -10,7 +10,7 @@ import {
 	PaymentsTabs
 } from "widgets/ModulePayment";
 import { SERVICES } from "./contants";
-import { strings } from "locales/i18n";
+import { strings } from "translations/i18n";
 
 export function PaymentsContentView() {
 	return (

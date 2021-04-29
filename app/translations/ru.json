@@ -1,4 +1,6 @@
 {
+	"enterPinCode": "Введите ПИН-код",
+	"confirmPinCode": "Подтвердите PIN-код",
 	"depositName": "Наименование депозита",
 	"persentageRate": "Процентная ставка",
 	"period": "Период",
@@ -130,5 +132,6 @@
 	"activationProcess": "Процесс авторизации",
 	"next": "Далее",
 	"back": "Назад",
-	"notifications": "Уведомление"
+	"notifications": "Уведомление",
+	"attemptFailed": "Ошибка"
 }

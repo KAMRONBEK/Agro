@@ -1,4 +1,4 @@
-import { strings } from "locales/i18n";
+import { strings } from "translations/i18n";
 import React from "react";
 import { View, Text } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";

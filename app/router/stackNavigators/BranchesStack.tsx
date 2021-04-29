@@ -4,7 +4,7 @@ import { ROUTES } from "const";
 import { ScreenBranches } from "screens/ScreenBranches";
 import { screenOptions } from "../stackConfigs";
 import { GreenHeaderController } from "widgets/ModuleRouter/GreenHeader/widget/controller";
-import { strings } from "locales/i18n";
+import { strings } from "translations/i18n";
 
 type Nav = {
 	[ROUTES.SCREEN_BRANCHES];

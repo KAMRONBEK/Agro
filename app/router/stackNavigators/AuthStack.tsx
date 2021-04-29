@@ -6,7 +6,7 @@ import { BackGreenHeader, BackHeader, NoHeader } from "widgets/ModuleRouter";
 import { ScreenLocalization } from "screens/ScreenLocalization";
 import { ScreenLoginType } from "screens/ScreenLoginType";
 import { ScreenAuthorization } from "screens/ScreenAuthorization";
-import { strings } from "locales/i18n";
+import { strings } from "translations/i18n";
 import { ScreenSignup2 } from "screens/ScreenSignup2";
 import { ScreenSmsConfirmation } from "screens/ScreenSmsConfirmation";
 import { ScreenPinCode } from "screens/ScreenPinCode/screen";

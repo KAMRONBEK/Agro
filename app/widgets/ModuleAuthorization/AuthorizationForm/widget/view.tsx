@@ -6,7 +6,7 @@ import { Palette } from "styles";
 import { Eye, HideEye } from "../assets";
 import { TOUCHABLE_OPACITY } from "const";
 import { IFieldState, FieldType } from "types";
-import { strings } from "locales/i18n";
+import { strings } from "translations/i18n";
 
 interface IOwnProps {
 	phone: IFieldState<FieldType, string>;

@@ -1,5 +1,5 @@
 import { TOUCHABLE_OPACITY } from "const";
-import { strings } from "locales/i18n";
+import { strings } from "translations/i18n";
 import React from "react";
 import { View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";

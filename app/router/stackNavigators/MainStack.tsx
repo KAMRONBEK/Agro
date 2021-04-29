@@ -5,7 +5,7 @@ import { ScreenMain } from "screens/ScreenMain";
 import { AccountHeader, BackGreenHeader } from "widgets/ModuleRouter";
 import { screenOptions } from "../stackConfigs";
 import { ScreenAddCard } from "screens/ScreenAddCard";
-import { strings } from "locales/i18n";
+import { strings } from "translations/i18n";
 import { ScreenCreateVisaVirtual } from "screens/ScreenCreateVisaVirtual";
 import { ScreenPaymentInnerList } from "../../screens/ScreenPaymentInnerList";
 import { ScreenCardOperations } from "../../screens/ScreenCardOperations";

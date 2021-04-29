@@ -1,4 +1,4 @@
-import { strings } from "locales/i18n";
+import { strings } from "translations/i18n";
 import { IHint } from "./types";
 
 export const HINTS: IHint[] = [

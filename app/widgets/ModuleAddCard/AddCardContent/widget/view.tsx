@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text } from "react-native";
 import { styles } from "./styles";
 import { AddCardButtons } from "widgets/ModuleAddCard";
-import { strings } from "locales/i18n";
+import { strings } from "translations/i18n";
 
 export function AddCardContentView() {
 	return (

@@ -129,5 +129,6 @@
 	"areYouSure": "To'lashga ishonchingiz komilmi?",
 	"refuse": "Rad etish",
 	"accept": "Qabul qilish",
-	"notifications": "Xabarlar"
+	"notifications": "Xabarlar",
+	"attemptFailed": "Xato"
 }

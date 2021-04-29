@@ -1,17 +1,19 @@
 import React from "react";
-import { View } from "react-native";
+import { TouchableOpacity, View } from "react-native";
 import MapView, { Callout, Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import { styles, mapStyle } from "./styles";
 import { Palette } from "styles";
 import { IBranch } from "types/store";
 import { BranchCallout } from "../../BranchCallout";
+import CursorIcon from "../../../../screens/ScreenBranches/widget/CursorIcon";
 
 interface IProps {
 	branches: IBranch[];
 	currentLocation: any;
+	getCurrentLocation: any;
 }
 
-export function BranchesMapView({ branches, currentLocation }: IProps) {
+export function BranchesMapView({ branches, currentLocation, getCurrentLocation }: IProps) {
 	const getCoordsOfBranch = (cords: string) => {
 		const normalizedCords = cords.split(",");
 		if (normalizedCords.length > 2 || !(+normalizedCords[0] && +normalizedCords[1])) {
@@ -69,6 +71,11 @@ export function BranchesMapView({ branches, currentLocation }: IProps) {
 						)
 				)}
 			</MapView>
+			<TouchableOpacity style={styles.getCurrentLocation} onPress={getCurrentLocation}>
+				<View style={styles.circleIcon}>
+					<CursorIcon />
+				</View>
+			</TouchableOpacity>
 		</View>
 	);
 }

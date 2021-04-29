@@ -1,6 +1,6 @@
 import { API_VERSION } from "api";
 import { ROUTES } from "const";
-import { strings } from "locales/i18n";
+import { strings } from "translations/i18n";
 import React, { Component } from "react";
 import { NavigationScreenProp } from "react-navigation";
 import { ISuppliersParams, VisaCurrencyType } from "types";

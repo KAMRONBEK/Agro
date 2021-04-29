@@ -1,15 +1,15 @@
 import { ISupplierField, ISupplierState, IFieldState, FieldType, FormTypes, ISupplierFormData } from "types";
 import { formatedPureValue } from "utils";
 import { REQUIRED_FIELD, WRONG_FORMAT, MIN_LENGTH, MIN_AMOUNT, MAX_AMOUNT } from "const";
-import { strings } from "locales/i18n";
+import { strings } from "translations/i18n";
 
 export function validateFields(state: ISupplierState): { isError: boolean, result: IFieldState<FieldType>[] } {
   const { fields, form: formData, currentStep } = state;
 
   const result = fields.map(field => {
-    const params = { 
-      type: field.type, 
-      value: field.value 
+    const params = {
+      type: field.type,
+      value: field.value
     };
 
     const fieldForm = formData[formData.findIndex(item => item.step === currentStep)]
@@ -20,13 +20,13 @@ export function validateFields(state: ISupplierState): { isError: boolean, resul
       if (fieldForm.type === FormTypes.Input_Text) {
         return checkInput(params, fieldForm, field);
       }
-  
+
       if (fieldForm.type === FormTypes.Amount_Input) {
         const amountMinMaxAmountResult = fieldForm.type === FormTypes.Amount_Input && validateAmountMinMaxAmount(params, fieldForm);
         const isRequiredResult = validateRequiredField(isRequired, params);
-  
+
         const errors = getErrors([amountMinMaxAmountResult, isRequiredResult]);
-  
+
         return {
           ...field,
           value: field.value,

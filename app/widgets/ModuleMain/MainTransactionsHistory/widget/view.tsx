@@ -6,7 +6,7 @@ import { styles } from "./styles";
 import { TOUCHABLE_OPACITY_DISABLED, DEFAULT_DATE, TOUCHABLE_OPACITY } from "const";
 import { ITransaction, ITransactionType } from "types";
 import moment from "moment";
-import { strings } from "locales/i18n";
+import { strings } from "translations/i18n";
 
 interface IOwnProps {
 	modalRef: RefObject<BottomSheet>;

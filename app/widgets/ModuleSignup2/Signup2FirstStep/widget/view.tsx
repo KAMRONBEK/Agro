@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import { styles } from './styles';
 import { Signup2PhoneField } from 'widgets/ModuleSignup2';
-import {strings} from "../../../../locales/i18n";
+import {strings} from "../../../../translations/i18n";
 
 interface IOwnProps {
 

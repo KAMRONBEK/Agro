@@ -1,6 +1,6 @@
 import AsyncStorage from '@react-native-community/async-storage';
 import {Locale, UNAUTHENTICATED, USER_TOKEN} from 'const';
-import localization from 'locales/i18n';
+import i18 from 'translations/i18n';
 import moment from 'moment';
 import {IMessageError} from 'types';
 
@@ -19,7 +19,6 @@ export const compose = <T extends {}>(...funcs: any[]) => {
 
 export const isTokenExist = async (): Promise<string> => {
     const res = await AsyncStorage.getItem(USER_TOKEN);
-    console.log(res);
     return res;
 };
 
@@ -32,7 +31,7 @@ export function getFormatedDate(date: Date, format: string) {
 }
 
 export async function setLocale(locale: Locale) {
-    localization.setLanguage(locale);
+    i18.locale = locale;
     AsyncStorage.setItem('locale', locale);
 }
 
@@ -80,6 +79,6 @@ export function isUnauthenticated(error: IMessageError): boolean {
 }
 
 export function validateEmail(email) {
-    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const re = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
     return re.test(String(email).toLowerCase());
 }

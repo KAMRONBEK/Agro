@@ -3,7 +3,7 @@ import { View, Text } from "react-native";
 // import Switch from 'react-native-customisable-switch';
 import { styles } from "./styles";
 import { Palette } from "styles";
-import { strings } from "locales/i18n";
+import { strings } from "translations/i18n";
 
 export function OnlineConversionSavePatternView() {
 	return (

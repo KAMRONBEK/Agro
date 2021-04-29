@@ -4,7 +4,7 @@ import { ROUTES } from "const";
 import { ScreenPayment } from "../../screens/ScreenPayment";
 import { screenOptions } from "../stackConfigs";
 import { AccountHeader, BackGreenHeader } from "widgets/ModuleRouter";
-import { strings } from "../../locales/i18n";
+import { strings } from "../../translations/i18n";
 import { ScreenPaymentInnerList } from "../../screens/ScreenPaymentInnerList";
 import { ScreenOnlineConversion } from "../../screens/ScreenOnlineConversion";
 import { ScreenCardOperations } from "../../screens/ScreenCardOperations";

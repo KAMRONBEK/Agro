@@ -8,7 +8,7 @@ import TextInputMask, { onChangeTextCallback } from "react-native-text-input-mas
 import { TOUCHABLE_OPACITY } from "const";
 import { IFieldState, FieldType } from "types";
 import { VerifyCardModal } from "widgets/ModuleShared";
-import { strings } from "locales/i18n";
+import { strings } from "translations/i18n";
 
 interface IOwnProps {
 	isVisible: boolean;

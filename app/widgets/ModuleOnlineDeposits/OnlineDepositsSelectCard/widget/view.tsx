@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text } from "react-native";
 import { styles } from "./styles";
-import { strings } from "locales/i18n";
+import { strings } from "translations/i18n";
 import { IConnectProps } from "./controller";
 import { Cards } from "widgets/ModuleShared";
 import { ICard, ICardBalance } from "types";

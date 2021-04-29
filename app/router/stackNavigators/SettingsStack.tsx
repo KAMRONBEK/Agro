@@ -3,11 +3,13 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { ROUTES } from "const";
 import { ScreenSettings } from "screens/ScreenSettings";
 import { screenOptions } from "../stackConfigs";
-import { strings } from "locales/i18n";
-import { GreenHeader } from "widgets/ModuleRouter";
+import { strings } from "translations/i18n";
+import {GreenHeader, NoHeader} from "widgets/ModuleRouter";
+import {ScreenPinCode} from "../../screens";
 
 type Nav = {
 	[ROUTES.SCREEN_SETTINGS];
+	[ROUTES.SCREEN_PIN_CODE];
 };
 
 const { Navigator, Screen } = createStackNavigator<Nav>();
@@ -19,6 +21,17 @@ const SettingStack = () => (
 			component={ScreenSettings}
 			options={{
 				...GreenHeader(strings("changeSettings"))
+			}}
+		/>
+		<Screen
+			name={ROUTES.SCREEN_PIN_CODE}
+			component={ScreenPinCode}
+			initialParams={{
+				isSetup: true
+			}}
+			options={{
+				header: NoHeader,
+				headerShown: false,
 			}}
 		/>
 	</Navigator>

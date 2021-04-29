@@ -3,6 +3,7 @@ import { BranchesMapView } from "./view";
 import { Props } from "./connect";
 import Geolocation from "react-native-geolocation-service";
 import { PermissionsAndroid, Platform } from "react-native";
+import { apiQwerty } from "../../../../utils";
 
 export class BranchesMapController extends Component<Props> {
 	state = {
@@ -23,7 +24,11 @@ export class BranchesMapController extends Component<Props> {
 	async componentDidMount() {
 		this.props.getBranches();
 		await this.requestPermission();
-		await Geolocation.getCurrentPosition(
+		this.getCurrentLocation();
+	}
+
+	getCurrentLocation = () => {
+		Geolocation.getCurrentPosition(
 			position => {
 				this.setState({
 					currentLocation: position.coords
@@ -34,10 +39,16 @@ export class BranchesMapController extends Component<Props> {
 			},
 			{ enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
 		);
-	}
+	};
 
 	render() {
-		return <BranchesMapView currentLocation={this.state.currentLocation} branches={this.props.branches} />;
+		return (
+			<BranchesMapView
+				currentLocation={this.state.currentLocation}
+				branches={this.props.branches}
+				getCurrentLocation={this.getCurrentLocation}
+			/>
+		);
 	}
 }
 

@@ -3,7 +3,7 @@ import { ITransactionDetails, ITransactionType } from "types";
 import { View, Text } from "react-native";
 import { styles } from "./styles";
 import { PAYMENT_STATUS } from "./consts";
-import { strings } from "locales/i18n";
+import { strings } from "translations/i18n";
 
 interface IOwnProps {
 	details: ITransactionDetails;

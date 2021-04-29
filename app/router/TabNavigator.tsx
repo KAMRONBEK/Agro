@@ -6,7 +6,7 @@ import MainStack from "./stackNavigators/MainStack";
 import BranchesStack from "./stackNavigators/BranchesStack";
 import SettingStack from "./stackNavigators/SettingsStack";
 import { Home } from "./assets";
-import { strings } from "../locales/i18n";
+import { strings } from "../translations/i18n";
 import { Wallet } from "./assets";
 import { Settings } from "./assets";
 import { tabBarOptions } from "./stackConfigs";
@@ -18,6 +18,7 @@ import { ScreenPinCode } from "../screens";
 import { NoHeader } from "../widgets/ModuleRouter";
 
 type Nav = {
+	[ROUTES.SCREEN_PIN_CODE];
 	[ROUTES.SCREEN_MAIN];
 	[ROUTES.SCREEN_PAYMENT];
 	[ROUTES.SCREEN_BRANCHES];
@@ -37,6 +38,9 @@ const TabNavigator = () => {
 				options={{
 					header: NoHeader,
 					headerShown: false,
+				}}
+				initialParams={{
+					isSetup: false
 				}}
 			/>
 		</Navigator>

@@ -8,7 +8,7 @@ import {
 	OnTimePayment,
 	RepaymentOfLoans
 } from "../assets";
-import { strings } from "locales/i18n";
+import { strings } from "translations/i18n";
 
 export interface IService {
 	name: string;

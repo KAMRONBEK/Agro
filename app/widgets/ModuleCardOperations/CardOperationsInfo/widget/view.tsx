@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text } from "react-native";
 import { styles } from "./styles";
 import { ICardInfo, ITransferInfo, IFieldState, FieldType } from "types";
-import { strings } from "locales/i18n";
+import { strings } from "translations/i18n";
 
 interface IOwnProps {
 	cardInfo: ICardInfo;

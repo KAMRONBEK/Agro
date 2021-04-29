@@ -5,7 +5,7 @@ import { styles } from "./styles";
 import { ChevronRight } from "../assets";
 import { Palette } from "styles";
 import RNPickerSelect from "react-native-picker-select";
-import localization from "../../../../locales/i18n";
+import localization from "../../../../translations/i18n";
 
 interface IOwnProps {
 	icon: JSX.Element;

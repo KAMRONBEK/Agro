@@ -6,7 +6,7 @@ import { styles } from "./styles";
 import { Palette } from "styles";
 import { CountdownTimer } from "widgets/ModuleShared/CountdownTimer";
 import { IFieldState, FieldType } from "types";
-import { strings } from "locales/i18n";
+import { strings } from "translations/i18n";
 
 interface IOwnProps {
 	field: IFieldState<FieldType.Code, string>;

@@ -6,7 +6,7 @@ import { RootModel } from "../models";
 import { AUTHORIZATION } from "api";
 import { Locale } from "const";
 import AsyncStorage from "@react-native-community/async-storage";
-import localization from "../../locales/i18n";
+import I18n from 'react-native-i18n';
 
 export const app = createModel<RootModel>()({
 	state: initState,
@@ -39,6 +39,8 @@ export const app = createModel<RootModel>()({
 	effects: dispatch => ({
 		pushTokenExist: createLoggedAsyncAction(
 			async () => {
+				const lang =  await AsyncStorage.getItem('locale');
+				I18n.locale = lang ?? 'ru'
 				const res = await isTokenExist();
 				await dispatch.app.setToken(res);
 				await dispatch.app.doneTokenExist(!!res);
@@ -48,13 +50,11 @@ export const app = createModel<RootModel>()({
 				dispatch.app.failTokenExist(false);
 			}
 		),
-
 		async changeAppLanguage(language: Locale) {
-			await AsyncStorage.setItem("locale", language);
-			localization.setLanguage(language);
+			I18n.locale = language ?? 'ru';
+			await AsyncStorage.setItem("locale", language ?? 'ru');
 			dispatch.app.setAppLanguage(language);
 		},
-
 		pushResetApp: () => {
 			dispatch.login.resetState();
 			dispatch.cardOperations.resetState();

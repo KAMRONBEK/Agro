@@ -8,7 +8,6 @@ const Stack = createStackNavigator();
 const RootRouter = () => {
 	return (
 		<Stack.Navigator headerMode="none">
-			{/* <Stack.Screen name={ROUTES.SCREEN_PIN_CODE} component={ScreenPinCode} /> */}
 			<Stack.Screen name={ROUTES.ROOT} component={TabNavigator} />
 		</Stack.Navigator>
 	);

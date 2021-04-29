@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, TextInput } from "react-native";
 import { styles } from "./styles";
 import { Palette } from "styles";
-import { strings } from "locales/i18n";
+import { strings } from "translations/i18n";
 
 export function OnlineCurrencyAccountView() {
 	return (

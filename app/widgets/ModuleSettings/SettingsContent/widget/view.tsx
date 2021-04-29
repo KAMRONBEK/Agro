@@ -5,7 +5,7 @@ import { SettingsButton, SettingsCategory, SettingsLogoutButton, SettingsSwitch 
 import { Email, Lang, Notify, Phone, Profile, Review, Secure } from "../assets";
 import { styles } from "./styles";
 import { SettingsSaveButton } from "widgets/ModuleSettings";
-import { strings } from "locales/i18n";
+import { strings } from "translations/i18n";
 import { SettingsSelect } from "widgets/ModuleSettings/SettingsSelect";
 import { IUser } from "types";
 import { Locale, TOUCHABLE_OPACITY, TOUCHABLE_OPACITY_2 } from "const";
@@ -25,7 +25,7 @@ let userType = {
 	gender: null,
 	created_at: "2020-08-24T12:15:36.000000Z",
 	updated_at: "2020-09-04T12:35:29.000000Z",
-	email: "example@example.com",
+	email: "example@example.com"
 };
 
 interface IProps {
@@ -55,7 +55,7 @@ export let SettingsContentView = ({
 	feedbackModalVisibility,
 	hideFeedbackModal,
 	langaugeModalVisibility,
-	onCloseLanguageModal,
+	onCloseLanguageModal
 }: IProps) => {
 	const [notification, setNotification] = useState(true);
 	return (
@@ -95,7 +95,7 @@ export let SettingsContentView = ({
 					source={images.globe}
 					imageStyle={{
 						borderRadius: 20,
-						opacity: 0.05,
+						opacity: 0.05
 					}}
 				>
 					<TouchableOpacity activeOpacity={TOUCHABLE_OPACITY} onPress={onCloseLanguageModal}>
@@ -109,37 +109,34 @@ export let SettingsContentView = ({
 					</View>
 					<View style={styles.imgWrapper}>
 						<TouchableOpacity
+							style={styles.center}
 							activeOpacity={TOUCHABLE_OPACITY}
 							onPress={() => {
 								onSelectLanguage(Locale.RU);
 							}}
 						>
-							<View>
-								<Image source={images.russia} style={styles.langImage} />
-								<Text style={styles.name}>{strings("russian")}</Text>
-							</View>
+							<Image source={images.russia} style={styles.langImage} />
+							<Text style={styles.name}>{strings("russian")}</Text>
 						</TouchableOpacity>
 						<TouchableOpacity
+							style={styles.center}
 							activeOpacity={TOUCHABLE_OPACITY}
 							onPress={() => {
 								onSelectLanguage(Locale.UZ);
 							}}
 						>
-							<View>
-								<Image source={images.uzbekistan} style={styles.langImage} />
-								<Text style={styles.name}> {strings("uzbek")}</Text>
-							</View>
+							<Image source={images.uzbekistan} style={styles.langImage} />
+							<Text style={styles.name}> {strings("uzbek")}</Text>
 						</TouchableOpacity>
 						<TouchableOpacity
 							activeOpacity={TOUCHABLE_OPACITY}
 							onPress={() => {
 								onSelectLanguage(Locale.EN);
 							}}
+							style={styles.center}
 						>
-							<View>
-								<Image source={images.unitedStates} style={styles.langImage} />
-								<Text style={styles.name}> {strings("english")}</Text>
-							</View>
+							<Image source={images.unitedStates} style={styles.langImage} />
+							<Text style={styles.name}> {strings("english")}</Text>
 						</TouchableOpacity>
 					</View>
 				</ImageBackground>
@@ -148,7 +145,7 @@ export let SettingsContentView = ({
 				<>
 					<SettingsButton
 						hasInput
-						onChange={(e) => onFieldChange("name", e)}
+						onChange={e => onFieldChange("name", e)}
 						icon={<Profile />}
 						name={userData.name}
 						placeholder={userType.name}
@@ -156,7 +153,7 @@ export let SettingsContentView = ({
 					/>
 					<SettingsButton
 						hasInput
-						onChange={(e) => onFieldChange("email", e)}
+						onChange={e => onFieldChange("email", e.toLocaleLowerCase())}
 						icon={<Email />}
 						name={userData.email}
 						placeholder={userType.email}
@@ -164,7 +161,7 @@ export let SettingsContentView = ({
 					/>
 					<SettingsButton
 						hasInput
-						onChange={(e) => onFieldChange("phone", e)}
+						onChange={e => onFieldChange("phone", e)}
 						icon={<Phone />}
 						name={userData.phone}
 						placeholder={userType.phone}
@@ -183,7 +180,7 @@ export let SettingsContentView = ({
 						icon={<Lang />}
 						name={strings("language")}
 						showBorderBottom
-						onPress={(any) => {
+						onPress={any => {
 							onSelectLanguage(any);
 						}}
 						onPressLanguage={onPressLanguage}

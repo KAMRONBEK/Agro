@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { LocalizationButtonsView } from "./view";
 import { Locale, ROUTES } from "const";
-import { setLocale } from "utils";
 
 interface IConnectProps {
 	navigation: any;
@@ -11,10 +10,11 @@ interface IConnectProps {
 export class LocalizationButtonsController extends Component<IConnectProps> {
 	chooseLanguage = (locale: Locale) => () => {
 		const {
-			navigation: { navigate }
+			navigation: { navigate },
+			changeAppLanguage,
 		} = this.props;
 
-		setLocale(locale);
+		changeAppLanguage(locale);
 
 		navigate(ROUTES.SCREEN_SIGNUP);
 	};

@@ -83,7 +83,7 @@ export const styles = StyleSheet.create({
 	},
 	langImage: {
 		width: 50,
-		height: 50
+		height: 50,
 	},
 	imgWrapper: {
 		flexDirection: "row",
@@ -95,5 +95,9 @@ export const styles = StyleSheet.create({
 		fontSize: 12,
 		color: Palette.blackText,
 		textAlign: "center"
+	},
+	center: {
+		justifyContent: 'center',
+		alignItems: "center"
 	}
 });

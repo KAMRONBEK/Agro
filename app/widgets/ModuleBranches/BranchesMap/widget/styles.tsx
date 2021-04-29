@@ -7,6 +7,27 @@ export const styles = StyleSheet.create({
 	},
 	map: {
 		flex: 1
+	},
+	getCurrentLocation: {
+		borderRadius: 100,
+		width: 45,
+		height: 45,
+		position: "absolute",
+		right: 20,
+		bottom: 30,
+		overflow: "hidden",
+		elevation: 5
+	},
+	circleIcon: {
+		width: 45,
+		height: 45,
+		justifyContent: "center",
+		alignItems: "center",
+		marginBottom: 2.7,
+		borderRadius: 100,
+		backgroundColor: "#fff",
+		borderWidth: 2,
+		borderColor: "#fff"
 	}
 });
 

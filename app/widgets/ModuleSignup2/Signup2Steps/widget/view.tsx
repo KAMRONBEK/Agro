@@ -5,7 +5,7 @@ import { Signup2FirstStep, Signup2SecondStep } from "widgets/ModuleSignup2";
 import { TOUCHABLE_OPACITY } from "const";
 import { Palette } from "styles";
 import { string } from "prop-types";
-import { strings } from "../../../../locales/i18n";
+import { strings } from "../../../../translations/i18n";
 
 interface IOwnProps {
 	activeStep: number;

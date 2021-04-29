@@ -1,5 +1,5 @@
 import { IAddCard } from "./types";
-import { strings } from "locales/i18n";
+import { strings } from "translations/i18n";
 
 export const ADD_CARD_TITLE = strings("addCard");
 

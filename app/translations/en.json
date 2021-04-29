@@ -1,4 +1,6 @@
 {
+	"enterPinCode": "Enter Pin-code",
+	"confirmPinCode": "Confirm Pin-code",
 	"selectCardForDebit": "Select card for debiting",
 	"selectCardForRecharge": "Select card for replenishment",
 	"main": "Main",
@@ -126,5 +128,6 @@
 	"depositStorePeriod": "Deposit storage period",
 	"areYouSure": "Are you sure to pay?",
 	"refuse": "Refuse",
-	"accept": "Accept"
+	"accept": "Accept",
+	"attemptFailed": "Attempt Failed"
 }

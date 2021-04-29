@@ -7,12 +7,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import AuthStack from "./router/stackNavigators/AuthStack";
 import { Dispatch, RootState } from "./store";
 import { connect } from "react-redux";
-import AsyncStorage from "@react-native-community/async-storage";
-import { Locale } from "const";
-import RootRouter from "router/RootRouter";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { Platform, StatusBar, UIManager } from "react-native";
-import { Palette } from "styles";
+import { Platform, UIManager } from "react-native";
+
 
 if (Platform.OS === "android") {
 	if (UIManager.setLayoutAnimationEnabledExperimental) {
@@ -27,33 +23,27 @@ class App extends Component<Props> {
 	};
 
 	async componentDidMount() {
-		const language = (await AsyncStorage.getItem("locale")) ?? "ru";
-		// await this.props.changeAppLanguage(Locale[language]);
 		this.props.pushTokenExist();
-		this.setState({ isLoading: false });
 	}
 
-	// componentDidUpdate(prevProps: Readonly<Props>, prevState: Readonly<{}>, snapshot?: any) {
-	//     if(prevProps.language !== this.props.language) {
-	//         this.forceUpdate();
-	//     }
-	// }
 
 	renderNavigator = () => {
-		const { isLogged, isLangLoading, isAppLoading } = this.props;
+		const { isLogged, isAppLoading } = this.props;
 
-		if (isAppLoading || isLangLoading || this.state.isLoading) {
+		if (isAppLoading) {
 			return <AppLoadingView />;
 		}
 		switch (isLogged) {
 			case true: {
-				return <TabNavigator />;
+				return <TabNavigator key={this.props.language}/>;
 			}
 			case false: {
 				return <AuthStack />;
 			}
 		}
 	};
+
+
 
 	render() {
 		return (

@@ -4,7 +4,7 @@ import { styles } from "./styles";
 import { Cards } from "widgets/ModuleShared";
 import { CreateVisaVirtualHints, CreateVisaVirtualButton } from "widgets/ModuleCreateVisaVirtual";
 import { ICard } from "types";
-import { strings } from "locales/i18n";
+import { strings } from "translations/i18n";
 
 interface IOwnProps {
 	cards: ICard[];

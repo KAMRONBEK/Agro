@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { StackNavigationProp } from "@react-navigation/stack";
+import { StackScreenProps } from "@react-navigation/stack";
 
 import { SettingsContentController } from "./controller";
 import { Dispatch, RootState } from "store";
@@ -35,4 +35,4 @@ export const SettingsContentConnect = connect(
 type StateProps = ReturnType<typeof mapState>;
 type DisPatchProps = ReturnType<typeof mapDispatch>;
 
-export type Props = { navigation: StackNavigationProp<any> } & StateProps & DisPatchProps;
+export type Props = { navigation: StackScreenProps<any> } & StateProps & DisPatchProps;

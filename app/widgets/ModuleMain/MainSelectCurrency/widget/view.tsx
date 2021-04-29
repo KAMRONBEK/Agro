@@ -5,7 +5,7 @@ import { styles } from "./styles";
 import { Arrow } from "../assets";
 import { OPTIONS } from "./constants";
 import { apiQwerty } from "utils";
-import { strings } from "locales/i18n";
+import { strings } from "translations/i18n";
 
 interface IOwnProps {}
 
@@ -13,6 +13,7 @@ export let MainSelectCurrencyView = ({  }: IOwnProps) => {
 	const [data, setData] = useState({});
 	let effect = async () => {
 		let res = await apiQwerty.get(`/api/visas/exchange`);
+		setData(res.data?.exchangeRates);
 	};
 	useEffect(() => {
 		effect();
@@ -38,7 +39,7 @@ export let MainSelectCurrencyView = ({  }: IOwnProps) => {
 				</View>
 				<View style={styles.currencyRightBox}>
 					<Text style={styles.rate}>
-						<Text style={styles.rateBold}>9500.00</Text> {strings("som")}
+						<Text style={styles.rateBold}>{+index === 0 ? data?.sellRate : data?.buyRate}</Text> {strings("som")}
 					</Text>
 				</View>
 			</TouchableOpacity>
@@ -62,7 +63,7 @@ export let MainSelectCurrencyView = ({  }: IOwnProps) => {
 								resizeMode="contain"
 							/>
 						</View>
-						<Text style={styles.currencyCost}>1 USD = 9500.00 сум</Text>
+						<Text style={styles.currencyCost}>1 USD = {data?.buyRate} сум</Text>
 					</View>
 					<View style={styles.selectRightBox}>
 						<Arrow />

@@ -1,4 +1,4 @@
-import { strings } from "locales/i18n";
+import { strings } from "translations/i18n";
 import { Route } from "react-native-tab-view";
 
 export const ROUTES: Route[] = [

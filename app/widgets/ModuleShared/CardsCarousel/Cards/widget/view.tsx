@@ -11,7 +11,7 @@ import { Palette } from 'styles';
 import { TextInputMask } from 'react-native-masked-text';
 import { BlurView } from "@react-native-community/blur";
 import moment from 'moment';
-import { strings } from "locales/i18n";
+import { strings } from "translations/i18n";
 
 interface IOwnProps {
   carouselRef: RefObject<Carousel<any>> & RefObject<ScrollViewProps> & RefObject<CarouselStatic<any>>;
@@ -150,7 +150,7 @@ export function CardsView({
 
   function renderUzCard(item: ICard) {
     const { card_number } = item;
-    
+
     return (
       <ImageBackground style={styles.cardBg} resizeMode='stretch' source={require('../assets/CardBg/CardBg1.png')}>
         <View style={styles.cardContent}>
@@ -178,7 +178,7 @@ export function CardsView({
   function renderVisaCard(item: ICard) {
     const { card_number, visa_info, } = item;
     const { statuS1 } = visa_info;
-    
+
     return (
       <View style={[styles.cardBg, styles.visaCardBg]}>
         { statuS1 === "2" && renderExpiredCardLayout(card_number) }
@@ -196,7 +196,7 @@ export function CardsView({
               <View style={styles.switchContainer}>
                 { changeVisaVirtualStatusIsFetching && <ActivityIndicator size='small' color={Palette.white} animating={changeVisaVirtualStatusIsFetching} /> }
                 <Text style={styles.switchTitle}>{statuS1 === '0' ? strings('activated'): strings('deactivated')}</Text>
-                {/* <Switch 
+                {/* <Switch
                   value={statuS1 === '0' ? true : false}
                   onAsyncPress={onValueChange}
                   style={styles.switch}
@@ -221,7 +221,7 @@ export function CardsView({
               <Text numberOfLines={1} style={styles.cardHolder}>{visa_info.carD_NAME}</Text>
               {renderVisaBalance(item)}
             </View>
-          
+
             <Visa />
           </View>
         </View>

@@ -3,7 +3,7 @@ import { View, Text } from "react-native";
 import { TemplateModal } from "templates";
 import { styles } from "./styles";
 import { Login } from "../assets";
-import { strings } from "locales/i18n";
+import { strings } from "translations/i18n";
 
 interface IOwnProps {
 	isVisible: boolean;

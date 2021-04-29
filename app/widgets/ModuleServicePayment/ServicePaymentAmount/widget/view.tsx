@@ -3,7 +3,7 @@ import { View, Text, TextInput } from "react-native";
 import { styles } from "./styles";
 import { TextInputMask } from "react-native-masked-text";
 import { IFieldState, FieldType } from "types";
-import { strings } from "locales/i18n";
+import { strings } from "translations/i18n";
 
 interface IOwnProps {
 	field: IFieldState<FieldType.SupplierField, string>;

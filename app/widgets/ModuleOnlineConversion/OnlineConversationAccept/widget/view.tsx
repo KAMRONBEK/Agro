@@ -4,7 +4,7 @@ import { styles } from "./styles";
 import { TOUCHABLE_OPACITY } from "const";
 import LinearGradient from "react-native-linear-gradient";
 import { GRADIENT_COLORS } from "styles";
-import { strings } from "locales/i18n";
+import { strings } from "translations/i18n";
 
 export function OnlineConversationAcceptView() {
 	return (

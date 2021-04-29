@@ -6,7 +6,7 @@ import TextInputMask from "react-native-text-input-mask";
 import { IFieldState, FieldType } from "types";
 import { Palette } from "styles";
 import { Signup2CountdownTimer } from "widgets/ModuleSignup2";
-import { strings } from "locales/i18n";
+import { strings } from "translations/i18n";
 
 interface IOwnProps {
 	phone: IFieldState<FieldType.Phone, string>;

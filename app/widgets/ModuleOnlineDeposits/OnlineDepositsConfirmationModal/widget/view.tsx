@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, TextInput, Dimensions, TouchableOpacity, Image } from "react-native";
 import { styles } from "./styles";
 import { Palette } from "styles";
-import { strings } from "locales/i18n";
+import { strings } from "translations/i18n";
 import { TextInputMask } from "react-native-masked-text";
 import { IConnectProps } from "./controller";
 import Modal from "react-native-modal";

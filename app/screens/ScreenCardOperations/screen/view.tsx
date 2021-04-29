@@ -15,7 +15,7 @@ import {
 } from "widgets/ModuleCardOperations";
 import { OperationType, ICard, CardTypes } from "types";
 import { Cards } from "widgets/ModuleShared";
-import { strings } from "locales/i18n";
+import { strings } from "translations/i18n";
 import { select } from "store";
 import { ScrollView } from "react-native-gesture-handler";
 

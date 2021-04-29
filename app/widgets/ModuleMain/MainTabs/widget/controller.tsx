@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { MainTabsView } from './view';
 import { NavigationState, Route } from 'react-native-tab-view';
-import { ROUTES } from './constants';
 import { ICard, CardTypes } from 'types';
+import {strings} from "../../../../translations/i18n";
 
 interface IConnectProps {
   cards: ICard[];
@@ -16,7 +16,11 @@ export class MainTabsController extends Component<IConnectProps, IState> {
   state: IState = {
     tabsState: {
       index: 0,
-      routes: ROUTES
+      routes: [
+        { key: "first", title: strings("somType") },
+        { key: "second", title: strings("currencyType") }
+        // { key: 'third', title: 'Депозитные' }
+      ]
     }
   }
 
@@ -29,7 +33,6 @@ export class MainTabsController extends Component<IConnectProps, IState> {
   render() {
     const { tabsState } = this.state;
     const { cards } = this.props;
-    console.log(cards);
     const sumCards = cards.filter(card => card.card_type === CardTypes.Uzcard);
     const visaCards = cards
       .filter(card => card.card_type === CardTypes.Visa)
@@ -40,7 +43,7 @@ export class MainTabsController extends Component<IConnectProps, IState> {
           avaiL_AMOUNT: !!card?.visa_balance ? card?.visa_balance.avaiL_AMOUNT.slice(0, card?.visa_balance.avaiL_AMOUNT.length - 2) : null
         }
       }));
-    
+
     return (
       <MainTabsView
         tabsState={tabsState}

@@ -4,7 +4,7 @@ import { TabView, SceneMap, NavigationState, Route, TabBar, SceneRendererProps }
 import { styles } from "./styles";
 import { Palette } from "styles";
 import { DepositListType, ICard } from "types";
-import { strings } from "locales/i18n";
+import { strings } from "translations/i18n";
 import SwitchSelector from "react-native-switch-selector";
 import { setAlpha } from "utils";
 import { switchOptions } from "./constants";

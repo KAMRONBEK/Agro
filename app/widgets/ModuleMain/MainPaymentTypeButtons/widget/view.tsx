@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity } from "react-native";
 import { styles } from "./styles";
 import { ROUTES, TOUCHABLE_OPACITY } from "const";
 import { Autopayment, LocalPayment, Mobile, NFC, Transfer, Visa } from "../assets";
-import { strings } from "locales/i18n";
+import { strings } from "translations/i18n";
 
 interface IOwnProps {
 	routeTo: (route: ROUTES) => () => void;

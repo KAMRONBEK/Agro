@@ -3,7 +3,7 @@ import { ScrollView } from "react-native";
 import { styles } from "./styles";
 import { SettingsContent } from "widgets/ModuleSettings";
 
-export function ScreenSettingsView({ setLanguage }) {
+export function ScreenSettingsView() {
 	return (
 		<ScrollView contentContainerStyle={styles.container}>
 			<SettingsContent />

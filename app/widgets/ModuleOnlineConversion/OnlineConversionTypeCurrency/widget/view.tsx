@@ -3,7 +3,7 @@ import { View, Text, ScrollView, TouchableOpacity } from "react-native";
 import { styles } from "./styles";
 import { Coin } from "../assets";
 import { TOUCHABLE_OPACITY } from "const";
-import { strings } from "locales/i18n";
+import { strings } from "translations/i18n";
 
 export function OnlineConversionTypeCurrencyView() {
 	function renderCurrency() {
