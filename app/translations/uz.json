@@ -1,6 +1,7 @@
 {
-	"enterPinCode": "Введите ПИН-код",
-	"confirmPinCode": "Подтвердите PIN-код",
+	"enterPinCode": "Pin-kodni kiriting",
+	"enterPinCodeChange": "Yangi Pin-kodni kiriting",
+	"confirmPinCode": "Pin-kodni Tasdiqlang",
 	"selectCardForDebit": "Yechim uchun kartani tanlash",
 	"selectCardForRecharge": "Kirim uchun kartani tanlash",
 	"main": "Bosh",
@@ -61,7 +62,7 @@
 	"onlineConversion": "Onlayn ayrboshlash",
 	"transferToCard": "Kartaga o'tkazma",
 	"onlineDeposit": "Onlayn depozitlar",
-	"onlineCredit": "Oblayn kreditlar",
+	"onlineCredit": "Onlayn kreditlar",
 	"oneTimePayment": "Bir martalik to'lov",
 	"repaymentCredit": "Kredit so'ndirish",
 	"cardNumber": "Karta raqami",
@@ -130,5 +131,11 @@
 	"refuse": "Rad etish",
 	"accept": "Qabul qilish",
 	"notifications": "Xabarlar",
-	"attemptFailed": "Xato"
+	"attemptFailed": "Xato",
+	"cancel": "Bekor qilish",
+	"buy": "Xarid",
+	"sell": "Sotish",
+	"useFingerPrint": "Barmoq izi bilan tasdiqlash",
+	"changePin": "Pin ni o'zgartirish",
+	"open": "Ochish"
 }

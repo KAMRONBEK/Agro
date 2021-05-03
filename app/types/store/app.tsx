@@ -5,4 +5,5 @@ export interface IAppState {
 	language: Locale;
 	token: string;
 	loggedTime: Date | null;
+	useFingerPrint: boolean;
 }

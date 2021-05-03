@@ -1,5 +1,6 @@
 {
 	"enterPinCode": "Enter Pin-code",
+	"enterPinCodeChange": "Enter new Pin-code",
 	"confirmPinCode": "Confirm Pin-code",
 	"selectCardForDebit": "Select card for debiting",
 	"selectCardForRecharge": "Select card for replenishment",
@@ -129,5 +130,11 @@
 	"areYouSure": "Are you sure to pay?",
 	"refuse": "Refuse",
 	"accept": "Accept",
-	"attemptFailed": "Attempt Failed"
+	"attemptFailed": "Attempt Failed",
+	"cancel": "Cancel",
+	"buy": "Buy",
+	"sell": "Sell",
+	"useFingerPrint": "Use fingerprint scanner",
+	"changePin": "Change pin",
+	"open": "Open"
 }

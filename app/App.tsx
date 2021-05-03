@@ -9,23 +9,20 @@ import { Dispatch, RootState } from "./store";
 import { connect } from "react-redux";
 import { Platform, UIManager } from "react-native";
 
-
 if (Platform.OS === "android") {
 	if (UIManager.setLayoutAnimationEnabledExperimental) {
 		UIManager.setLayoutAnimationEnabledExperimental(true);
 	}
 }
 
-
 class App extends Component<Props> {
 	state = {
-		isLoading: true,
+		isLoading: true
 	};
 
 	async componentDidMount() {
 		this.props.pushTokenExist();
 	}
-
 
 	renderNavigator = () => {
 		const { isLogged, isAppLoading } = this.props;
@@ -35,7 +32,7 @@ class App extends Component<Props> {
 		}
 		switch (isLogged) {
 			case true: {
-				return <TabNavigator key={this.props.language}/>;
+				return <TabNavigator />;
 			}
 			case false: {
 				return <AuthStack />;
@@ -43,15 +40,11 @@ class App extends Component<Props> {
 		}
 	};
 
-
-
 	render() {
 		return (
 			<>
 				<MyStatusBar />
-
 				<NavigationContainer>{this.renderNavigator()}</NavigationContainer>
-
 				<FlashMessage position="top" />
 			</>
 		);
@@ -62,16 +55,19 @@ const mapState = ({ app: { language, isLogged }, loading }: RootState) => ({
 	language,
 	isLogged,
 	isLangLoading: loading.effects.app.changeAppLanguage,
-	isAppLoading: loading.effects.app.pushTokenExist,
+	isAppLoading: loading.effects.app.pushTokenExist
 });
 
 const mapDispatch = ({ app: { changeAppLanguage, pushTokenExist } }: Dispatch) => ({
 	changeAppLanguage,
-	pushTokenExist,
+	pushTokenExist
 });
 
 type StateProps = ReturnType<typeof mapState>;
 type DisPatchProps = ReturnType<typeof mapDispatch>;
 type Props = StateProps & DisPatchProps;
 
-export default connect(mapState, mapDispatch)(App);
+export default connect(
+	mapState,
+	mapDispatch
+)(App);

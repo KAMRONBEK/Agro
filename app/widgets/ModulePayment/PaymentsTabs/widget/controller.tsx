@@ -3,6 +3,7 @@ import { PaymentsTabsView } from "./view";
 import { NavigationState, Route } from "react-native-tab-view";
 import { ROUTES } from "./constants";
 import { ICard, CardTypes } from "types";
+import { strings } from "../../../../translations/i18n";
 
 interface IConnectProps {
 	cards: ICard[];
@@ -16,7 +17,7 @@ export class PaymentsTabsController extends Component<IConnectProps, IState> {
 	state: IState = {
 		tabsState: {
 			index: 0,
-			routes: ROUTES
+			routes: [{ key: "first", title: strings("somType") }, { key: "second", title: strings("currencyType") }]
 		}
 	};
 

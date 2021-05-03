@@ -4,7 +4,7 @@ import SwitchSelector from "react-native-switch-selector";
 import { styles } from "./styles";
 import { Palette } from "styles";
 import { setAlpha } from "utils";
-import { switchOptions } from "./constants";
+import { strings } from "../../../../translations/i18n";
 
 export function OnlineConversionTypeView() {
 	return (
@@ -17,7 +17,16 @@ export function OnlineConversionTypeView() {
 				selectedColor={Palette.white}
 				buttonColor={setAlpha(Palette.white, 0.1)}
 				backgroundColor={Palette.transparent}
-				options={switchOptions}
+				options={[
+					{
+						label: strings("buy"),
+						value: 0
+					},
+					{
+						label: strings("sell"),
+						value: 1
+					}
+				]}
 				selectedTextStyle={styles.switchText}
 				textStyle={styles.switchText}
 				height={40}

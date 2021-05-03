@@ -4,11 +4,12 @@ import { View, Text } from "react-native";
 import { styles } from "./styles";
 import { Palette } from "styles";
 import ToggleSwitch from "toggle-switch-react-native";
+import { strings } from "../../../../translations/i18n";
 
 export function ServicePaymentSavePatternView() {
 	return (
 		<View style={styles.container}>
-			<Text style={styles.title}>Сохранить как шаблон</Text>
+			<Text style={styles.title}>{strings("saveAsTemplate")}</Text>
 			{/* <Switch
         defaultValue={true}
         activeBackgroundColor={Palette.greenAloe}

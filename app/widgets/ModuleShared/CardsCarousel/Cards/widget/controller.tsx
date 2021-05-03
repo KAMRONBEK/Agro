@@ -7,6 +7,7 @@ import { ScrollViewProps } from "react-native";
 import { ADD_CARD } from "./consts";
 import { NavigationScreenProp } from "react-navigation";
 import { ROUTES } from "const";
+import { strings } from "../../../../../translations/i18n";
 
 export interface IOwnProps {
 	showAddCard?: boolean;
@@ -80,7 +81,16 @@ export class CardsController extends Component<IConnectProps & IOwnProps> {
 			changeVisaVirtualStatusIsFetching,
 			pushCardsBalance
 		} = this.props;
-		const formatedCards = showAddCard || !cards.length ? [...cards, ADD_CARD] : [...cards];
+		const formatedCards =
+			showAddCard || !cards.length
+				? [
+						...cards,
+						{
+							addCard: true,
+							title: strings("addCard")
+						}
+				  ]
+				: [...cards];
 
 		return (
 			<>

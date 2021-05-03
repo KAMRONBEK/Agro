@@ -98,10 +98,12 @@ export let SettingsContentView = ({
 						opacity: 0.05
 					}}
 				>
-					<TouchableOpacity activeOpacity={TOUCHABLE_OPACITY} onPress={onCloseLanguageModal}>
-						<View style={styles.langCloseWrapper}>
-							<AntDesign name="close" size={24} color={Palette.white} />
-						</View>
+					<TouchableOpacity
+						style={styles.langCloseWrapper}
+						activeOpacity={TOUCHABLE_OPACITY}
+						onPress={onCloseLanguageModal}
+					>
+						<AntDesign name="close" size={24} color={Palette.white} />
 					</TouchableOpacity>
 
 					<View style={styles.langTop}>

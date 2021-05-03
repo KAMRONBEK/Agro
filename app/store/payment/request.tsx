@@ -9,8 +9,7 @@ export async function callPayment(params: IPaymentParams) {
 	return apiQwerty
 		.post<IPaymentData>(PAYMENT, params, {
 			headers: {
-				[AUTHORIZATION]: await AsyncStorage.getItem(USER_TOKEN),
-				[ACCEPT_LANGUAGE]: Locale.RU
+				[AUTHORIZATION]: await AsyncStorage.getItem(USER_TOKEN)
 			}
 		})
 		.then(response => response.data)

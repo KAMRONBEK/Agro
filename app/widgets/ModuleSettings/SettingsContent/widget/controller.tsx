@@ -24,7 +24,7 @@ export class SettingsContentController extends Component<Props> {
 	};
 
 	onSecurityPress = () => {
-		this.props.navigation.navigate(ROUTES.SCREEN_PIN_CODE);
+		this.props.navigation.navigate(ROUTES.SCREEN_SECURITY);
 	};
 	onPressLanguage = () => {
 		this.props.showLanguageModal();

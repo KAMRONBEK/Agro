@@ -5,5 +5,6 @@ export const initState: IAppState = {
 	isLogged: false,
 	language: Locale.RU,
 	token: null,
-	loggedTime: null
+	loggedTime: null,
+	useFingerPrint: true
 };

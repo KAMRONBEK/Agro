@@ -1,10 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import { PinCodeView as ScreenPinCodeView } from "./view";
+import { IProps } from "./connect";
 
-interface IConnectProps {}
-
-export class ScreenPinController extends Component<IConnectProps> {
-	render() {
-		return <ScreenPinCodeView {...this.props} />;
-	}
+export function ScreenPinController(props: IProps) {
+	return <ScreenPinCodeView {...props} />;
 }

@@ -1,16 +1,16 @@
 import { connect } from "react-redux";
 import { Dispatch, RootState } from "store";
-import { ScreenPinController } from "./controller";
+import { ScreenSetupPinCodeController } from "./controller";
 import { StackScreenProps } from "@react-navigation/stack";
 
-const mapState = ({ app: { useFingerPrint } }: RootState) => ({ useFingerPrint });
+const mapState = ({ app: {} }: RootState) => ({});
 
 let mapDispatch = ({ app: { pushTokenExist, setLoggedTime } }: Dispatch) => ({ pushTokenExist, setLoggedTime });
 
-export let ScreenPinCode = connect(
+export let ScreenSetupPinCode = connect(
 	mapState,
 	mapDispatch
-)(ScreenPinController);
+)(ScreenSetupPinCodeController);
 
 type StateProps = ReturnType<typeof mapState>;
 type DisPatchProps = ReturnType<typeof mapDispatch>;

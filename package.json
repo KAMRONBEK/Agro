@@ -41,6 +41,7 @@
 		"prop-types": "15.7.2",
 		"react": "16.9.0",
 		"react-native": "^0.63.4",
+		"react-native-background-timer": "^2.4.1",
 		"react-native-confirmation-code-input": "1.0.4",
 		"react-native-flash-message": "^0.1.15",
 		"react-native-geolocation-service": "^5.2.0",

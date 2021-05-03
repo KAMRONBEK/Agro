@@ -6,43 +6,35 @@ import { Locale } from "const";
 export async function allDeposits() {
 	return apiQwerty
 		.get(ALL_DEPOSITS, {
-			headers: {
-				[ACCEPT_LANGUAGE]: Locale.RU,
-			},
+			headers: {}
 		})
-		.then((response) => response.data.data)
-		.catch((err) => err.response.data);
+		.then(response => response.data.data)
+		.catch(err => err.response.data);
 }
 
 export async function userDeposits() {
 	return apiQwerty
 		.get(ACTIVE_DEPOSITS, {
-			headers: {
-				[ACCEPT_LANGUAGE]: Locale.RU,
-			},
+			headers: {}
 		})
-		.then((response) => response.data.data)
-		.catch((err) => err.response.data);
+		.then(response => response.data.data)
+		.catch(err => err.response.data);
 }
 
 export async function depositInfo(code) {
 	return apiQwerty
 		.get(DEPOSIT_INFO(code), {
-			headers: {
-				[ACCEPT_LANGUAGE]: Locale.RU,
-			},
+			headers: {}
 		})
-		.then((response) => response.data.data)
-		.catch((err) => err.response.data);
+		.then(response => response.data.data)
+		.catch(err => err.response.data);
 }
 
 export async function createDeposit(credentials) {
 	return apiQwerty
 		.post(CREATE_DEPOSIT, formData(credentials), {
-			headers: {
-				[ACCEPT_LANGUAGE]: Locale.RU,
-			},
+			headers: {}
 		})
-		.then((response) => response.data.data)
-		.catch((err) => err.response.data);
+		.then(response => response.data.data)
+		.catch(err => err.response.data);
 }

@@ -54,7 +54,7 @@ const PaymentStack = () => (
 			name={ROUTES.SCREEN_CARD_OPERATIONS}
 			component={ScreenCardOperations}
 			options={{
-				...BackGreenHeader(strings("paylentWithCard"))
+				...BackGreenHeader(strings("paymentWithCard"))
 			}}
 		/>
 		<Screen

@@ -5,6 +5,7 @@ import { styles } from './styles';
 import { Palette } from 'styles';
 import { TOUCHABLE_OPACITY } from 'const';
 import { ISupplierForm, ISupplierFormData } from 'types';
+import {strings} from "../../../../translations/i18n";
 
 interface IOwnProps {
   supplierForm: ISupplierForm;
@@ -22,12 +23,12 @@ export function ServicePaymentFooterButtonsView({
   return (
     <View style={styles.container}>
       <TouchableOpacity activeOpacity={TOUCHABLE_OPACITY} style={styles.cancelButton}>
-        <Text style={styles.cancelButtonTitle}>Отмена</Text>
+        <Text style={styles.cancelButtonTitle}>{strings('cancel')}</Text>
       </TouchableOpacity>
       <TouchableOpacity disabled={paymentIsFetching} onPress={next} activeOpacity={TOUCHABLE_OPACITY} style={styles.transferButton}>
         <LinearGradient start={{x: 0, y: 0}} end={{x: 1, y: 0}} colors={[Palette.greenGrace, Palette.greenCesar]} style={styles.transferButtonGradient}>
           {
-            paymentIsFetching ? 
+            paymentIsFetching ?
               <ActivityIndicator size='small' color={Palette.white} animating={paymentIsFetching} /> :
               <Text style={styles.transferButtonTitle}>{button?.options.text}</Text>
           }

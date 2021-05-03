@@ -62,7 +62,8 @@ export const styles = StyleSheet.create({
 	langCloseWrapper: {
 		position: "absolute",
 		right: 10,
-		top: -50,
+		zIndex: 999,
+		top: 15,
 		borderRadius: 40,
 		width: 40,
 		height: 40,
@@ -83,7 +84,7 @@ export const styles = StyleSheet.create({
 	},
 	langImage: {
 		width: 50,
-		height: 50,
+		height: 50
 	},
 	imgWrapper: {
 		flexDirection: "row",
@@ -97,7 +98,7 @@ export const styles = StyleSheet.create({
 		textAlign: "center"
 	},
 	center: {
-		justifyContent: 'center',
+		justifyContent: "center",
 		alignItems: "center"
 	}
 });

@@ -51,13 +51,13 @@ export function OnlineDepositsTabsView({
 							</View>
 						</TouchableOpacity>
 						{innerlistVisibility && (
-							<View style={styles.mergedList}>
+							<View>
 								<FlatList
 									keyExtractor={(item, index) => item.code.toString()}
 									data={item?.deposits}
 									renderItem={({ item, index }) => {
 										return (
-											<TouchableOpacity onPress={() => onNewDepositPress(item.code)}>
+											<TouchableOpacity  onPress={() => onNewDepositPress(item.code)}>
 												<View style={[styles.allDepositCard, styles.innerList]}>
 													<View style={styles.row}>
 														<Text style={styles.title}>
@@ -106,7 +106,7 @@ export function OnlineDepositsTabsView({
 							<Text>{strings("noDeposit")}</Text>
 						</View>
 					)}
-					contentContainerStyle={{ flex: 1 }}
+					contentContainerStyle={{ flex: 1, paddingHorizontal: 15 }}
 				/>
 			</View>
 		);
@@ -185,7 +185,16 @@ export function OnlineDepositsTabsView({
 				selectedColor={Palette.white}
 				buttonColor={setAlpha(Palette.white, 0.1)}
 				backgroundColor={Palette.transparent}
-				options={switchOptions}
+				options={[
+					{
+						label: strings("currentDeposits"),
+						value: DepositListType.AllDeposits
+					},
+					{
+						label: strings("myDeposits"),
+						value: DepositListType.UserDeposits
+					}
+				]}
 				selectedTextStyle={styles.switchText}
 				textStyle={styles.switchText}
 				height={40}

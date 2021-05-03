@@ -1,12 +1,13 @@
-import { ISwitchSelectorOption } from 'react-native-switch-selector';
+import { ISwitchSelectorOption } from "react-native-switch-selector";
+import { strings } from "../../../../translations/i18n";
 
 export const switchOptions: ISwitchSelectorOption[] = [
-  {
-    label: 'Купить',
-    value: 0
-  },
-  {
-    label: 'Продать',
-    value: 1
-  }
-]
+	{
+		label: strings("buy"),
+		value: 0
+	},
+	{
+		label: strings("sell"),
+		value: 1
+	}
+];

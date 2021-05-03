@@ -1,83 +1,84 @@
-import React, { Component } from 'react';
-import { Signup2CountdownTimerView } from './view';
+import React, { Component } from "react";
+import { Signup2CountdownTimerView } from "./view";
+import BackgroundTimer from "react-native-background-timer";
 
 interface IConnectProps {
-  codeIsFetching: boolean;
-  pushSendCode: () => void;
+	codeIsFetching: boolean;
+	pushSendCode: () => void;
 }
 
 interface IState {
-  countdown: number;
-  showCountdown: boolean;
+	countdown: number;
+	showCountdown: boolean;
 }
 
 export class Signup2CountdownTimerController extends Component<IConnectProps, IState> {
-  countdown;
+	countdown;
 
-  state: IState = {
-    countdown: 59,
-    showCountdown: true
-  }
+	state: IState = {
+		countdown: 59,
+		showCountdown: true
+	};
 
-  componentDidMount() {
-    this.startCountdown();
-  }
+	componentDidMount() {
+		this.startCountdown();
+	}
 
-  componentDidUpdate(prevProps: IConnectProps, prevState: IState) {
-    const { countdown } = this.state;
+	componentDidUpdate(prevProps: IConnectProps, prevState: IState) {
+		const { countdown } = this.state;
 
-    if (countdown !== prevState.countdown) {
-      if (countdown === 0) {
-        this.stopCountdown();
-      }
-    }
-  }
+		if (countdown !== prevState.countdown) {
+			if (countdown === 0) {
+				this.stopCountdown();
+			}
+		}
+	}
 
-  componentWillUnmount() {
-    this.stopCountdown();
-  }
+	componentWillUnmount() {
+		this.stopCountdown();
+	}
 
-  startCountdown = () => {
-    this.countdown = setInterval(() => {
-      this.setState((prevState: IState) => ({
-        showCountdown: true,
-        countdown: prevState.countdown - 1
-      }))
-    }, 1000);
-  }
+	startCountdown = () => {
+		this.countdown = BackgroundTimer.setInterval(() => {
+			this.setState((prevState: IState) => ({
+				showCountdown: true,
+				countdown: prevState.countdown - 1
+			}));
+		}, 1000);
+	};
 
-  stopCountdown = () => {
-    clearInterval(this.countdown);
-    this.setState({ 
-      showCountdown: false,
-      countdown: 59
-    })
-  }
+	stopCountdown = () => {
+		clearInterval(this.countdown);
+		this.setState({
+			showCountdown: false,
+			countdown: 59
+		});
+	};
 
-  formatedSeconds = (countdown: number) => {
-    return countdown < 10 ? '0' + countdown : String(countdown);
-  }
+	formatedSeconds = (countdown: number) => {
+		return countdown < 10 ? "0" + countdown : String(countdown);
+	};
 
-  sendCode = () => {
-    const { pushSendCode } = this.props;
+	sendCode = () => {
+		const { pushSendCode } = this.props;
 
-    pushSendCode();
+		pushSendCode();
 
-    this.startCountdown();
-  }
+		this.startCountdown();
+	};
 
-  render() {
-    const { countdown, showCountdown } = this.state;
-    const { codeIsFetching } = this.props;
-    
-    return (
-      <Signup2CountdownTimerView
-        countdown={countdown}
-        showCountdown={showCountdown}
-        codeIsFetching={codeIsFetching}
-        sendCode={this.sendCode}
-        formatedSeconds={this.formatedSeconds}
-      />
-    )
-  }
+	render() {
+		const { countdown, showCountdown } = this.state;
+		const { codeIsFetching } = this.props;
+
+		return (
+			<Signup2CountdownTimerView
+				countdown={countdown}
+				showCountdown={showCountdown}
+				codeIsFetching={codeIsFetching}
+				sendCode={this.sendCode}
+				formatedSeconds={this.formatedSeconds}
+			/>
+		);
+	}
 }

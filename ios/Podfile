@@ -50,6 +50,8 @@ target 'Agro' do
 
   pod 'RNSentry', :path => '../node_modules/@sentry/react-native'
 
+  pod 'react-native-background-timer', :path => '../node_modules/react-native-background-timer'
+
   target 'AgroTests' do
     inherit! :search_paths
     # Pods for testing

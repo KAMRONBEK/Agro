@@ -19,7 +19,7 @@ export function CardOperationsTransferAmountView({
 	onChangeAmount
 }: IOwnProps) {
 	function renderType() {
-		return operationType === OperationType.Transfer ? "перевода" : "запроса";
+		return operationType === OperationType.Transfer ? "transfer" : "request";
 	}
 
 	function renderError(value: string, index: number) {
@@ -34,7 +34,7 @@ export function CardOperationsTransferAmountView({
 		<View style={styles.container}>
 			<View style={styles.labelBox}>
 				<Text style={styles.label}>
-					{strings("enterAmount")} {renderType()}
+					{strings("enterAmount")} {strings(renderType())}
 				</Text>
 			</View>
 			<View style={styles.inputBox}>

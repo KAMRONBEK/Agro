@@ -6,6 +6,7 @@ import { ICard, CardTypes, DepositListType } from "types";
 import reactotron from "store/ReactatronConfig";
 import { NavigationScreenProp } from "react-navigation";
 import { ROUTES as ROUTE } from "const";
+import { strings } from "../../../../translations/i18n";
 
 interface IConnectProps {
 	currentDeposits: [];
@@ -26,8 +27,11 @@ export class OnlineDepositsTabsController extends Component<IConnectProps, IStat
 	state: IState = {
 		tabsState: {
 			index: 0,
-			routes: ROUTES,
-		},
+			routes: [
+				{ key: "first", title: strings("currentDeposits") },
+				{ key: "second", title: strings("myDeposits") }
+			]
+		}
 	};
 
 	tabOnChange = (type: DepositListType) => {
@@ -55,7 +59,7 @@ export class OnlineDepositsTabsController extends Component<IConnectProps, IStat
 		getUserDeposits();
 	}
 
-	onNewDepositPress = (code) => {
+	onNewDepositPress = code => {
 		let { navigation, setCurrentDeposit } = this.props;
 		setCurrentDeposit(code);
 		navigation.navigate(ROUTE.SCREEN_ONLINE_DEPOSITS_PAYMENT);

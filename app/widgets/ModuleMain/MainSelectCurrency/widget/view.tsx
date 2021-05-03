@@ -63,7 +63,7 @@ export let MainSelectCurrencyView = ({  }: IOwnProps) => {
 								resizeMode="contain"
 							/>
 						</View>
-						<Text style={styles.currencyCost}>1 USD = {data?.buyRate} сум</Text>
+						<Text style={styles.currencyCost}>1 USD = {data?.buyRate} {strings('som')}</Text>
 					</View>
 					<View style={styles.selectRightBox}>
 						<Arrow />

@@ -1,13 +1,6 @@
 import React from "react";
 import { ROUTES } from "const";
-import {
-	CardTransfer,
-	OnlineConversion,
-	OnlineCredit,
-	OnlineDeposit,
-	OnTimePayment,
-	RepaymentOfLoans
-} from "../assets";
+import { CardTransfer, OnlineConversion, OnlineCredit, OnlineDeposit, OnTimePayment } from "../assets";
 import { strings } from "translations/i18n";
 
 export interface IService {
